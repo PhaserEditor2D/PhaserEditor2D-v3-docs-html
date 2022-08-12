@@ -1,0 +1,4 @@
+include:
+  - docs/_static
+  - docs/_images
+  - docs/_header.html
