@@ -1,10 +1,16 @@
 #!/bin/zsh
 
-rm -Rf $PHASEREDITOR_HOME/PhaserEditor2D-v3-docs-html/html
+rm -Rf $PHASEREDITOR_HOME/PhaserEditor2D-v3-docs-html/docs
+
+# build docs
 
 cd $PHASEREDITOR_HOME/PhaserEditor2D-v3-docs
 ./build.sh
 cp -R _build/html $PHASEREDITOR_HOME/PhaserEditor2D-v3-docs-html/
 
-rm -R $PHASEREDITOR_HOME/PhaserEditor2D-v3-docs-html/html/_sources
-rm -R $PHASEREDITOR_HOME/PhaserEditor2D-v3-docs-html/html/.doctrees
+# clean
+
+cd $PHASEREDITOR_HOME/PhaserEditor2D-v3-docs-html/
+mv html docs
+rm -R docs/_sources
+rm -R docs/.doctrees
