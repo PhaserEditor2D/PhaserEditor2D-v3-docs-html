@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JavaScript Editor &mdash; Phaser Editor 2D Help</title>
+  <title>Arcade physics &mdash; Phaser Editor 2D Help</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
@@ -20,8 +20,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Advanced JavaScript editing features" href="js-editor-advanced-features.html" />
-    <link rel="prev" title="Visual Studio Code compatibility" href="vscode-compatibility.html" /> 
+    <link rel="next" title="Creating Arcade Image and Sprite objects" href="arcade-physics-add-object.html" />
+    <link rel="prev" title="Border properties" href="border-properties.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -33,7 +33,7 @@
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.34.0
+                v3.35.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -48,18 +48,31 @@
 <li class="toctree-l1"><a class="reference internal" href="../first-steps/index.html">First steps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../workbench/index.html">Workbench</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../asset-pack-editor/index.html">Asset Pack Editor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../scene-editor/index.html">Scene Editor</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Code Editor</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="vscode-compatibility.html">Visual Studio Code compatibility</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">JavaScript Editor</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="js-editor-advanced-features.html">Advanced JavaScript editing features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="js-editor-outline-view.html">Outline view integration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="js-editor-inspector-view.html">Inspector view integration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="js-editor-asset-pack-completions.html">Asset Pack keys auto-completion</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Scene Editor</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="create-new-scene-file.html">Create a new Scene file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add-object.html">Adding an object to the scene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inspector-view.html">Inspector view</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Arcade physics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcade-physics-add-object.html">Creating Arcade Image and Sprite objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcade-physics-add-body.html">Enabling the Arcade physics on a game object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcade-physics-properties.html">Arcade physics body properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcade-physics-collider.html">Arcade physics collider</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="display-list.html">Display List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prefabs.html">Prefabs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-components.html">User Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation-tools.html">Manipulation tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="layout-tools.html">Layout tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scene-compiler.html">The scene compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../code-editor/index.html">Code Editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../animations-editor/index.html">Animations Editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../atlas-editor/index.html">Atlas Editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../misc/index.html">Miscellaneous</a></li>
@@ -80,8 +93,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Code Editor</a> &raquo;</li>
-      <li>JavaScript Editor</li>
+          <li><a href="index.html">Scene Editor</a> &raquo;</li>
+      <li>Arcade physics</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -90,26 +103,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="javascript-editor">
-<h1>JavaScript Editor<a class="headerlink" href="#javascript-editor" title="Permalink to this headline"></a></h1>
+  <section id="arcade-physics">
+<h1>Arcade physics<a class="headerlink" href="#arcade-physics" title="Permalink to this headline"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="js-editor-advanced-features.html">Advanced JavaScript editing features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="js-editor-outline-view.html">Outline view integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="js-editor-inspector-view.html">Inspector view integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="js-editor-asset-pack-completions.html">Asset Pack keys auto-completion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcade-physics-add-object.html">Creating Arcade Image and Sprite objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcade-physics-add-body.html">Enabling the Arcade physics on a game object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcade-physics-properties.html">Arcade physics body properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arcade-physics-collider.html">Arcade physics collider</a></li>
 </ul>
 </div>
-<p>The JavaScript editor included in <a class="reference external" href="../intro/all-in-one.html">Phaser Editor 2D All-in-One</a> is based on the <a class="reference external" href="https://microsoft.github.io/monaco-editor/">Monaco editor</a>. The <a class="reference external" href="https://microsoft.github.io/monaco-editor/">Monaco editor</a> is an advanced component that allows regular operations like code-completion, code hints, code browsing, etc…</p>
-<img alt="JavaScript editor." src="../_images/scene-editor-js-editor-05012020.webp" />
+<p>Arcade is a physics system very popular in <a class="reference external" href="https://phaser.io">Phaser</a>. <a class="reference external" href="https://phasereditor2d.com">Phaser Editor 2D</a> provides visual tools for creating and configuring Arcade physics objects.</p>
+<p>You can create a <code class="docutils literal notranslate"><span class="pre">Phaser.Physics.Arcade.Image</span></code> or <code class="docutils literal notranslate"><span class="pre">Phaser.Physics.Arcade.Sprite</span></code> game object or you can enable a physics body in any other game object.</p>
+<p>With the visual tools, you can change the body size and offset. With the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a> editors, you can adjust the physics properties like velocity, mass, etc…</p>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="vscode-compatibility.html" class="btn btn-neutral float-left" title="Visual Studio Code compatibility" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="js-editor-advanced-features.html" class="btn btn-neutral float-right" title="Advanced JavaScript editing features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="border-properties.html" class="btn btn-neutral float-left" title="Border properties" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="arcade-physics-add-object.html" class="btn btn-neutral float-right" title="Creating Arcade Image and Sprite objects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
