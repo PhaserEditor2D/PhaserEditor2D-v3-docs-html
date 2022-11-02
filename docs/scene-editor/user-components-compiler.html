@@ -33,7 +33,7 @@
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.35.0
+                v3.35.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -70,6 +70,7 @@
 <li class="toctree-l3"><a class="reference internal" href="user-components-super-class.html">A base class for your components</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user-components-awake-event.html">The awake event</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user-components-instancing.html">Adding User Components to a Game Object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-components-in-prefab-object.html">Adding User Components to a Prefab</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="manipulation-tools.html">Manipulation tools</a></li>
@@ -115,7 +116,15 @@
 <p>The <a class="reference external" href="../scene-editor/user-components.html">user components</a> are configured in <code class="docutils literal notranslate"><span class="pre">*.components</span></code> files and used by the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a>. It is a concept of <a class="reference external" href="https://phasereditor2d.com">Phaser Editor 2D</a>, not <a class="reference external" href="https://phaser.io">Phaser</a>. So we use the same <a class="reference external" href="../scene-editor/index.html">Scene Editor</a> philosophy, it compiles our custom configurations into plain, readable, fully <a class="reference external" href="https://phaser.io">Phaser</a> compatible code.</p>
 <p>Following, look at how an <strong>HorizontalMove</strong> component is compiled into JavaScript.</p>
 <p>The component information:</p>
-<img alt="Component metadata." src="../_images/scene-editor-user-components-demo-info-f_09172020.webp" />
+<img alt="Component metadata." src="../_images/scene-editor-user-components-editor-info-20221101.webp" />
+<p>The properties of the component:</p>
+<img alt="The properties" src="../_images/scene-editor-user-components-props-20221101.webp" />
+<p><strong>Horizontal Velocity</strong></p>
+<img alt="Horizaontal move property." src="../_images/scene-editor-user-components-prop-1-20221101.webp" />
+<p><strong>Min X</strong></p>
+<img alt="Min position X" src="../_images/scene-editor-user-components-prop-2-20221101.webp" />
+<p><strong>Max X</strong></p>
+<img alt="Max position Y." src="../_images/scene-editor-user-components-prop-3-20221101.webp" />
 <p>The generated code:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// You can write more code here</span>
 

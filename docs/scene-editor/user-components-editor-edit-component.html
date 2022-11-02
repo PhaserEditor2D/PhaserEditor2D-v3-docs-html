@@ -33,7 +33,7 @@
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.35.0
+                v3.35.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -72,6 +72,7 @@
 <li class="toctree-l3"><a class="reference internal" href="user-components-super-class.html">A base class for your components</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user-components-awake-event.html">The awake event</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user-components-instancing.html">Adding User Components to a Game Object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-components-in-prefab-object.html">Adding User Components to a Prefab</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="manipulation-tools.html">Manipulation tools</a></li>
@@ -121,11 +122,15 @@
 <li><p>The name of the component class.</p></li>
 <li><p>The type of the game object (or entity). Next to the field, you can open a menu with common possible options.</p></li>
 <li><p>The super-class of the component class. It is optional. Next to the field, you can open a menu with common possible options and names used in other components.</p></li>
-<li><p>The definition of the component’s properties.</p></li>
 </ul>
-<img alt="Edit component properties" src="../_images/scene-editor-user-components-edit-props-07212020.webp" />
+<img alt="Edit component info." src="../_images/scene-editor-user-components-edit-props-20221101.webp" />
 <p>The properties work the same as the <a class="reference external" href="prefab-user-properties.html#creating-a-prefab-user-property">Prefab user properties</a>.</p>
-<p>The above image shows the <strong>HorizontalMove</strong> component. It has a game object type <code class="docutils literal notranslate"><span class="pre">Phaser.GameObjects.Image</span></code>. It means you should add this component to that type of objects (entities). And the <strong>horizVelocity</strong>, <strong>minX</strong> and <strong>minY</strong> properties. This component is compiled into this JavaScript code:</p>
+<p>You can add new properties by pressing the <strong>Add Property</strong> button.</p>
+<p>The above image shows the <strong>HorizontalMove</strong> component. It has a game object type <code class="docutils literal notranslate"><span class="pre">Phaser.GameObjects.Image</span></code>. It means you should add this component to that type of objects (entities). And the <strong>horizVelocity</strong>, <strong>minX</strong> and <strong>minY</strong> properties.</p>
+<img alt="The component's properties." src="../_images/scene-editor-user-components-props-20221101.webp" />
+<p>For editing the info of a property, select it in the editor and set the values in the Inspector view:</p>
+<img alt="Edit property." src="../_images/scene-editor-user-components-edit-property-20221101.webp" />
+<p>This component is compiled into this JavaScript code:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// You can write more code here</span>
 
 <span class="cm">/* START OF COMPILED CODE */</span>
