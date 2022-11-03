@@ -33,7 +33,7 @@
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.35.0
+                v3.35.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -129,9 +129,12 @@
              
   <section id="creating-a-prefab-user-property">
 <h1>Creating a prefab user property<a class="headerlink" href="#creating-a-prefab-user-property" title="Permalink to this headline"></a></h1>
-<p>The <strong>Prefab Properties</strong> section of the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a> shows a button to create a new user property. This section is shown when you select the scene (click on a blank space of the scene).</p>
+<p>The <strong>Prefab Properties</strong> section of the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a> shows a button to create a new user property. This section is shown when you select the scene (click on a blank space of the scene), or when you select the <strong>Prefab Properties</strong> element in the <a class="reference external" href="../workbench/outline-view.html">Outline view</a>:</p>
+<img alt="The Prefabs Properties in the Outline view." src="../_images/prefab-user-props-node-outline-view-20221102.webp" />
 <p>Click on the <strong>Add Property</strong> button to create a new property. The button shows a menu with the different type of properties:</p>
-<img alt="Add prefab user property." src="../_images/prefab-user-props-add-property-09102020.webp" />
+<img alt="Add prefab user property." src="../_images/prefab-user-props-add-property-20221102.webp" />
+<p>The properties are shown as children of the <strong>Prefab Properties</strong> element. Click a property for editing it in the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a>:</p>
+<img alt="Display all properties of a prefab." src="../_images/prefab-user-props-as-children-outline-20221102.webp" />
 <p>All type of properties requires some common parameters that you should provide:</p>
 <ul class="simple">
 <li><p>The <strong>Name</strong> of the property. It is used by the compiler to generate a property declaration code. It should be a valid JavaScript identifier.</p></li>
@@ -140,8 +143,8 @@
 <li><p>The <strong>Default</strong> value.</p></li>
 <li><p>The <strong>Custom Definition</strong> flag. If enabled, the <a class="reference external" href="../scene-editor/scene-compiler.html">scene compiler</a> skips the generation of the code with the property declaration. It allows you writing a custom implementation of the property. For example, using a custom getter and setter. Learn more about <a class="reference external" href="prefab-user-properties-initializing.html#using-properties-with-custom-definition">using properties with custom definition</a>.</p></li>
 </ul>
-<img alt="Common parameters of a property." src="../_images/prefab-user-props-common-params-07092021.webp" />
-<p>In the title bar of the property, there is a menu with commands to:</p>
+<img alt="Common parameters of a property." src="../_images/prefab-user-props-common-params-20221102.webp" />
+<p>The menu of the property section shows the following actions:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>Move the property down/up.</p></li>
@@ -150,7 +153,7 @@
 </ul>
 </div></blockquote>
 <p>You can undo/redo all these changes.</p>
-<img alt="Property menu." src="../_images/prefab-user-props-menu-09102020.webp" />
+<img alt="Property menu." src="../_images/prefab-user-props-menu-20221102.webp" />
 </section>
 
 

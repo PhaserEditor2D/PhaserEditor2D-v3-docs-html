@@ -20,7 +20,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Manipulation tools" href="manipulation-tools.html" />
+    <link rel="next" title="Adding User Components to a Prefab" href="user-components-in-prefab-object.html" />
     <link rel="prev" title="The awake event" href="user-components-awake-event.html" /> 
 </head>
 
@@ -33,7 +33,7 @@
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.35.0
+                v3.35.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -66,7 +66,12 @@
 <li class="toctree-l3"><a class="reference internal" href="user-components-start-update-methods.html">Implementing behaviors with the Phaser events</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user-components-super-class.html">A base class for your components</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user-components-awake-event.html">The awake event</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Adding User Components to a Game Object</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Adding User Components to a Game Object</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#generating-the-code-for-a-component-in-an-object">Generating the code for a component in an object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#actions-for-a-component">Actions for a component</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="user-components-in-prefab-object.html">Adding User Components to a Prefab</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="manipulation-tools.html">Manipulation tools</a></li>
@@ -124,9 +129,14 @@
 <p>However, the interesting is adding components to objects in the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a>.</p>
 <p>This is possible in the <strong>User Components</strong> section. It shows the <strong>Add Component</strong> button.</p>
 <p>When you click that button, it shows a dialog with all the components defined in the project (grouped by the <code class="docutils literal notranslate"><span class="pre">*.components</span></code> files). Select the one you want to add:</p>
-<img alt="Add a component to the object." src="../_images/scene-editor-user-components-obj-add-component-05292021.webp" />
-<p>Then, the properties of the components are shown in the same <strong>User Components</strong> section, and are ready to be set with new values:</p>
-<img alt="Edit the user component instance properties." src="../_images/scene-editor-user-components-obj-edit-component-07302020.webp" />
+<img alt="Add a component to the object." src="../_images/scene-editor-user-components-obj-add-component-20221102.webp" />
+<p>Then, the <strong>HorizontalMove</strong> component is shown as an object’s child in the <a class="reference external" href="../workbench/outline-view.html">Outline view</a> and the User Components section shows a link to the component:</p>
+<img alt="Showing the user components of an object." src="../_images/scene-editor-user-components-show-components-20221102.webp" />
+<p>So, when you select the <strong>HorizontalMove</strong> component, the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a> shows the properties of the component:</p>
+<img alt="Edit the user component instance properties." src="../_images/scene-editor-user-components-obj-edit-component-20221102.webp" />
+<p>The <strong>Select Parent Game Object</strong> button is a shortcut for selecting the object containing the component.</p>
+<section id="generating-the-code-for-a-component-in-an-object">
+<h2>Generating the code for a component in an object<a class="headerlink" href="#generating-the-code-for-a-component-in-an-object" title="Permalink to this headline"></a></h2>
 <p>The <a class="reference external" href="user-components-compiler.html">user components compiler</a> will generate the code to create the component, just like if you write it by hand:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// bridge2 (components)</span>
 <span class="kd">const</span> <span class="nx">bridge2HorizontalMove</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">HorizontalMove</span><span class="p">(</span><span class="nx">bridge2</span><span class="p">);</span>
@@ -135,10 +145,19 @@
 <span class="nx">bridge2HorizontalMove</span><span class="p">.</span><span class="nx">maxX</span> <span class="o">=</span> <span class="mf">400</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>If the selected object is a prefab instance, then the components present in the prefab are shown too, and you can lock/unlock its properties:</p>
-<img alt="Editing properties of a component of a prefab instance." src="../_images/scene-editor-user-components-obj-prefab-properties-07302020.webp" />
-<p>Look at the prefab and the <a class="reference external" href="../scene-editor/user-components.html">user component</a> names: both are shown as links. If you click on it, it will open the prefab or the user component in its editor. Also, each <a class="reference external" href="../scene-editor/user-components.html">user component</a> panel has a menu icon. Click on it to list other options, like select in the scene all the objects with the same <a class="reference external" href="../scene-editor/user-components.html">user component</a>:</p>
-<img alt="Select all objects with the same User Component." src="../_images/scene-editor-user-components-select-all-objects-07302020.webp" />
+</section>
+<section id="actions-for-a-component">
+<h2>Actions for a component<a class="headerlink" href="#actions-for-a-component" title="Permalink to this headline"></a></h2>
+<p>These are the actions associated to the user component of an object:</p>
+<img alt="Actions for a user component in an object." src="../_images/scene-editor-user-components-component-menu-link-20221102.webp" />
+<img alt="Actions for a user component in an object." src="../_images/scene-editor-user-components-component-menu-20221102.webp" />
+<ul class="simple">
+<li><p><strong>Select Objects With HorizontalMove</strong>: selects in the scene all objects containing the <strong>HorizontalMove</strong> component.</p></li>
+<li><p><strong>Open Definition Of HorizontalMove</strong>: opens the definition of the component in the <a class="reference external" href="./user-components-editor.html">User Components Editor</a>.</p></li>
+<li><p><strong>Move Up</strong>, <strong>Move Down</strong>: changes the order of the component.</p></li>
+<li><p><strong>Delete</strong>: deletes the component from the object.</p></li>
+</ul>
+</section>
 </section>
 
 
@@ -146,7 +165,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="user-components-awake-event.html" class="btn btn-neutral float-left" title="The awake event" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="manipulation-tools.html" class="btn btn-neutral float-right" title="Manipulation tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="user-components-in-prefab-object.html" class="btn btn-neutral float-right" title="Adding User Components to a Prefab" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
