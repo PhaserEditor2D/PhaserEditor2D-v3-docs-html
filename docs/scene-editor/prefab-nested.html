@@ -33,7 +33,7 @@
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.60.3
+                v3.61.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -124,9 +124,9 @@
 <p>It is a <a class="reference external" href="container-object.html">container</a>, with an <strong>alien</strong> and a <strong>ship</strong> children.</p>
 <p>When you create an instance of the <strong>AlienPrefab</strong> (that is an instance of a <a class="reference external" href="container-object.html">container</a>), you can change its position, its scale. It’s custom properties. But you cannot change the properties of the <strong>ship</strong> or the <strong>alien</strong> children.</p>
 <p>But if you declare the <strong>alien</strong> and <strong>ship</strong> objects as nested prefab, you can access them in the prefab instance.</p>
-<p>For setting an object as nested prefab, you select the <strong>Nested Prefab</strong> option in the <strong>Scope</strong> parameter of the <strong>Variable</strong> section:</p>
-<img alt="Setting the nested prefab scope." src="../_images/scene-editor-nested-prefab-scope-08182021.webp" />
-<p>Variables with a <strong>Nested Prefab</strong> scopes are generated in code as public fields. It is like the <strong>Public</strong> scope but allowing to modify the object in prefab instances.</p>
+<p>For setting an object as nested prefab, you select the <strong>NESTED_PREFAB</strong> option in the <strong>Scope</strong> parameter of the <strong>Variable</strong> section:</p>
+<img alt="Setting the nested prefab scope." src="../_images/scene-editor-nested-prefab-scope-20230516.webp" />
+<p>Variables with a <strong>NESTED_PREFAB</strong> scopes are generated in code as public fields. It is like the <strong>PUBLIC</strong> scope but allowing to modify the object in prefab instances.</p>
 <section id="nested-prefab-instances">
 <h2>Nested prefab instances<a class="headerlink" href="#nested-prefab-instances" title="Permalink to this headline"></a></h2>
 <p>When you create an instance of a prefab that contains nested prefabs, the <a class="reference external" href="../workbench/outline-view.html">Outline</a> view shows the nested prefabs. Also, the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a> allows selecting the nested prefab instance:</p>

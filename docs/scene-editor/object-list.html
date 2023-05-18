@@ -33,7 +33,7 @@
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.60.3
+                v3.61.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -58,6 +58,7 @@
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Object List</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#object-list-properties">Object List properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#object-list-code-generation">Object List code generation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#object-list-vs-phaser-group">Object List vs Phaser Group</a></li>
 </ul>
 </li>
@@ -107,9 +108,28 @@
 <h1>Object List<a class="headerlink" href="#object-list" title="Permalink to this headline"></a></h1>
 <p>Often, you need to group objects with a common property or type, or with a common goal in the game. For example, you need to group the enemy objects, the pickable items, the platform objects, so you can test if the player collides with them.</p>
 <p>For this purpose, the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a> allows grouping the objects of the scene into a JavaScript array.</p>
-<p>You can create an <a class="reference internal" href="#object-list">Object List</a> using by dropping a <a class="reference external" href="blocks-view-integration.html">List built-in block</a> on the scene.</p>
-<img alt="Object list." src="../_images/scene-editor-object-list-04192020.webp" />
-<p>To add an object to an <a class="reference internal" href="#object-list">Object List</a>, you can set the <a class="reference external" href="lists-properties.html">Lists property</a> of the object, in the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a>.</p>
+<p>You can create an <a class="reference internal" href="#object-list">Object List</a> by dropping a <a class="reference external" href="blocks-view-integration.html">List built-in block</a> on the scene:</p>
+<img alt="Add object list from the Blocks view." src="../_images/scene-editor-object-list-add-from-blocks-20230516.webp" />
+<p>Or you can create a new list when adding an object to the list:</p>
+<img alt="Create new list in the Lists section." src="../_images/scene-editor-object-list-new-list-from-section-20230516.webp" />
+<img alt="Enter the name of the new list." src="../_images/scene-editor-object-list-add-new-2-20230516.webp" />
+<p>To add an object to an <a class="reference internal" href="#object-list">Object List</a>, select the object and look for the <strong>Lists</strong> section. Click on the drop-down of the <strong>Lists</strong> property, it shows the lists availables in the scene with the option of add the selected object to a list or remove it from a list:</p>
+<img alt="Add object to the list." src="../_images/scene-editor-object-list-add-object-20230516.webp" />
+<p>The <a class="reference external" href="../workbench/outline-view.html">Outline view</a> shows the Object Lists of your scene, in the <strong>Lists</strong> category. It also shows the objects of every list:</p>
+<img alt="Object lists in the outline." src="../_images/scene-editor-object-list-outline-20230516.webp" />
+<p>You can remove items from a list by selecting them in the outline and pressing the <strong>Delete</strong> command (<code class="docutils literal notranslate"><span class="pre">Del</span></code>).</p>
+<p>Also, you can sort the items in the list with the order commands, just like you order the game objects in the scene:</p>
+<img alt="Sorting commands." src="../_images/scene-editor-object-list-order-commands-20230516.webp" />
+<p>You can locate the a list item in the scene. Select the list item, and in the <strong>List Item</strong> section of the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a>, click on the <strong>Select Game Object</strong> button:</p>
+<img alt="List Item section." src="../_images/scene-editor-object-list-item-section-20230516.webp" />
+<section id="object-list-properties">
+<h2>Object List properties<a class="headerlink" href="#object-list-properties" title="Permalink to this headline"></a></h2>
+<p>The <a class="reference internal" href="#object-list">Object List</a> type is not part of the <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/">Phaser API</a>, it is something introduced by the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a>. In the <strong>Variable</strong> section of the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a>, it shows the <a class="reference external" href="variable-properties.html">Variable properties</a>:</p>
+<img alt="Object List properties." src="../_images/scene-editor-object-list-section-20230516.webp" />
+<p>In this section you can modify the name of the list, see the inferred type of the list items, and change the scope (<code class="docutils literal notranslate"><span class="pre">CLASS</span></code> by default) of the object list variable.</p>
+</section>
+<section id="object-list-code-generation">
+<h2>Object List code generation<a class="headerlink" href="#object-list-code-generation" title="Permalink to this headline"></a></h2>
 <p>The code generated by the <a class="reference external" href="../scene-editor/scene-compiler.html">scene compiler</a>, to create a list, is like this:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">pickableItems</span> <span class="o">=</span> <span class="p">[</span><span class="nx">melon</span><span class="p">,</span> <span class="nx">melon_1</span><span class="p">,</span> <span class="nx">melon_2</span><span class="p">,</span> <span class="nx">bomb</span><span class="p">,</span> <span class="nx">bomb_1</span><span class="p">,</span> <span class="nx">bomb_2</span><span class="p">];</span>
 </pre></div>
@@ -123,11 +143,6 @@
 </pre></div>
 </div>
 <p>This detailed type declaration of the arrays allows that code editors like <a class="reference external" href="https://code.visualstudio.com">Visual Studio Code</a> can provide a smarter coding experience.</p>
-<section id="object-list-properties">
-<h2>Object List properties<a class="headerlink" href="#object-list-properties" title="Permalink to this headline"></a></h2>
-<p>The <a class="reference internal" href="#object-list">Object List</a> type is not part of the <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/">Phaser API</a>, it is something introduced by the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a>. It has the <a class="reference external" href="variable-properties.html">Variable properties</a> and it also shows the <strong>List</strong> section in the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a>.</p>
-<img alt="Object List properties." src="../_images/scene-editor-object-list-props-04192020.webp" />
-<p>The <strong>Remove From List</strong> and <strong>Select In Scene</strong> buttons apply to the items selected in the viewer next to them.</p>
 </section>
 <section id="object-list-vs-phaser-group">
 <h2>Object List vs Phaser Group<a class="headerlink" href="#object-list-vs-phaser-group" title="Permalink to this headline"></a></h2>
