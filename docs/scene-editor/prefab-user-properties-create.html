@@ -33,7 +33,7 @@
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.61.0
+                v3.62.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -69,6 +69,8 @@
 <li class="toctree-l4"><a class="reference internal" href="prefab-user-properties-expression-type.html">Expression property type</a></li>
 <li class="toctree-l4"><a class="reference internal" href="prefab-user-properties-object-variable-type.html">Object Variable property type</a></li>
 <li class="toctree-l4"><a class="reference internal" href="prefab-user-properties-object-constructor-type.html">Object Constructor property type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="prefab-user-properties-event-type.html">Event property type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="prefab-user-properties-keycode-type.html">Key Code property type</a></li>
 <li class="toctree-l4"><a class="reference internal" href="prefab-user-properties-texture-type.html">Texture Config property type</a></li>
 <li class="toctree-l4"><a class="reference internal" href="prefab-user-properties-asset-key-type.html">Asset Key property type</a></li>
 <li class="toctree-l4"><a class="reference internal" href="prefab-user-properties-animation-key-type.html">Animation Key property type</a></li>
@@ -133,8 +135,9 @@
 <h1>Creating a prefab user property<a class="headerlink" href="#creating-a-prefab-user-property" title="Permalink to this headline"></a></h1>
 <p>The <strong>Prefab Properties</strong> section of the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a> shows a button to create a new user property. This section is shown when you select the scene (click on a blank space of the scene), or when you select the <strong>Prefab Properties</strong> element in the <a class="reference external" href="../workbench/outline-view.html">Outline view</a>:</p>
 <img alt="The Prefabs Properties in the Outline view." src="../_images/prefab-user-props-node-outline-view-20221102.webp" />
-<p>Click on the <strong>Add Property</strong> button to create a new property. The button shows a menu with the different type of properties:</p>
-<img alt="Add prefab user property." src="../_images/prefab-user-props-add-property-20221102.webp" />
+<p>Click on the <strong>Add Property</strong> button to create a new property. It opens a dialog with the different type of properties:</p>
+<img alt="Property types dialog." src="../_images/prefab-user-props-add-property-dialog-20230626.webp" />
+<img alt="Add Property button." src="../_images/prefab-user-props-add-property-button-20230626.webp" />
 <p>The properties are shown as children of the <strong>Prefab Properties</strong> element. Click a property for editing it in the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a>:</p>
 <img alt="Display all properties of a prefab." src="../_images/prefab-user-props-as-children-outline-20221102.webp" />
 <p>All type of properties requires some common parameters that you should provide:</p>
@@ -149,13 +152,13 @@
 <p>The menu of the property section shows the following actions:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>Move the property down/up.</p></li>
 <li><p>Change the type of the property.</p></li>
 <li><p>Delete the property.</p></li>
 </ul>
 </div></blockquote>
+<p>To change the order of the properties, go with the context menu’s <strong>Edit</strong> → <strong>Move</strong> commands.</p>
 <p>You can undo/redo all these changes.</p>
-<img alt="Property menu." src="../_images/prefab-user-props-menu-20221102.webp" />
+<img alt="Property menu." src="../_images/prefab-user-props-menu-20230627.webp" />
 </section>
 
 

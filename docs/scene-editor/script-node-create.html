@@ -21,7 +21,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="The ScriptNode class" href="script-node-class.html" />
-    <link rel="prev" title="Script Nodes" href="script-node.html" /> 
+    <link rel="prev" title="Script Nodes vs User Components" href="script-node-vs-user-component.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -33,7 +33,7 @@
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.61.0
+                v3.62.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -60,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="input.html">Input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="prefabs.html">Prefabs</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="script-node.html">Script Nodes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="script-node-vs-user-component.html">Script Nodes vs User Components</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Creating a Script Node</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#browsing-the-script-nodes">Browsing the Script Nodes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#code-generation-of-the-creation-of-a-script">Code generation of the creation of a script</a></li>
@@ -116,15 +117,15 @@
 <p>A <a class="reference external" href="../scene-editor/script-node.html">ScriptNode</a> object shares a lot with the game objects, you can add it to the scene by dragging it from the <a class="reference external" href="../workbench/blocks-view.html">Blocks view</a> and dropping it on the scene:</p>
 <img alt="Create script node from the blocks view." src="../_images/script-node-create-1-20230322.webp" />
 <p>That action creates an instance of the <a class="reference external" href="./script-node-class.html">ScriptNode class</a> and adds it to the object selected in the scene. If no object is selected, then it adds the script node to the scene.</p>
-<p>In addition to an instance of the <a class="reference external" href="./script-node-class.html">ScriptNode class</a>, you can add an instance of a <a class="reference external" href="./script-node-prefab.html">ScriptNode prefab</a>: select the <strong>Add Script</strong> option in the <strong>Script</strong> context menu or press the <strong>Add Script</strong> command (<code class="docutils literal notranslate"><span class="pre">U</span></code>).</p>
-<img alt="Add Script command." src="../_images/script-node-add-script-command.webp" />
+<p>In addition to an instance of the <a class="reference external" href="./script-node-class.html">ScriptNode class</a>, you can add an instance of a <a class="reference external" href="./script-node-prefab.html">ScriptNode prefab</a>: select the <strong>Add Script</strong> option in the <strong>Scripting</strong> context menu or press the <strong>Add Script</strong> command (<code class="docutils literal notranslate"><span class="pre">U</span></code>).</p>
+<img alt="Add Script command." src="../_images/script-node-add-script-dialog-20230627.webp" />
 <p>It opens the <strong>Add Script</strong> dialog. There you can select the script you want to add:</p>
 <img alt="The Add Script dialog." src="../_images/script-node-add-script-dialog.webp" />
 <section id="browsing-the-script-nodes">
 <h2>Browsing the Script Nodes<a class="headerlink" href="#browsing-the-script-nodes" title="Permalink to this headline"></a></h2>
 <p>The <a class="reference external" href="../scene-editor/script-node.html">script nodes</a> are displayed in the <a class="reference external" href="../workbench/outline-view.html">Outline view</a>, below the parent object, or the scene:</p>
 <img alt="Script nodes in the outline view." src="../_images/script-node-outline-20230322.webp" />
-<p>Also, you can browse the scripts of an object by pressing the command <code class="docutils literal notranslate"><span class="pre">Shift+U</span></code>. The command is also available in the <strong>Script</strong> section of the context menu. That command opens the <strong>Browse Scripts</strong> dialog:</p>
+<p>Also, you can browse the scripts of an object by pressing the command <code class="docutils literal notranslate"><span class="pre">Shift+U</span></code>. The command is also available in the <strong>Scripting</strong> section of the context menu. That command opens the <strong>Browse Scripts</strong> dialog:</p>
 <img alt="Browsing the script nodes." src="../_images/script-node-browse-scripts-20230322.webp" />
 </section>
 <section id="code-generation-of-the-creation-of-a-script">
@@ -160,7 +161,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="script-node.html" class="btn btn-neutral float-left" title="Script Nodes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="script-node-vs-user-component.html" class="btn btn-neutral float-left" title="Script Nodes vs User Components" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="script-node-class.html" class="btn btn-neutral float-right" title="The ScriptNode class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

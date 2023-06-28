@@ -33,7 +33,7 @@
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.61.0
+                v3.62.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -118,13 +118,11 @@
   <section id="adding-user-components-to-a-prefab">
 <h1>Adding User Components to a Prefab<a class="headerlink" href="#adding-user-components-to-a-prefab" title="Permalink to this headline"></a></h1>
 <p>In the previous section we shown how you can add a user component to an object. But, what does happen if you add a user component to a prefab? It is practically the same, but this component will be present in all the prefab instances too.</p>
-<p>Let’s see this example of a moving platform prefab. It contains the <strong>PlatformPhysics</strong> and <strong>HorizontalMove</strong> components, but let’s focus on the <strong>HorizontalMove</strong> one:</p>
-<img alt="The user components of a prefab." src="../_images/scene-editor-user-components-add-prefab-object-20221102.webp" />
-<img alt="The user component properties." src="../_images/scene-editor-user-components-add-prefab-object-props-20221102.webp" />
-<p>When you select an instance of this <strong>MovingPlatform1</strong> prefab, it also shows the <strong>HorizontalMove</strong> component, but highlighting that it belongs to the <strong>MovingPlatform1</strong> prefab:</p>
-<img alt="Components of a prefab instance." src="../_images/scene-editor-user-components-prefab-instance-components.webp" />
-<p>The component’s link contains the component’s name and the name of the prefab it belongs to. If you click the prefab name, it opens the prefab file in a new editor, and selects the component. If you click on the component link, it selects the component and shows its properties in the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a>. Look you can lock/unlock the properties:</p>
-<img alt="Editing properties of a component of a prefab instance." src="../_images/scene-editor-user-components-obj-prefab-properties-20221102.webp" />
+<p>Let’s see this example of a moving platform prefab. It contains the <strong>HorizontalMove</strong> component:</p>
+<img alt="The user components of a prefab." src="../_images/scene-editor-user-components-add-prefab-object-20230627.webp" />
+<p>When you select an instance of this <strong>MovingPlatform1</strong> prefab, it also shows the <strong>HorizontalMove</strong> component, but highlighting that it belongs to the <strong>MovingPlatform1</strong> prefab.</p>
+<p>The section’s title contains the component’s name and the name of the prefab it belongs to. The section’s body shows the component’s properties and look you can lock/unlock them:</p>
+<img alt="Components of a prefab instance." src="../_images/scene-editor-user-components-prefab-instance-components-20230627.webp" />
 <section id="generating-the-code-for-a-component-in-a-prefab-instance">
 <h2>Generating the code for a component in a prefab instance<a class="headerlink" href="#generating-the-code-for-a-component-in-a-prefab-instance" title="Permalink to this headline"></a></h2>
 <p>The <a class="reference external" href="user-components-compiler.html">user components compiler</a> will generate the code to changing the component’s properties like this:</p>
@@ -141,12 +139,12 @@
 <section id="hiding-a-component-to-the-prefab-instances">
 <h2>Hiding a component to the prefab instances<a class="headerlink" href="#hiding-a-component-to-the-prefab-instances" title="Permalink to this headline"></a></h2>
 <p>Maybe you don’t want to show the component of a prefab in the prefab instances. Because it is a component with local properties and behaviors and it could be perfectly hidden to the prefab instances. For doing this, you can uncheck the <strong>Export</strong> parameter of the component in the prefab:</p>
-<img alt="Export parameter." src="../_images/scene-editor-user-components-export-parameter-20221102.webp" />
+<img alt="Export parameter." src="../_images/scene-editor-user-components-export-parameter-20230627.webp" />
 </section>
 <section id="actions-for-a-component-in-a-prefab-instance">
 <h2>Actions for a component in a prefab instance<a class="headerlink" href="#actions-for-a-component-in-a-prefab-instance" title="Permalink to this headline"></a></h2>
 <p>These are the actions associated to the user component of a prefab instance:</p>
-<img alt="Actions for a user component instance." src="../_images/scene-editor-user-components-instance-menu-20221102.webp" />
+<img alt="Actions for a user component instance." src="../_images/scene-editor-user-components-instance-menu-20230627.webp" />
 <ul class="simple">
 <li><p><strong>Select Objects With HorizontalMove</strong>: selects in the scene all objects containing the <strong>HorizontalMove</strong> component.</p></li>
 <li><p><strong>Open Definition Of HorizontalMove</strong>: opens the definition of the component in the <a class="reference external" href="./user-components-editor.html">User Components Editor</a>.</p></li>
