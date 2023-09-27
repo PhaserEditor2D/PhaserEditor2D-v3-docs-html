@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Container objects &mdash; Phaser Editor 2D Help</title>
+  <title>Container &mdash; Phaser Editor 2D Help</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
@@ -20,7 +20,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Layer objects" href="layer-object.html" />
+    <link rel="next" title="Layer" href="layer-object.html" />
     <link rel="prev" title="Polygon" href="shape-polygon-object.html" /> 
 </head>
 
@@ -33,7 +33,7 @@
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.62.1
+                v3.63.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -54,27 +54,29 @@
 <li class="toctree-l2"><a class="reference internal" href="inspector-view.html">Inspector view</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="game-objects.html">Game Object types</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="common-object-properties.html">Common object properties</a></li>
-<li class="toctree-l3"><a class="reference internal" href="image-object.html">Image objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sprite-object.html">Sprite objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tile-sprite-object.html">Tile Sprite objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="nine-slice-object.html">Nine Slice objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="text-object.html">Text objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="bitmap-text-object.html">Bitmap Text objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tilemap-object.html">Tilemap objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tilemap-layer-object.html">Tilemap Layer objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="shape-object.html">Shape objects</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Container objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="image-object.html">Image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sprite-object.html">Sprite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tile-sprite-object.html">TileSprite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nine-slice-object.html">NineSlice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="text-object.html">Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bitmap-text-object.html">BitmapText</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tilemap-object.html">Tilemap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tilemap-layer-object.html">TilemapLayer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="shape-object.html">Shape</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Container</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#grouping-objects-in-a-container">Grouping objects in a Container</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#trimming-a-container">Trimming a Container</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#container-properties">Container properties</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="layer-object.html">Layer objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="layer-object.html">Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spine-game-object.html">SpineGameObject</a></li>
 <li class="toctree-l3"><a class="reference internal" href="replace-object-type.html">Replacing the type of an object</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
 <li class="toctree-l2"><a class="reference internal" href="input.html">Input</a></li>
@@ -111,7 +113,7 @@
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Scene Editor</a> &raquo;</li>
           <li><a href="game-objects.html">Game Object types</a> &raquo;</li>
-      <li>Container objects</li>
+      <li>Container</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -120,8 +122,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="container-objects">
-<h1>Container objects<a class="headerlink" href="#container-objects" title="Permalink to this headline"></a></h1>
+  <section id="container">
+<h1>Container<a class="headerlink" href="#container" title="Permalink to this headline"></a></h1>
 <p>In <a class="reference external" href="https://phaser.io">Phaser</a> 3, the only game object types that have children are the Container (<a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html">Phaser.GameObjects.Container</a>) and the <a class="reference external" href="./layer-object.html">Layer</a> objects. But only the Container can be used to transform the children (in position, angle and scale).</p>
 <p><a class="reference external" href="./working-with-parent-objects.html">Learn more about working with parent objects in the Scene Editor</a>.</p>
 <p>You can create a <a class="reference external" href="container-object.html">container</a> by dropping a <a class="reference external" href="blocks-view-integration.html">Container built-in block</a> on the scene,  or with the <a class="reference external" href="#grouping-objects-in-a-container">Create Container with Selection</a> command.</p>
@@ -173,13 +175,13 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="shape-polygon-object.html" class="btn btn-neutral float-left" title="Polygon" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="layer-object.html" class="btn btn-neutral float-right" title="Layer objects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="layer-object.html" class="btn btn-neutral float-right" title="Layer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2016-2022, Arian Fornaris.</p>
+    <p>&#169; Copyright 2016-2023, Arian Fornaris.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

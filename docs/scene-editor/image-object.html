@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Image objects &mdash; Phaser Editor 2D Help</title>
+  <title>Image &mdash; Phaser Editor 2D Help</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
@@ -20,7 +20,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Sprite objects" href="sprite-object.html" />
+    <link rel="next" title="Sprite" href="sprite-object.html" />
     <link rel="prev" title="Text property" href="text-property.html" /> 
 </head>
 
@@ -33,7 +33,7 @@
             <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.62.1
+                v3.63.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -54,22 +54,24 @@
 <li class="toctree-l2"><a class="reference internal" href="inspector-view.html">Inspector view</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="game-objects.html">Game Object types</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="common-object-properties.html">Common object properties</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Image objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sprite-object.html">Sprite objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tile-sprite-object.html">Tile Sprite objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="nine-slice-object.html">Nine Slice objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="text-object.html">Text objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="bitmap-text-object.html">Bitmap Text objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tilemap-object.html">Tilemap objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tilemap-layer-object.html">Tilemap Layer objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="shape-object.html">Shape objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="container-object.html">Container objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="layer-object.html">Layer objects</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sprite-object.html">Sprite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tile-sprite-object.html">TileSprite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nine-slice-object.html">NineSlice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="text-object.html">Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bitmap-text-object.html">BitmapText</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tilemap-object.html">Tilemap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tilemap-layer-object.html">TilemapLayer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="shape-object.html">Shape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="container-object.html">Container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="layer-object.html">Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spine-game-object.html">SpineGameObject</a></li>
 <li class="toctree-l3"><a class="reference internal" href="replace-object-type.html">Replacing the type of an object</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
 <li class="toctree-l2"><a class="reference internal" href="input.html">Input</a></li>
@@ -106,7 +108,7 @@
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Scene Editor</a> &raquo;</li>
           <li><a href="game-objects.html">Game Object types</a> &raquo;</li>
-      <li>Image objects</li>
+      <li>Image</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -115,8 +117,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="image-objects">
-<h1>Image objects<a class="headerlink" href="#image-objects" title="Permalink to this headline"></a></h1>
+  <section id="image">
+<h1>Image<a class="headerlink" href="#image" title="Permalink to this headline"></a></h1>
 <p>The <a class="reference external" href="image-object.html">Image</a> is a built-in <a class="reference external" href="https://phaser.io">Phaser</a> object type: <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Image.html">Phaser.GameObjects.Image</a>.</p>
 <p>You can create an <a class="reference external" href="image-object.html">Image</a> object by dropping an Image built-in type or texture from the <a class="reference external" href="blocks-view-integration.html">Blocks view</a>.</p>
 <img alt="Add image from Blocks view." src="../_images/scene-editor-drop-image-04152020.webp" />
@@ -143,13 +145,13 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="text-property.html" class="btn btn-neutral float-left" title="Text property" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="sprite-object.html" class="btn btn-neutral float-right" title="Sprite objects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="sprite-object.html" class="btn btn-neutral float-right" title="Sprite" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2016-2022, Arian Fornaris.</p>
+    <p>&#169; Copyright 2016-2023, Arian Fornaris.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spine assets preview &mdash; Phaser Editor 2D Help</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/icon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Creating a SpineGameObject" href="spine-animations-game-object.html" />
+    <link rel="prev" title="Loading the Spine assets" href="spine-animations-loading.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                v3.63.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../first-steps/index.html">First steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workbench/index.html">Workbench</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asset-pack-editor/index.html">Asset Pack Editor</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Scene Editor</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="create-new-scene-file.html">Create a new Scene file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add-object.html">Adding an object to the scene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inspector-view.html">Inspector view</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="spine-animations.html">Spine animations</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="spine-animations-install.html">Installing the Spine plugin in your game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spine-animations-loading.html">Loading the Spine assets</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Spine assets preview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#preview-spine-atlas-assets">Preview Spine atlas assets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#preview-spine-skeleton-and-animation-data">Preview Spine skeleton and animation data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#preview-spine-animations">Preview Spine animations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spine-animations-game-object.html">Creating a SpineGameObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spine-animations-game-object-properties.html">SpineGameObject properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spine-animations-game-object-user-properties.html">SpineGameObject user properties</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html">Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prefabs.html">Prefabs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="script-node.html">Script Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-components.html">User Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation-tools.html">Manipulation tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="layout-tools.html">Layout tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scene-compiler.html">The scene compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../code-editor/index.html">Code Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../animations-editor/index.html">Animations Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../atlas-editor/index.html">Atlas Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">Miscellaneous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pricing/index.html">License and pricing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Phaser Editor 2D</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Scene Editor</a> &raquo;</li>
+          <li><a href="spine-animations.html">Spine animations</a> &raquo;</li>
+      <li>Spine assets preview</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="spine-assets-preview">
+<h1>Spine assets preview<a class="headerlink" href="#spine-assets-preview" title="Permalink to this headline"></a></h1>
+<p>There are different contexts in <a class="reference external" href="https://phasereditor2d.com">Phaser Editor 2D</a> where there are <a class="reference external" href="https://esotericsoftware.com">Spine</a> assets and you can preview them: in the <a class="reference external" href="../asset-pack-editor/index.html">Asset Pack Editor</a> and the <a class="reference external" href="../workbench/blocks-view.html">Blocks view</a> of the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a>.</p>
+<p>For displaying and inspecting Spine objects, the <a class="reference external" href="https://esotericsoftware.com/spine-phaser">Spine Phaser runtime</a> requires the skeleton data file and the atlas files. If you follow the default <a class="reference external" href="https://esotericsoftware.com">Spine</a> assets <a class="reference external" href="spine-animations-loading.html#spine-assets-default-naming-rules">naming rules</a>, then <a class="reference external" href="https://phasereditor2d.com">Phaser Editor 2D</a> can build the skeleton instances and preview them.</p>
+<p>In the next sections we explain it in details.</p>
+<section id="preview-spine-atlas-assets">
+<h2>Preview Spine atlas assets<a class="headerlink" href="#preview-spine-atlas-assets" title="Permalink to this headline"></a></h2>
+<p>The <a class="reference external" href="../asset-pack-editor/index.html">Asset Pack Editor</a> shows the <a class="reference external" href="https://esotericsoftware.com">Spine</a> atlas assets you add to an <a class="reference external" href="../asset-pack-editor/asset-pack-file.html">Asset Pack file</a>. If you select it in the editor, the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a> shows you all the atlas frames:</p>
+<img alt="Atlas preview" src="../_images/spine-animations-atlas-preview-20230924.webp" />
+</section>
+<section id="preview-spine-skeleton-and-animation-data">
+<h2>Preview Spine skeleton and animation data<a class="headerlink" href="#preview-spine-skeleton-and-animation-data" title="Permalink to this headline"></a></h2>
+<p>You can select a <a class="reference external" href="https://esotericsoftware.com">Spine</a> skeleton data in the <a class="reference external" href="../asset-pack-editor/index.html">Asset Pack Editor</a> or the <a class="reference external" href="../workbench/blocks-view.html">Blocks view</a> of the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a>. In both cases, the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a> shows two sections of properties: the <strong>Spine Skeleton</strong> and the <strong>Spine Preview</strong>.</p>
+<p>The <strong>Spine Skeleton</strong> shows the <strong>Skeleton Key</strong> and <strong>Atlas Key</strong>:</p>
+<img alt="Skeleton assets info" src="../_images/spine-animations-skeleton-asset-preview-20230924.webp" />
+<p>The <strong>Spine Preview</strong> section displays the skins defined in the skeleton data:</p>
+<img alt="Displays the skins of a skeleton data." src="../_images/spine-animations-skeleton-skins-preview-20230924.webp" />
+</section>
+<section id="preview-spine-animations">
+<h2>Preview Spine animations<a class="headerlink" href="#preview-spine-animations" title="Permalink to this headline"></a></h2>
+<p>Notice the <strong>Spine Skeleton</strong> section contains a <strong>Preview Animations</strong> button. It opens the <strong>Spine Preview</strong> dialog.</p>
+<p>In this dialog, you can play the skeleton animations and change other properties like the skin.</p>
+<img alt="Skeleton preview dialog" src="../_images/spine-animations-skeleton-preview-dialog-20230924.webp" />
+<p>Let’s go parameter by parameter.</p>
+<section id="skin-preview">
+<h3>Skin preview<a class="headerlink" href="#skin-preview" title="Permalink to this headline"></a></h3>
+<p>You can change the preview skin by pressing in the <strong>Skin</strong> button:</p>
+<img alt="Change skin" src="../_images/spine-animations-asset-preview-dialog-skin-20230924.webp" />
+</section>
+<section id="animation-and-track">
+<h3>Animation and Track<a class="headerlink" href="#animation-and-track" title="Permalink to this headline"></a></h3>
+<p>With <a class="reference external" href="https://esotericsoftware.com">Spine</a> you can play simultaneous animations on different tracks. With the <strong>Track</strong> button you can select the track ID for playing the animation you select in the <strong>Animation</strong> button.</p>
+<p>In the next image, you can see it is playing the <strong>idle</strong> animation in <strong>Track 0</strong>, and the <strong>shoot</strong> animation in <strong>Track 1</strong>.</p>
+<img alt="Tracks" src="../_images/spine-animations-assets-preview-dialog-track-20230924.webp" />
+<p>When you select an animation in the <strong>Animation</strong> button, it plays it immediately on the selected track:</p>
+<img alt="Select the animation." src="../_images/spine-animations-preview-assets-dialog-animation-20230924.webp" />
+<p>The animation is played in a loop if the <strong>Loop</strong> parameter is checked.</p>
+<p>If the <strong>Events</strong> parameter is checked, then the canvas shows the name of the events the animation emits. Look in this image the <strong>footstep</strong> events:</p>
+<img alt="Events." src="../_images/spine-animations-preview-dialog-events-20230924.webp" />
+<p>Also, you can set the <strong>Default Mix</strong> and <strong>Time Scale</strong> of the animation. The <strong>Default Mix</strong> is applied when you change from one animation to another.</p>
+<p><a class="reference external" href="http://esotericsoftware.com/spine-phaser#Applying-Animations">Learn more about applying animations in the Spine Phaser runtime</a></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="spine-animations-loading.html" class="btn btn-neutral float-left" title="Loading the Spine assets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="spine-animations-game-object.html" class="btn btn-neutral float-right" title="Creating a SpineGameObject" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2016-2023, Arian Fornaris.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-67206336-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-67206336-2', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loading the Spine assets &mdash; Phaser Editor 2D Help</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/icon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Spine assets preview" href="spine-animations-assets-preview.html" />
+    <link rel="prev" title="Installing the Spine plugin in your game" href="spine-animations-install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #343131" >
+            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                v3.63.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../first-steps/index.html">First steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workbench/index.html">Workbench</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../asset-pack-editor/index.html">Asset Pack Editor</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Scene Editor</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="create-new-scene-file.html">Create a new Scene file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add-object.html">Adding an object to the scene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inspector-view.html">Inspector view</a></li>
+<li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="spine-animations.html">Spine animations</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="spine-animations-install.html">Installing the Spine plugin in your game</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Loading the Spine assets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#spine-assets-default-naming-rules">Spine assets default naming rules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spine-animations-assets-preview.html">Spine assets preview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spine-animations-game-object.html">Creating a SpineGameObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spine-animations-game-object-properties.html">SpineGameObject properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spine-animations-game-object-user-properties.html">SpineGameObject user properties</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html">Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prefabs.html">Prefabs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="script-node.html">Script Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user-components.html">User Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation-tools.html">Manipulation tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="layout-tools.html">Layout tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scene-compiler.html">The scene compiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../code-editor/index.html">Code Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../animations-editor/index.html">Animations Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../atlas-editor/index.html">Atlas Editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/index.html">Miscellaneous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pricing/index.html">License and pricing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #343131" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Phaser Editor 2D</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Scene Editor</a> &raquo;</li>
+          <li><a href="spine-animations.html">Spine animations</a> &raquo;</li>
+      <li>Loading the Spine assets</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="loading-the-spine-assets">
+<h1>Loading the Spine assets<a class="headerlink" href="#loading-the-spine-assets" title="Permalink to this headline"></a></h1>
+<p>To load a <a class="reference external" href="https://esotericsoftware.com">Spine</a> animation into a <a class="reference external" href="https://phaser.io">Phaser</a> game, you first have to export the animation from the <a class="reference external" href="https://esotericsoftware.com">Spine</a> editor.</p>
+<p>Exporting an animation produces the following assets:</p>
+<ul class="simple">
+<li><p>Skeleton and animation data.</p></li>
+<li><p>Texture atlas with the images of the skeleton.</p></li>
+</ul>
+<p>You can export the skeleton and animation data to a JSON file or a binary file (<code class="docutils literal notranslate"><span class="pre">.skel</span></code>). <a class="reference external" href="https://phasereditor2d.com">Phaser Editor 2D</a> supports both formats. Also, you can export the skeleton images into a texture atlas. It produces a <code class="docutils literal notranslate"><span class="pre">.atlas</span></code> file with the frames info and the <code class="docutils literal notranslate"><span class="pre">.png</span></code> images.</p>
+<p><a class="reference external" href="https://esotericsoftware.com/spine-phaser#Asset-Management">Learn more about Assets Management in the Spine editor</a></p>
+<p>The common way to import the <a class="reference external" href="https://esotericsoftware.com">Spine</a> assets into a <a class="reference external" href="https://phaser.io">Phaser</a> game is using the <a class="reference external" href="https://phaser.io">Phaser</a> loader methods:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">spineBinary(key,</span> <span class="pre">url)</span></code> - Loads <code class="docutils literal notranslate"><span class="pre">.skel</span></code> files containing skeleton and animation data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spineJson(key,</span> <span class="pre">url)</span></code> - Loads the <code class="docutils literal notranslate"><span class="pre">.json</span></code> files containing skeleton and animation data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spineAtlas(key,</span> <span class="pre">url,</span> <span class="pre">premultipliedAlpha)</span></code> - Loads the texture atlas files.</p></li>
+</ul>
+<p>This is an example:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">preload</span><span class="p">()</span> <span class="p">{</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">spineBinary</span><span class="p">(</span><span class="s2">&quot;skeleton&quot;</span><span class="p">,</span> <span class="s2">&quot;path/to/skeleton.skel&quot;</span><span class="p">);</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">spineAtlas</span><span class="p">(</span><span class="s2">&quot;skeleton-atlas&quot;</span><span class="p">,</span> <span class="s2">&quot;path/to/skeleton.atlas&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>However, <a class="reference external" href="https://phasereditor2d.com">Phaser Editor 2D</a> provides the <a class="reference external" href="../asset-pack-editor/index.html">Asset Pack Editor</a>, which is a visual tool for loading the assets into the <a class="reference external" href="https://phaser.io">Phaser</a> games.</p>
+<p>The workflow for importing the <a class="reference external" href="https://esotericsoftware.com">Spine</a> assets into the Asset Pack file is:</p>
+<ul class="simple">
+<li><p>Export the assets from the <a class="reference external" href="https://esotericsoftware.com">Spine</a> editor into the “assets” folder of the game project:</p></li>
+</ul>
+<blockquote>
+<div><img alt="Copy Spine files into the assets folder of your game." src="../_images/spine-animations-assets-20230923.webp" />
+</div></blockquote>
+<ul class="simple">
+<li><p>In the <a class="reference external" href="../workbench/files-view.html">Files view</a>, select the data <code class="docutils literal notranslate"><span class="pre">.json</span></code> file (or <code class="docutils literal notranslate"><span class="pre">.skel</span></code> if it is exported with the binary format):</p></li>
+</ul>
+<blockquote>
+<div><img alt="Select the data file in the Files view" src="../_images/spine-animations-select-data-file-20230923.webp" />
+</div></blockquote>
+<ul class="simple">
+<li><p>In the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a>, the <strong>Asset Pack Entry</strong> section shows a button for importing the selected file into an Asset Pack file:</p></li>
+</ul>
+<blockquote>
+<div><img alt="Import the file into an asset pack." src="../_images/spine-animations-import-data-file-20230923.webp" />
+</div></blockquote>
+<ul class="simple">
+<li><p>Do the same process but with the <code class="docutils literal notranslate"><span class="pre">.atlas</span></code> file. Select it in the <a class="reference external" href="../workbench/files-view.html">Files view</a> and add it to an asset pack:</p></li>
+</ul>
+<blockquote>
+<div><img alt="Select the atlas file." src="../_images/spine-animations-select-atlas-file-20230923.webp" />
+<img alt="Add the atlas file to the asset pack." src="../_images/spine-animations-add-atlas-to-pack-20230923.webp" />
+</div></blockquote>
+<ul class="simple">
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">asset-pack.json</span></code> file in the <a class="reference external" href="../asset-pack-editor/index.html">Asset Pack Editor</a> and check the Spine assets are there:</p></li>
+</ul>
+<blockquote>
+<div><img alt="The spine assets in the Asset Pack editor." src="../_images/spine-animations-asset-pack-20230923.webp" />
+</div></blockquote>
+<p>If everything is well, you will find both the data file and the atlas file in the pack editor. If you select the data file entry, the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a> shows the info and the animation preview. You can click on the <strong>Preview Animations</strong> button. It opens a dialog where you can play the animations. We talk more about this dialog later.</p>
+<img alt="Preview button." src="../_images/spine-animations-asset-preview-button-20230923.webp" />
+<img alt="Preview dialog." src="../_images/spine-animations-asset-preview-dialog-20230923.webp" />
+<section id="spine-assets-default-naming-rules">
+<h2>Spine assets default naming rules<a class="headerlink" href="#spine-assets-default-naming-rules" title="Permalink to this headline"></a></h2>
+<p><strong>Important</strong> The <a class="reference external" href="https://esotericsoftware.com/spine-phaser">Spine Phaser runtime</a> allows using a different atlas for the same skeleton. For previewing a skeleton, the editor looks for an atlas asset with the same key but with the <code class="docutils literal notranslate"><span class="pre">-atlas</span></code> suffix. In the above example, the skeleton data has the <code class="docutils literal notranslate"><span class="pre">spineboy</span></code> key, and the atlas asset the <code class="docutils literal notranslate"><span class="pre">spineboy-atlas</span></code> key:</p>
+<img alt="Spine data and atlas assets." src="../_images/spine-animations-data-and-atlas-assets-20230923.webp" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="spine-animations-install.html" class="btn btn-neutral float-left" title="Installing the Spine plugin in your game" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="spine-animations-assets-preview.html" class="btn btn-neutral float-right" title="Spine assets preview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2016-2023, Arian Fornaris.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-67206336-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-67206336-2', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>
