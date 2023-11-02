@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The ScriptNode class &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
@@ -103,10 +109,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="script-node.html">Script Nodes</a> &raquo;</li>
-      <li>The ScriptNode class</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="script-node.html">Script Nodes</a></li>
+      <li class="breadcrumb-item active">The ScriptNode class</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -116,16 +122,16 @@
            <div itemprop="articleBody">
              
   <section id="the-scriptnode-class">
-<h1>The ScriptNode class<a class="headerlink" href="#the-scriptnode-class" title="Permalink to this headline"></a></h1>
+<h1>The ScriptNode class<a class="headerlink" href="#the-scriptnode-class" title="Link to this heading"></a></h1>
 <p>When you create an instance of a <a class="reference external" href="../scene-editor/script-node.html">ScriptNode</a>, the <a class="reference external" href="../scene-editor/scene-compiler.html">scene compiler</a> generates a code like this:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="ow">new</span> <span class="nx">ScriptNode</span><span class="p">(</span><span class="nx">parent</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="ow">new</span><span class="w"> </span><span class="nx">ScriptNode</span><span class="p">(</span><span class="nx">parent</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>It means it creates an instance of the <code class="docutils literal notranslate"><span class="pre">ScriptNode</span></code> class. But this class is not part of the <a class="reference external" href="https://phaser.io">Phaser</a> API, it is a class you should code yourself.</p>
 <p>The protocol of this class is simple, it needs a constructor that receives a parent argument. Something like this:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">ScriptNode</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">ScriptNode</span><span class="w"> </span><span class="p">{</span>
 
-<span class="kr">constructor</span><span class="p">(</span><span class="nx">parent</span><span class="p">)</span> <span class="p">{</span>
+<span class="kr">constructor</span><span class="p">(</span><span class="nx">parent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -147,7 +153,7 @@
 <li><p>Provides an interface for “action nodes”.</p></li>
 </ul>
 <section id="the-parent">
-<h2>The parent<a class="headerlink" href="#the-parent" title="Permalink to this headline"></a></h2>
+<h2>The parent<a class="headerlink" href="#the-parent" title="Link to this heading"></a></h2>
 <p>When a new instance of the <code class="docutils literal notranslate"><span class="pre">ScriptNode</span></code> class is created, it receives a parent node as an argument. This parent could be a scene, a game object, or another script node.</p>
 <p>The script node instance keeps a reference to the parent, but also keeps a reference to the game object and the scene. Sure, if the node is added to a scene, the game object reference is not updated, it keeps <code class="docutils literal notranslate"><span class="pre">undefined</span></code>.</p>
 <p>Related to the parent, the class provides the following properties:</p>
@@ -158,7 +164,7 @@
 </ul>
 </section>
 <section id="the-children">
-<h2>The children<a class="headerlink" href="#the-children" title="Permalink to this headline"></a></h2>
+<h2>The children<a class="headerlink" href="#the-children" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">ScriptNode</span></code> class has an array of nodes for keeping the children. This array is updated when a new node is created. It also provides some related methods:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">children</span> <span class="pre">()</span></code>: A property for iterating the children.</p></li>
@@ -166,7 +172,7 @@
 </ul>
 </section>
 <section id="the-events">
-<h2>The events<a class="headerlink" href="#the-events" title="Permalink to this headline"></a></h2>
+<h2>The events<a class="headerlink" href="#the-events" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">ScriptNode</span></code> class provides a couple of methods for handling special events that may help you on implementing the behaviors. It works just like the <a class="reference external" href="./user-components-super-class.html">User Components events</a>. The methods are:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">awake()</span></code>: It is called when all the objects of the scene are created. The values of the user properties (prefab) will be available at this time, so you can override this method for making computations that require the value of the properties. It works like the <a class="reference external" href="user-components-awake-event.html">UserComponent “awake” method</a>.</p></li>
@@ -176,7 +182,7 @@
 </ul>
 </section>
 <section id="the-action-methods">
-<h2>The action methods<a class="headerlink" href="#the-action-methods" title="Permalink to this headline"></a></h2>
+<h2>The action methods<a class="headerlink" href="#the-action-methods" title="Link to this heading"></a></h2>
 <p>We find it convenient to establish a protocol for action script nodes. An action script is a script node that will execute a certain task. For that purpose, the class provides the following methods:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">execute()</span></code>: Contains the code of the action.</p></li>

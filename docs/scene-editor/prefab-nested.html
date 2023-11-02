@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nested prefabs &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
@@ -105,10 +111,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="prefabs.html">Prefabs</a> &raquo;</li>
-      <li>Nested prefabs</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="prefabs.html">Prefabs</a></li>
+      <li class="breadcrumb-item active">Nested prefabs</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -118,7 +124,7 @@
            <div itemprop="articleBody">
              
   <section id="nested-prefabs">
-<h1>Nested prefabs<a class="headerlink" href="#nested-prefabs" title="Permalink to this headline"></a></h1>
+<h1>Nested prefabs<a class="headerlink" href="#nested-prefabs" title="Link to this heading"></a></h1>
 <p>The nested prefab is a powerful concept. Like the overall prefab concept, it is inspired by <a class="reference external" href="https://unity.com">Unity Engine</a>. Its name describes its purpose: allow nesting prefabs.</p>
 <p>There are many cases where your prefab is a compound of objects, and you would like to modify them in prefab instances. For example, look at this <strong>AlienShip</strong> prefab:</p>
 <img alt="AlienShip, a prefab with nested prefabs." src="../_images/scene-editor-nested-prefab-alienship-08182021.webp" />
@@ -129,14 +135,14 @@
 <img alt="Setting the nested prefab scope." src="../_images/scene-editor-nested-prefab-scope-20230516.webp" />
 <p>Variables with a <strong>NESTED_PREFAB</strong> scopes are generated in code as public fields. It is like the <strong>PUBLIC</strong> scope but allowing to modify the object in prefab instances.</p>
 <section id="nested-prefab-instances">
-<h2>Nested prefab instances<a class="headerlink" href="#nested-prefab-instances" title="Permalink to this headline"></a></h2>
+<h2>Nested prefab instances<a class="headerlink" href="#nested-prefab-instances" title="Link to this heading"></a></h2>
 <p>When you create an instance of a prefab that contains nested prefabs, the <a class="reference external" href="../workbench/outline-view.html">Outline</a> view shows the nested prefabs. Also, the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a> allows selecting the nested prefab instance:</p>
 <img alt="Prefab instance with nested prefabs." src="../_images/scene-editor-nested-prefab-instance-08192021.webp" />
 <p>Note the nested prefab instance <strong>ship</strong> of the <strong>AlienShip</strong>’s prefab instance, has a different texture. Nested prefab instances work just like prefab instances: for changing a property, it first requires unlocking the property:</p>
 <img alt="Changing the texture property of a nested prefab instance." src="../_images/scene-editor-nested-prefab-instance-change-texture-08192021.webp" />
 <p>The code generated for the <strong>alien1</strong> object is like this:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// alien1</span>
-<span class="kd">const</span> <span class="nx">alien1</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">AlienShip</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="mf">142</span><span class="p">,</span> <span class="mf">398</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">alien1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">AlienShip</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="mf">142</span><span class="p">,</span><span class="w"> </span><span class="mf">398</span><span class="p">);</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">existing</span><span class="p">(</span><span class="nx">alien1</span><span class="p">);</span>
 <span class="nx">alien1</span><span class="p">.</span><span class="nx">ship</span><span class="p">.</span><span class="nx">setTexture</span><span class="p">(</span><span class="s2">&quot;shipYellow&quot;</span><span class="p">);</span>
 </pre></div>
@@ -144,7 +150,7 @@
 <p>Note the nested prefab instance <strong>ship</strong> is a field of the prefab instance <strong>alien1</strong>.</p>
 </section>
 <section id="things-you-cannot-do-with-nested-prefab-instances">
-<h2>Things you cannot do with nested prefab instances<a class="headerlink" href="#things-you-cannot-do-with-nested-prefab-instances" title="Permalink to this headline"></a></h2>
+<h2>Things you cannot do with nested prefab instances<a class="headerlink" href="#things-you-cannot-do-with-nested-prefab-instances" title="Link to this heading"></a></h2>
 <p>In practice, nested prefabs are like prefabs, with certain differences:</p>
 <p>(Remember a prefab is a type, a template, and a prefab instance is the realization of the prefab in the scene)</p>
 <ul class="simple">

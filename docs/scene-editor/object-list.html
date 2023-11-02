@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Object List &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Object List</a><ul>
@@ -94,9 +100,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-      <li>Object List</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+      <li class="breadcrumb-item active">Object List</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -106,7 +112,7 @@
            <div itemprop="articleBody">
              
   <section id="object-list">
-<h1>Object List<a class="headerlink" href="#object-list" title="Permalink to this headline"></a></h1>
+<h1>Object List<a class="headerlink" href="#object-list" title="Link to this heading"></a></h1>
 <p>Often, you need to group objects with a common property or type, or with a common goal in the game. For example, you need to group the enemy objects, the pickable items, the platform objects, so you can test if the player collides with them.</p>
 <p>For this purpose, the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a> allows grouping the objects of the scene into a JavaScript array.</p>
 <p>You can create an <a class="reference internal" href="#object-list">Object List</a> by dropping a <a class="reference external" href="blocks-view-integration.html">List built-in block</a> on the scene:</p>
@@ -124,29 +130,29 @@
 <p>You can locate the a list item in the scene. Select the list item, and in the <strong>List Item</strong> section of the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a>, click on the <strong>Select Game Object</strong> button:</p>
 <img alt="List Item section." src="../_images/scene-editor-object-list-item-section-20230516.webp" />
 <section id="object-list-properties">
-<h2>Object List properties<a class="headerlink" href="#object-list-properties" title="Permalink to this headline"></a></h2>
+<h2>Object List properties<a class="headerlink" href="#object-list-properties" title="Link to this heading"></a></h2>
 <p>The <a class="reference internal" href="#object-list">Object List</a> type is not part of the <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/">Phaser API</a>, it is something introduced by the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a>. In the <strong>Variable</strong> section of the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a>, it shows the <a class="reference external" href="variable-properties.html">Variable properties</a>:</p>
 <img alt="Object List properties." src="../_images/scene-editor-object-list-section-20230516.webp" />
 <p>In this section you can modify the name of the list, see the inferred type of the list items, and change the scope (<code class="docutils literal notranslate"><span class="pre">CLASS</span></code> by default) of the object list variable.</p>
 </section>
 <section id="object-list-code-generation">
-<h2>Object List code generation<a class="headerlink" href="#object-list-code-generation" title="Permalink to this headline"></a></h2>
+<h2>Object List code generation<a class="headerlink" href="#object-list-code-generation" title="Link to this heading"></a></h2>
 <p>The code generated by the <a class="reference external" href="../scene-editor/scene-compiler.html">scene compiler</a>, to create a list, is like this:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">pickableItems</span> <span class="o">=</span> <span class="p">[</span><span class="nx">melon</span><span class="p">,</span> <span class="nx">melon_1</span><span class="p">,</span> <span class="nx">melon_2</span><span class="p">,</span> <span class="nx">bomb</span><span class="p">,</span> <span class="nx">bomb_1</span><span class="p">,</span> <span class="nx">bomb_2</span><span class="p">];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">pickableItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">melon</span><span class="p">,</span><span class="w"> </span><span class="nx">melon_1</span><span class="p">,</span><span class="w"> </span><span class="nx">melon_2</span><span class="p">,</span><span class="w"> </span><span class="nx">bomb</span><span class="p">,</span><span class="w"> </span><span class="nx">bomb_1</span><span class="p">,</span><span class="w"> </span><span class="nx">bomb_2</span><span class="p">];</span>
 </pre></div>
 </div>
 <p>If the output language is TypeScript, the <a class="reference external" href="../scene-editor/scene-compiler.html">scene compiler</a> generates a field declaration for the list:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">private</span> <span class="nx">pickableItems</span><span class="o">:</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">Melon</span><span class="o">|</span><span class="nx">Bomb</span><span class="o">&gt;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">private</span><span class="w"> </span><span class="nx">pickableItems</span><span class="o">:</span><span class="w"> </span><span class="nb">Array</span><span class="o">&lt;</span><span class="nx">Melon</span><span class="o">|</span><span class="nx">Bomb</span><span class="o">&gt;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Note that the <a class="reference external" href="../scene-editor/scene-compiler.html">scene compiler</a> infers the type of the array elements: a union of <code class="docutils literal notranslate"><span class="pre">Melon</span></code> and <code class="docutils literal notranslate"><span class="pre">Bomb</span></code>, that are <a class="reference external" href="../scene-editor/prefabs.html">prefabs</a>. It also infers the type of the elements if are <a class="reference external" href="https://phaser.io">Phaser</a> built-in types:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">private</span> <span class="nx">parallax</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">GameObjects</span><span class="p">.</span><span class="nx">Image</span><span class="p">[];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">private</span><span class="w"> </span><span class="nx">parallax</span><span class="o">:</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">GameObjects</span><span class="p">.</span><span class="nx">Image</span><span class="p">[];</span>
 </pre></div>
 </div>
 <p>This detailed type declaration of the arrays allows that code editors like <a class="reference external" href="https://code.visualstudio.com">Visual Studio Code</a> can provide a smarter coding experience.</p>
 </section>
 <section id="object-list-vs-phaser-group">
-<h2>Object List vs Phaser Group<a class="headerlink" href="#object-list-vs-phaser-group" title="Permalink to this headline"></a></h2>
+<h2>Object List vs Phaser Group<a class="headerlink" href="#object-list-vs-phaser-group" title="Link to this heading"></a></h2>
 <p>Traditionally, <a class="reference external" href="https://phaser.io">Phaser</a> uses the <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Group.html">Group game object</a> to join objects around a common purpose. But grouping is not the only feature of a <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Group.html">Group game object</a>:</p>
 <ul class="simple">
 <li><p>It implements an object pool.</p></li>
@@ -162,7 +168,7 @@
 <li><p>Even for a human, a simple JavaScript array could be more comprehensible.</p></li>
 <li><p>If you need a <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Group.html">Group game object</a>, you can create it with the array of objects generated by the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a>:</p>
 <blockquote>
-<div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">pickableItemsGroup</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">group</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">pickableItems</span><span class="p">);</span>
+<div><div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">pickableItemsGroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">group</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">pickableItems</span><span class="p">);</span>
 </pre></div>
 </div>
 </div></blockquote>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Basic Scripts project &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
@@ -102,10 +108,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="script-node.html">Script Nodes</a> &raquo;</li>
-      <li>The Basic Scripts project</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="script-node.html">Script Nodes</a></li>
+      <li class="breadcrumb-item active">The Basic Scripts project</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -115,14 +121,14 @@
            <div itemprop="articleBody">
              
   <section id="the-basic-scripts-project">
-<h1>The Basic Scripts project<a class="headerlink" href="#the-basic-scripts-project" title="Permalink to this headline"></a></h1>
+<h1>The Basic Scripts project<a class="headerlink" href="#the-basic-scripts-project" title="Link to this heading"></a></h1>
 <p>In the previous section, we covered how to create the <code class="docutils literal notranslate"><span class="pre">ScriptNode</span></code> class. It is very basic, it is the minimum you need for using the <a class="reference external" href="../scene-editor/script-node.html">script nodes</a>. For that reason, we created a project with other basic script nodes you can use in your game: the <a class="reference external" href="http://github.com/PhaserEditor2D/script-nodes-basic">script-nodes-basic</a> project.</p>
 <p>It is a project in development. In the way we get more experience making games with the script nodes, we may change it or increment the number of scripts on it.</p>
 <p>Following we present you a summary of the project. You can learn more on the project’s site:</p>
 <p><a class="reference external" href="https://github.com/PhaserEditor2D/script-nodes-basic">github.com/PhaserEditor2D/script-nodes-basic</a></p>
 <p>There are three groups of scripts: <strong>Base</strong>, <strong>Triggers</strong>, and <strong>Actions</strong>.</p>
 <section id="base-scripts">
-<h2>Base scripts<a class="headerlink" href="#base-scripts" title="Permalink to this headline"></a></h2>
+<h2>Base scripts<a class="headerlink" href="#base-scripts" title="Link to this heading"></a></h2>
 <p>Contain basic/abstract functionality. Often, you will create prefab variants of them (extend them).</p>
 <ul class="simple">
 <li><p><strong>ScriptNode</strong> - the base class for all the scripts.</p></li>
@@ -131,7 +137,7 @@
 </ul>
 </section>
 <section id="trigger-scripts">
-<h2>Trigger scripts<a class="headerlink" href="#trigger-scripts" title="Permalink to this headline"></a></h2>
+<h2>Trigger scripts<a class="headerlink" href="#trigger-scripts" title="Link to this heading"></a></h2>
 <p>These scripts listen to a certain event. When the event is triggered, then execute the children, which are actions.</p>
 <ul class="simple">
 <li><p><strong>OnEventScript</strong> - listens the given <code class="docutils literal notranslate"><span class="pre">eventName</span></code> object’s event.</p></li>
@@ -141,7 +147,7 @@
 </ul>
 </section>
 <section id="action-scripts">
-<h2>Action scripts<a class="headerlink" href="#action-scripts" title="Permalink to this headline"></a></h2>
+<h2>Action scripts<a class="headerlink" href="#action-scripts" title="Link to this heading"></a></h2>
 <p>Actions are scripts that are executed manually or by other nodes, like triggers or other actions.</p>
 <ul class="simple">
 <li><p><strong>CallbackActionScript</strong> - executes the given <code class="docutils literal notranslate"><span class="pre">callback</span></code> expression.</p></li>

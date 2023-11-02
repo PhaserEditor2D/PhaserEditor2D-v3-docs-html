@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The User Components compiler &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
@@ -102,10 +108,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="user-components.html">User Components</a> &raquo;</li>
-      <li>The User Components compiler</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="user-components.html">User Components</a></li>
+      <li class="breadcrumb-item active">The User Components compiler</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -115,7 +121,7 @@
            <div itemprop="articleBody">
              
   <section id="the-user-components-compiler">
-<h1>The User Components compiler<a class="headerlink" href="#the-user-components-compiler" title="Permalink to this headline"></a></h1>
+<h1>The User Components compiler<a class="headerlink" href="#the-user-components-compiler" title="Link to this heading"></a></h1>
 <p>The <a class="reference external" href="../scene-editor/user-components.html">user components</a> are configured in <code class="docutils literal notranslate"><span class="pre">*.components</span></code> files and used by the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a>. It is a concept of <a class="reference external" href="https://phasereditor2d.com">Phaser Editor 2D</a>, not <a class="reference external" href="https://phaser.io">Phaser</a>. So we use the same <a class="reference external" href="../scene-editor/index.html">Scene Editor</a> philosophy, it compiles our custom configurations into plain, readable, fully <a class="reference external" href="https://phaser.io">Phaser</a> compatible code.</p>
 <p>Following, look at how an <strong>HorizontalMove</strong> component is compiled into JavaScript.</p>
 <p>The component information:</p>
@@ -133,33 +139,33 @@
 
 <span class="cm">/* START OF COMPILED CODE */</span>
 
-<span class="kd">class</span> <span class="nx">HorizontalMove</span> <span class="k">extends</span> <span class="nx">BaseComponent</span> <span class="p">{</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">HorizontalMove</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">BaseComponent</span><span class="w"> </span><span class="p">{</span>
 
-    <span class="kr">constructor</span><span class="p">(</span><span class="nx">gameObject</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">gameObject</span><span class="p">[</span><span class="s2">&quot;__HorizontalMove&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">gameObject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">gameObject</span><span class="p">[</span><span class="s2">&quot;__HorizontalMove&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
 
-        <span class="cm">/** @type {Phaser.GameObjects.Image} */</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">gameObject</span> <span class="o">=</span> <span class="nx">gameObject</span><span class="p">;</span>
-        <span class="cm">/** @type {number} */</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">horizVelocity</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
-        <span class="cm">/** @type {number} */</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">minX</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
-        <span class="cm">/** @type {number} */</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">maxX</span> <span class="o">=</span> <span class="mf">3070</span><span class="p">;</span>
+<span class="w">        </span><span class="cm">/** @type {Phaser.GameObjects.Image} */</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">gameObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">gameObject</span><span class="p">;</span>
+<span class="w">        </span><span class="cm">/** @type {number} */</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">horizVelocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">        </span><span class="cm">/** @type {number} */</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">minX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">        </span><span class="cm">/** @type {number} */</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">maxX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3070</span><span class="p">;</span>
 
-        <span class="cm">/* START-USER-CTR-CODE */</span>
-        <span class="c1">// Write your code here.</span>
-        <span class="cm">/* END-USER-CTR-CODE */</span>
-    <span class="p">}</span>
+<span class="w">        </span><span class="cm">/* START-USER-CTR-CODE */</span>
+<span class="w">        </span><span class="c1">// Write your code here.</span>
+<span class="w">        </span><span class="cm">/* END-USER-CTR-CODE */</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="cm">/** @returns {HorizontalMove} */</span>
-    <span class="k">static</span> <span class="nx">getComponent</span><span class="p">(</span><span class="nx">gameObject</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">gameObject</span><span class="p">[</span><span class="s2">&quot;__HorizontalMove&quot;</span><span class="p">];</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="cm">/** @returns {HorizontalMove} */</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="nx">getComponent</span><span class="p">(</span><span class="nx">gameObject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">gameObject</span><span class="p">[</span><span class="s2">&quot;__HorizontalMove&quot;</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="cm">/* START-USER-CODE */</span>
-    <span class="c1">// Write your code here.</span>
-    <span class="cm">/* END-USER-CODE */</span>
+<span class="w">    </span><span class="cm">/* START-USER-CODE */</span>
+<span class="w">    </span><span class="c1">// Write your code here.</span>
+<span class="w">    </span><span class="cm">/* END-USER-CODE */</span>
 <span class="p">}</span>
 
 <span class="cm">/* END OF COMPILED CODE */</span>
@@ -167,11 +173,11 @@
 </pre></div>
 </div>
 <p>The generated class is very simple, next we explain it part by part:</p>
-<div class="topic">
+<aside class="topic">
 <p class="topic-title">The super class</p>
 <p>If a value (in this case <code class="docutils literal notranslate"><span class="pre">BaseComponent</span></code>) is set to the <strong>Super Class</strong> parameter. Then the class code is generated like this:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">HorizontalMove</span> <span class="k">extends</span> <span class="nx">BaseComponent</span> <span class="p">{</span>
-    <span class="p">...</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">HorizontalMove</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">BaseComponent</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -182,45 +188,45 @@
 Also, to avoid this error, you can use a bundler like Webpack, Parcel, or just TypeScript (compiling all to a single file).</p>
 <p><a class="reference external" href="../asset-pack-editor/import-scripts.html#execution-order-of-the-scripts">Learn more about the execution order of the scripts</a></p>
 </div>
-</div>
-<div class="topic">
+</aside>
+<aside class="topic">
 <p class="topic-title">The constructor</p>
 <p>The component has a constructor where all properties are initialized and you can add your initialization code too.</p>
 <img alt="The constructor code." src="../_images/scene-editor-user-components-ctr-code-07292020.webp" />
 <p>The constructor is used to create the component and add it to the game object:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">enemy</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(...);</span>
-<span class="kd">const</span> <span class="nx">enemyMove</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">HorizontalMove</span><span class="p">(</span><span class="nx">enemyMove</span><span class="p">);</span>
-<span class="nx">enemyMove</span><span class="p">.</span><span class="nx">maxX</span> <span class="o">=</span> <span class="mf">400</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">enemy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(...);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">enemyMove</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">HorizontalMove</span><span class="p">(</span><span class="nx">enemyMove</span><span class="p">);</span>
+<span class="nx">enemyMove</span><span class="p">.</span><span class="nx">maxX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">400</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
-<div class="topic">
+</aside>
+<aside class="topic">
 <p class="topic-title">The component accessor method</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">getComponent()</span></code> method gets the component from a game object, if exists:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">HorizontalMove</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">HorizontalMove</span><span class="w"> </span><span class="p">{</span>
 
-    <span class="p">...</span>
+<span class="w">    </span><span class="p">...</span>
 
-    <span class="cm">/** @returns {HorizontalMove} */</span>
-    <span class="k">static</span> <span class="nx">getComponent</span><span class="p">(</span><span class="nx">gameObject</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">gameObject</span><span class="p">[</span><span class="s2">&quot;__HorizontalMove&quot;</span><span class="p">];</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="cm">/** @returns {HorizontalMove} */</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="nx">getComponent</span><span class="p">(</span><span class="nx">gameObject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">gameObject</span><span class="p">[</span><span class="s2">&quot;__HorizontalMove&quot;</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 
 <span class="c1">// in a random part of the game</span>
-<span class="kd">const</span> <span class="nx">enemy</span> <span class="o">=</span> <span class="p">...;</span>
-<span class="kd">const</span> <span class="nx">horizMove</span> <span class="o">=</span> <span class="nx">HorizontalMove</span><span class="p">.</span><span class="nx">getComponent</span><span class="p">(</span><span class="nx">enemy</span><span class="p">);</span>
-<span class="nx">horizMove</span><span class="p">.</span><span class="nx">minX</span> <span class="o">=</span> <span class="mf">10</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">enemy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">horizMove</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">HorizontalMove</span><span class="p">.</span><span class="nx">getComponent</span><span class="p">(</span><span class="nx">enemy</span><span class="p">);</span>
+<span class="nx">horizMove</span><span class="p">.</span><span class="nx">minX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
 </pre></div>
 </div>
-</div>
-<div class="topic">
+</aside>
+<aside class="topic">
 <p class="topic-title">The user members of the component</p>
 <p>You can add members to the component class. Just write them inside the <code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">STAR-USER-CODE</span> <span class="pre">*/</span></code> and <code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">END-USER-CODE</span> <span class="pre">*/</span></code> comments.</p>
 <p>Probably, you would like to write a <strong>start</strong> and <strong>update</strong> method, like is explained in the <a class="reference external" href="user-components-start-update-methods.html">Starting and updating components</a> section.</p>
-</div>
+</aside>
 <section id="compiler-settings">
-<h2>Compiler settings<a class="headerlink" href="#compiler-settings" title="Permalink to this headline"></a></h2>
+<h2>Compiler settings<a class="headerlink" href="#compiler-settings" title="Link to this heading"></a></h2>
 <p>The User Components compiler supports two JavaScript and TypeScript as output languages. You can select this language in the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a>, when no component is selected. Also, you can select if insert spaces for indentation, the tab size, or the auto export/import of ES modules:</p>
 <img alt="Selecting compiler settings." src="../_images/scene-editor-user-components-compiler-settings.webp" />
 <p>The settings have default values, but if there are other scene files or user components files, the default values will be taken from the latest modified file (scene file if not components files are available).</p>

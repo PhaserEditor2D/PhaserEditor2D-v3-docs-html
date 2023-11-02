@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Asset Pack Editor &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -78,8 +83,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Asset Pack Editor</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Asset Pack Editor</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -89,7 +94,7 @@
            <div itemprop="articleBody">
              
   <section id="asset-pack-editor">
-<h1>Asset Pack Editor<a class="headerlink" href="#asset-pack-editor" title="Permalink to this headline"></a></h1>
+<h1>Asset Pack Editor<a class="headerlink" href="#asset-pack-editor" title="Link to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="create-asset-pack-file.html">Create a new Asset Pack file</a></li>
@@ -115,24 +120,24 @@
 </ul>
 </div>
 <p>In a <a class="reference external" href="https://phaser.io">Phaser</a> game, you load the files using the methods of the <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html">Phaser.Loader.LoaderPlugin</a> class. This is how you can <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#spritesheet__anchor">load a sprite-sheet</a> file:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">spritesheet</span><span class="p">(</span><span class="s1">&#39;bot&#39;</span><span class="p">,</span> <span class="s1">&#39;images/robot.png&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">frameWidth</span><span class="o">:</span> <span class="mf">32</span><span class="p">,</span> <span class="nx">frameHeight</span><span class="o">:</span> <span class="mf">38</span> <span class="p">});</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">spritesheet</span><span class="p">(</span><span class="s1">&#39;bot&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;images/robot.png&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">frameWidth</span><span class="o">:</span><span class="w"> </span><span class="mf">32</span><span class="p">,</span><span class="w"> </span><span class="nx">frameHeight</span><span class="o">:</span><span class="w"> </span><span class="mf">38</span><span class="w"> </span><span class="p">});</span>
 </pre></div>
 </div>
 <p>You pass a key (<code class="docutils literal notranslate"><span class="pre">'bot'</span></code>) to identify the file in the <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.Cache.CacheManager.html">game cache</a>, the URL of the file (<code class="docutils literal notranslate"><span class="pre">'images/robot.png'</span></code>) and a sprite-sheet configuration object, with other information like the frame size.</p>
 <p>Or you can load the file by passing a single argument, a <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.Types.Loader.FileTypes.html#.SpriteSheetFileConfig__anchor">SpriteSheetFileConfig</a> configuration object:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">spritesheet</span><span class="p">({</span>
-   <span class="nx">key</span><span class="o">:</span> <span class="s1">&#39;bot&#39;</span><span class="p">,</span>
-   <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;images/robot.png&#39;</span><span class="p">,</span>
-   <span class="nx">frameConfig</span><span class="o">:</span> <span class="p">{</span>
-   <span class="nx">frameWidth</span><span class="o">:</span> <span class="mf">32</span><span class="p">,</span>
-   <span class="nx">frameHeight</span><span class="o">:</span> <span class="mf">38</span>
-   <span class="p">}</span>
+<span class="w">   </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;bot&#39;</span><span class="p">,</span>
+<span class="w">   </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;images/robot.png&#39;</span><span class="p">,</span>
+<span class="w">   </span><span class="nx">frameConfig</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nx">frameWidth</span><span class="o">:</span><span class="w"> </span><span class="mf">32</span><span class="p">,</span>
+<span class="w">   </span><span class="nx">frameHeight</span><span class="o">:</span><span class="w"> </span><span class="mf">38</span>
+<span class="w">   </span><span class="p">}</span>
 <span class="p">});</span>
 </pre></div>
 </div>
 <p>Every file type can be loaded using its configuration object, that is just a JSON object. Following this logic, <a class="reference external" href="https://phaser.io">Phaser</a> has a special type of files that contains the configurations of other files: the <a class="reference external" href="../asset-pack-editor/asset-pack-file.html">Asset Pack file</a>.</p>
 <p>You can load an <a class="reference external" href="../asset-pack-editor/asset-pack-file.html">Asset Pack file</a> using the <code class="docutils literal notranslate"><span class="pre">pack(...)</span></code> method of the loader:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">pack</span><span class="p">(</span><span class="s2">&quot;level1&quot;</span><span class="p">,</span> <span class="s2">&quot;assets/pack.json&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">pack</span><span class="p">(</span><span class="s2">&quot;level1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;assets/pack.json&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The Asset Pack Editor allows you to edit an <a class="reference external" href="../asset-pack-editor/asset-pack-file.html">Asset Pack file</a>, making it very easy to load the assets in your game. Instead of spending precious time writing the JSON file by hand, with the <a class="reference external" href="../asset-pack-editor/index.html">Asset Pack Editor</a> you can load your assets with a visual tool and smart operations.</p>

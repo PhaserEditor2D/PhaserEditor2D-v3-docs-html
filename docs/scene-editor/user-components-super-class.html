@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A base class for your components &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
@@ -102,10 +108,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="user-components.html">User Components</a> &raquo;</li>
-      <li>A base class for your components</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="user-components.html">User Components</a></li>
+      <li class="breadcrumb-item active">A base class for your components</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -115,7 +121,7 @@
            <div itemprop="articleBody">
              
   <section id="a-base-class-for-your-components">
-<h1>A base class for your components<a class="headerlink" href="#a-base-class-for-your-components" title="Permalink to this headline"></a></h1>
+<h1>A base class for your components<a class="headerlink" href="#a-base-class-for-your-components" title="Link to this heading"></a></h1>
 <p>In the previous section, we explored how you can implement behaviors by listening to Phaser events. There, we implemented an <code class="docutils literal notranslate"><span class="pre">EventComponent</span></code> base class for all the components.</p>
 <p>The components concept provided by <a class="reference external" href="https://phasereditor2d.com">Phaser Editor 2D</a> is flexible. However, we think it is a good idea to propose a way of implementing the components.</p>
 <p>For this reason, we created a <strong>UserComponent</strong> class that you can use as the base class for all your components.</p>
@@ -133,118 +139,118 @@
 <p>You can do this operation just once unless you mess up the file content and want to reset it.</p>
 <p>Once the file is created, you can use the <strong>UserComponent</strong> class as the super-class of your components.</p>
 <section id="inside-the-usercomponent-class">
-<h2>Inside the UserComponent class<a class="headerlink" href="#inside-the-usercomponent-class" title="Permalink to this headline"></a></h2>
+<h2>Inside the UserComponent class<a class="headerlink" href="#inside-the-usercomponent-class" title="Link to this heading"></a></h2>
 <p>In the <a class="reference external" href="./user-components-start-update-methods.html">Implementing behaviors with the Phaser events</a> section, we explain how a component can register listeners to the Phaser events, for implementing a particular behavior. The <strong>UserComponent</strong> class does the same. It listens for Phaser events and calls special methods that could be overridden in derived classes. These are the methods present by the <strong>UserComponent</strong> class:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">UserComponent</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">UserComponent</span><span class="w"> </span><span class="p">{</span>
 
-    <span class="kr">constructor</span><span class="p">(</span><span class="nx">gameObject</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// registers the event listeners and call the methods</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">gameObject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// registers the event listeners and call the methods</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="nx">awake</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+<span class="w">    </span><span class="nx">awake</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
 
-    <span class="nx">start</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+<span class="w">    </span><span class="nx">start</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
 
-    <span class="nx">update</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+<span class="w">    </span><span class="nx">update</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
 
-    <span class="nx">destroy</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+<span class="w">    </span><span class="nx">destroy</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>It register the event listeners in the constructor:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">constructor</span><span class="p">(</span><span class="nx">gameObject</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">constructor</span><span class="p">(</span><span class="nx">gameObject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-    <span class="k">this</span><span class="p">.</span><span class="nx">scene</span> <span class="o">=</span> <span class="nx">gameObject</span><span class="p">.</span><span class="nx">scene</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">gameObject</span><span class="p">.</span><span class="nx">scene</span><span class="p">;</span>
 
-    <span class="kd">const</span> <span class="nx">listenAwake</span> <span class="o">=</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">awake</span> <span class="o">!==</span> <span class="nx">UserComponent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">awake</span><span class="p">;</span>
-    <span class="kd">const</span> <span class="nx">listenStart</span> <span class="o">=</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">start</span> <span class="o">!==</span> <span class="nx">UserComponent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">start</span><span class="p">;</span>
-    <span class="kd">const</span> <span class="nx">listenUpdate</span> <span class="o">=</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">update</span> <span class="o">!==</span> <span class="nx">UserComponent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">update</span><span class="p">;</span>
-    <span class="kd">const</span> <span class="nx">listenDestroy</span> <span class="o">=</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">destroy</span> <span class="o">!==</span> <span class="nx">UserComponent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">destroy</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">listenAwake</span><span class="w"> </span><span class="o">=</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">awake</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">UserComponent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">awake</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">listenStart</span><span class="w"> </span><span class="o">=</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">start</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">UserComponent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">start</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">listenUpdate</span><span class="w"> </span><span class="o">=</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">update</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">UserComponent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">update</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">listenDestroy</span><span class="w"> </span><span class="o">=</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">destroy</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">UserComponent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">destroy</span><span class="p">;</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nx">listenAwake</span><span class="p">)</span> <span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">listenAwake</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s2">&quot;scene-awake&quot;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">awake</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s2">&quot;scene-awake&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">awake</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nx">listenStart</span><span class="p">)</span> <span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">listenStart</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span>
-            <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scenes</span><span class="p">.</span><span class="nx">Events</span><span class="p">.</span><span class="nx">UPDATE</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">start</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span>
+<span class="w">            </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scenes</span><span class="p">.</span><span class="nx">Events</span><span class="p">.</span><span class="nx">UPDATE</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">start</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nx">listenUpdate</span><span class="p">)</span> <span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">listenUpdate</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span>
-            <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scenes</span><span class="p">.</span><span class="nx">Events</span><span class="p">.</span><span class="nx">UPDATE</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">update</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span>
+<span class="w">            </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scenes</span><span class="p">.</span><span class="nx">Events</span><span class="p">.</span><span class="nx">UPDATE</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">update</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nx">listenStart</span> <span class="o">||</span> <span class="nx">listenUpdate</span> <span class="o">||</span> <span class="nx">listenDestroy</span><span class="p">)</span> <span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">listenStart</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">listenUpdate</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">listenDestroy</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-        <span class="nx">gameObject</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">GameObjects</span><span class="p">.</span><span class="nx">Events</span><span class="p">.</span><span class="nx">DESTROY</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="w">        </span><span class="nx">gameObject</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">GameObjects</span><span class="p">.</span><span class="nx">Events</span><span class="p">.</span><span class="nx">DESTROY</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 
-            <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">off</span><span class="p">(</span>
-                <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scenes</span><span class="p">.</span><span class="nx">Events</span><span class="p">.</span><span class="nx">UPDATE</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">start</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">off</span><span class="p">(</span>
-                <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scenes</span><span class="p">.</span><span class="nx">Events</span><span class="p">.</span><span class="nx">UPDATE</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">update</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">off</span><span class="p">(</span>
+<span class="w">                </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scenes</span><span class="p">.</span><span class="nx">Events</span><span class="p">.</span><span class="nx">UPDATE</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">start</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">);</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">off</span><span class="p">(</span>
+<span class="w">                </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scenes</span><span class="p">.</span><span class="nx">Events</span><span class="p">.</span><span class="nx">UPDATE</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">update</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">);</span>
 
-            <span class="k">if</span> <span class="p">(</span><span class="nx">listenDestroy</span><span class="p">)</span> <span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">listenDestroy</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-                <span class="k">this</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
-            <span class="p">}</span>
-        <span class="p">});</span>
-    <span class="p">}</span>
+<span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>But let’s go step by step. First, it checks what events to listen to. Notice that the methods <strong>awake()</strong>, <strong>start()</strong>, etc…, are empty. So, if the component instance doesn’t provide a different implementation for one of these methods, then it means it can skip calling that method. Then the first thing is to know what methods to call:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">listenAwake</span> <span class="o">=</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">awake</span> <span class="o">!==</span> <span class="nx">UserComponent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">awake</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">listenAwake</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">awake</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">UserComponent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">awake</span><span class="p">;</span>
 
-<span class="kd">const</span> <span class="nx">listenStart</span> <span class="o">=</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">start</span> <span class="o">!==</span> <span class="nx">UserComponent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">start</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">listenStart</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">start</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">UserComponent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">start</span><span class="p">;</span>
 
-<span class="kd">const</span> <span class="nx">listenUpdate</span> <span class="o">=</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">update</span> <span class="o">!==</span> <span class="nx">UserComponent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">update</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">listenUpdate</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">update</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">UserComponent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">update</span><span class="p">;</span>
 
-<span class="kd">const</span> <span class="nx">listenDestroy</span> <span class="o">=</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">destroy</span> <span class="o">!==</span> <span class="nx">UserComponent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">destroy</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">listenDestroy</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">destroy</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">UserComponent</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">destroy</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>In the following lines, it adds the listeners to the Phaser events, but only if it is needed:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">...</span>
-<span class="k">if</span> <span class="p">(</span><span class="nx">listenStart</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">listenStart</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-    <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scenes</span><span class="p">.</span><span class="nx">Events</span><span class="p">.</span><span class="nx">UPDATE</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">start</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scenes</span><span class="p">.</span><span class="nx">Events</span><span class="p">.</span><span class="nx">UPDATE</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">start</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">listenUpdate</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">listenUpdate</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 
-    <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scenes</span><span class="p">.</span><span class="nx">Events</span><span class="p">.</span><span class="nx">UPDATE</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">update</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scenes</span><span class="p">.</span><span class="nx">Events</span><span class="p">.</span><span class="nx">UPDATE</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">update</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="p">...</span>
 </pre></div>
 </div>
 <p>At the end of the constructor, it registers a listener to the game object’s destroy event and removes all the listeners. It does it to avoid calling a method if the object is not active.</p>
 <p>When you create a new component, you can update it by just implementing the <strong>update()</strong> method:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">RotateObject</span> <span class="k">extends</span> <span class="nx">UserComponent</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">RotateObject</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">UserComponent</span><span class="w"> </span><span class="p">{</span>
 
-    <span class="kr">constructor</span><span class="p">(</span><span class="nx">gameObject</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">super</span><span class="p">(</span><span class="nx">gameObject</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">gameObject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">super</span><span class="p">(</span><span class="nx">gameObject</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="p">...</span>
+<span class="w">    </span><span class="p">...</span>
 
-    <span class="nx">update</span><span class="p">()</span> <span class="p">{</span>
+<span class="w">    </span><span class="nx">update</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-        <span class="c1">// this method is called when the scene</span>
-        <span class="c1">// emits the UPDATE event</span>
+<span class="w">        </span><span class="c1">// this method is called when the scene</span>
+<span class="w">        </span><span class="c1">// emits the UPDATE event</span>
 
-        <span class="k">this</span><span class="p">.</span><span class="nx">gameObject</span><span class="p">.</span><span class="nx">angle</span> <span class="o">+=</span> <span class="mf">1</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">gameObject</span><span class="p">.</span><span class="nx">angle</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>

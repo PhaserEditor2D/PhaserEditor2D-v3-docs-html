@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SpineGameObject preview &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="spine-animations.html">Spine animations</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="spine-animations-install.html">Installing the Spine plugin in your game</a></li>
 <li class="toctree-l3"><a class="reference internal" href="spine-animations-loading.html">Loading the Spine assets</a></li>
@@ -102,11 +108,11 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="spine-animations.html">Spine animations</a> &raquo;</li>
-          <li><a href="spine-animations-game-object-properties.html">SpineGameObject properties</a> &raquo;</li>
-      <li>SpineGameObject preview</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="spine-animations.html">Spine animations</a></li>
+          <li class="breadcrumb-item"><a href="spine-animations-game-object-properties.html">SpineGameObject properties</a></li>
+      <li class="breadcrumb-item active">SpineGameObject preview</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -116,7 +122,7 @@
            <div itemprop="articleBody">
              
   <section id="spinegameobject-preview">
-<h1>SpineGameObject preview<a class="headerlink" href="#spinegameobject-preview" title="Permalink to this headline"></a></h1>
+<h1>SpineGameObject preview<a class="headerlink" href="#spinegameobject-preview" title="Link to this heading"></a></h1>
 <p>You can preview a <a class="reference external" href="spine-animations-game-object.html">SpineGameObject</a> by pressing the <strong>Preview</strong> button in the <strong>Spine</strong> section. It opens the a preview dialog where you can select the animation name, the animation track, and other parameters.</p>
 <p>This dialog is similar to the <a class="reference external" href="spine-animations-assets-preview.html#preview-spine-animations">Spine Preview dialog</a>, but it also allows editing some properties of the game object, like the default mix, the animation mix, and the time scale:</p>
 <img alt="Spine game object preview dialog." src="../_images/spine-animations-object-preview-dialog-20230925.webp" />

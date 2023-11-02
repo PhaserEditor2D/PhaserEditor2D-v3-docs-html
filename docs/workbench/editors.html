@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Editors &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -91,9 +96,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Workbench</a> &raquo;</li>
-      <li>Editors</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Workbench</a></li>
+      <li class="breadcrumb-item active">Editors</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -103,26 +108,26 @@
            <div itemprop="articleBody">
              
   <section id="editors">
-<h1>Editors<a class="headerlink" href="#editors" title="Permalink to this headline"></a></h1>
+<h1>Editors<a class="headerlink" href="#editors" title="Link to this heading"></a></h1>
 <p>An editor is a panel that is dedicated to editing an object or input. It has a title and a content area. The title shows the name or identifier of the input object and the content area provides the UI elements to edit the input. In the majority of the cases, the input of an editor is a file.</p>
 <section id="dirty-state">
-<h2>Dirty state<a class="headerlink" href="#dirty-state" title="Permalink to this headline"></a></h2>
+<h2>Dirty state<a class="headerlink" href="#dirty-state" title="Link to this heading"></a></h2>
 <p>An important characteristic of the editors is the “dirty” state. When the user changes something in the editor, the editor is labeled as “dirty” and indicates that it should be saved to persist the changes. If you close an editor but it is dirty, it shows a confirmation message, because the changes will be lost.</p>
 <img alt="Editor dirty state and content preview." src="../_images/workbench-editor-dirty-04042020.jpg" />
 </section>
 <section id="title-image">
-<h2>Title image<a class="headerlink" href="#title-image" title="Permalink to this headline"></a></h2>
+<h2>Title image<a class="headerlink" href="#title-image" title="Link to this heading"></a></h2>
 <p>The title of an editor, in many cases, shows a preview of the content of the input. It is the case of scenes or images. This helps to identify the input of an editor when you have some of them open.</p>
 <p>You can make the title image bigger or smaller, by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl+3</span></code> and <code class="docutils literal notranslate"><span class="pre">Ctrl+4</span></code>.</p>
 <img alt="Title image size." src="../_images/workbench-editor-title-small-04052020.jpg" />
 </section>
 <section id="title-menu">
-<h2>Title menu<a class="headerlink" href="#title-menu" title="Permalink to this headline"></a></h2>
+<h2>Title menu<a class="headerlink" href="#title-menu" title="Link to this heading"></a></h2>
 <p>The editor’s title provides a context menu with a couple of options. To close the editor, close other editors or change the title’s image size:</p>
 <img alt="The context menu of the editor's title." src="../_images/workbench-editor-title-menu-04052020.jpg" />
 </section>
 <section id="restore-editors">
-<h2>Restore editors<a class="headerlink" href="#restore-editors" title="Permalink to this headline"></a></h2>
+<h2>Restore editors<a class="headerlink" href="#restore-editors" title="Link to this heading"></a></h2>
 <p>When you open a project, the IDE opens the editors used in the previous session. This information is stored in the local storage of the browser. This means, it is not present in other browser instance or you can remove it by clearing the browser private data.</p>
 </section>
 </section>

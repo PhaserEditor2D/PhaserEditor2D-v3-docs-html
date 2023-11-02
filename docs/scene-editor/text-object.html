@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Text &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -74,6 +79,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
@@ -108,10 +114,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="game-objects.html">Game Object types</a> &raquo;</li>
-      <li>Text</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="game-objects.html">Game Object types</a></li>
+      <li class="breadcrumb-item active">Text</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -121,33 +127,33 @@
            <div itemprop="articleBody">
              
   <section id="text">
-<h1>Text<a class="headerlink" href="#text" title="Permalink to this headline"></a></h1>
+<h1>Text<a class="headerlink" href="#text" title="Link to this heading"></a></h1>
 <p>The <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Text.html">Text type</a> allows to create <a href="#id2"><span class="problematic" id="id3">`Text objects`_</span></a> based on HTML fonts. It allows customizing the color of the text, the shadows, the stroke, etc…</p>
 <p>You can create a <a class="reference external" href="text-object.html">Text object</a> by dropping a <a class="reference external" href="blocks-view-integration.html">Text built-in block</a> on the scene.</p>
 <img alt="Create a default Text object." src="../_images/scene-editor-text-object-create-block-09252020.webp" />
 <p>Also, using the <a class="reference external" href="replace-object-type.html">type replacing dialog</a>, you can convert a <a class="reference external" href="bitmap-text-object.html">Bitmap Text</a> (or any other object) into a <a class="reference external" href="text-object.html">Text object</a>.</p>
 <img alt="Text object." src="../_images/scene-editor-text-object-05242020.webp" />
 <p>The <a class="reference external" href="text-object.html">Text</a> objects are created in code using the <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html#text__anchor">text factory</a>. This is how the <a class="reference external" href="scene-compiler.html">scene compiler</a> generates that code:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">text_1</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="mf">90</span><span class="p">,</span> <span class="mf">385</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="p">{});</span>
-<span class="nx">text_1</span><span class="p">.</span><span class="nx">text</span> <span class="o">=</span> <span class="s2">&quot;New Text object&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">text_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="mf">90</span><span class="p">,</span><span class="w"> </span><span class="mf">385</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{});</span>
+<span class="nx">text_1</span><span class="p">.</span><span class="nx">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;New Text object&quot;</span><span class="p">;</span>
 <span class="nx">text_1</span><span class="p">.</span><span class="nx">setStyle</span><span class="p">({</span>
-    <span class="s2">&quot;backgroundColor&quot;</span><span class="o">:</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;color&quot;</span><span class="o">:</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;fontFamily&quot;</span><span class="o">:</span><span class="s2">&quot;serif&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;fontSize&quot;</span><span class="o">:</span><span class="s2">&quot;60px&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;fontStyle&quot;</span><span class="o">:</span><span class="s2">&quot;bold italic&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;stroke&quot;</span><span class="o">:</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;shadow.offsetX&quot;</span><span class="o">:</span><span class="mf">5</span><span class="p">,</span>
-    <span class="s2">&quot;shadow.offsetY&quot;</span><span class="o">:</span><span class="mf">5</span><span class="p">,</span>
-    <span class="s2">&quot;shadow.color&quot;</span><span class="o">:</span><span class="s2">&quot;brown&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;shadow.blur&quot;</span><span class="o">:</span><span class="mf">7</span><span class="p">,</span>
-    <span class="s2">&quot;shadow.stroke&quot;</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
-    <span class="s2">&quot;shadow.fill&quot;</span><span class="o">:</span><span class="kc">true</span><span class="p">});</span>
+<span class="w">    </span><span class="s2">&quot;backgroundColor&quot;</span><span class="o">:</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;color&quot;</span><span class="o">:</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;fontFamily&quot;</span><span class="o">:</span><span class="s2">&quot;serif&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;fontSize&quot;</span><span class="o">:</span><span class="s2">&quot;60px&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;fontStyle&quot;</span><span class="o">:</span><span class="s2">&quot;bold italic&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;stroke&quot;</span><span class="o">:</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;shadow.offsetX&quot;</span><span class="o">:</span><span class="mf">5</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;shadow.offsetY&quot;</span><span class="o">:</span><span class="mf">5</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;shadow.color&quot;</span><span class="o">:</span><span class="s2">&quot;brown&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;shadow.blur&quot;</span><span class="o">:</span><span class="mf">7</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;shadow.stroke&quot;</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;shadow.fill&quot;</span><span class="o">:</span><span class="kc">true</span><span class="p">});</span>
 <span class="nx">text_1</span><span class="p">.</span><span class="nx">setPadding</span><span class="p">({</span><span class="s2">&quot;left&quot;</span><span class="o">:</span><span class="mf">10</span><span class="p">,</span><span class="s2">&quot;top&quot;</span><span class="o">:</span><span class="mf">10</span><span class="p">,</span><span class="s2">&quot;right&quot;</span><span class="o">:</span><span class="mf">10</span><span class="p">,</span><span class="s2">&quot;bottom&quot;</span><span class="o">:</span><span class="mf">10</span><span class="p">});</span>
 </pre></div>
 </div>
 <section id="text-type-properties">
-<h2>Text type properties<a class="headerlink" href="#text-type-properties" title="Permalink to this headline"></a></h2>
+<h2>Text type properties<a class="headerlink" href="#text-type-properties" title="Link to this heading"></a></h2>
 <p>The <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Text.html">Text type</a> contains many of the <a class="reference external" href="common-object-properties.html">common object properties</a>:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="variable-properties.html">Variable properties</a></p></li>

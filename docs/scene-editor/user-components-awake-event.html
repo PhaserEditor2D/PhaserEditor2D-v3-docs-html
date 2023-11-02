@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The awake event &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
@@ -99,10 +105,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="user-components.html">User Components</a> &raquo;</li>
-      <li>The awake event</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="user-components.html">User Components</a></li>
+      <li class="breadcrumb-item active">The awake event</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -112,88 +118,88 @@
            <div itemprop="articleBody">
              
   <section id="the-awake-event">
-<h1>The awake event<a class="headerlink" href="#the-awake-event" title="Permalink to this headline"></a></h1>
+<h1>The awake event<a class="headerlink" href="#the-awake-event" title="Link to this heading"></a></h1>
 <p>We propose using <a class="reference external" href="https://phaser.io">Phaser</a> events for implementing the User Components behaviors. However, the events provided in <a class="reference external" href="https://phaser.io">Phaser</a> are not enough. When you create a component, all properties are set with the default values. Then, you set the value of each property. However, maybe you want to perform a custom initialization routine after all properties are set.</p>
 <p>Looking into the <a class="reference external" href="https://phaser.io">Phaser</a> events, you can do it in the first scene’s update. It means you can listen once for the <strong>UPDATE</strong> event and run the initialization routine. It may work in many cases. But maybe, you want to run this routine just after all properties are set, and before the game starts the update loop.</p>
 <p>For this reason, the <a class="reference external" href="../scene-editor/scene-compiler.html">scene compiler</a> generates code for emitting a custom event, the <code class="docutils literal notranslate"><span class="pre">scene-awake</span></code> event, just after it generates the code that creates the objects in the scene, and all their properties are set:
 .. code:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// code generated by the compiler:</span>
 
-<span class="nx">editorCreate</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">editorCreate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-    <span class="c1">// creates the game object</span>
-    <span class="kd">const</span> <span class="nx">dino</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mf">400</span><span class="p">,</span> <span class="mf">240</span><span class="p">,</span> <span class="s2">&quot;FufuSuperDino&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// creates the game object</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">dino</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mf">400</span><span class="p">,</span><span class="w"> </span><span class="mf">240</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;FufuSuperDino&quot;</span><span class="p">);</span>
 
-    <span class="c1">// creates the PushOnClick component</span>
-    <span class="kd">const</span> <span class="nx">dinoPushOnClick</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">PushOnClick</span><span class="p">(</span><span class="nx">dino</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// creates the PushOnClick component</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">dinoPushOnClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">PushOnClick</span><span class="p">(</span><span class="nx">dino</span><span class="p">);</span>
 
-    <span class="c1">// sets the component&#39;s properties</span>
-    <span class="nx">dinoPushOnClick</span><span class="p">.</span><span class="nx">pushDelay</span> <span class="o">=</span> <span class="mf">500</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// sets the component&#39;s properties</span>
+<span class="w">    </span><span class="nx">dinoPushOnClick</span><span class="p">.</span><span class="nx">pushDelay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">500</span><span class="p">;</span>
 
-    <span class="c1">// emit the scene-awake event, after all objects are created</span>
-    <span class="c1">// and all properties are set</span>
-    <span class="nx">dino</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s2">&quot;scene-awake&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// emit the scene-awake event, after all objects are created</span>
+<span class="w">    </span><span class="c1">// and all properties are set</span>
+<span class="w">    </span><span class="nx">dino</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s2">&quot;scene-awake&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>When you implement a component, you can register a listener on the <strong>scene-awake</strong> event:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">PushOnClick</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">PushOnClick</span><span class="w"> </span><span class="p">{</span>
 
-    <span class="kr">constructor</span><span class="p">(</span><span class="nx">gameObject</span><span class="p">)</span> <span class="p">{</span>
-        <span class="p">...</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">gameObject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="p">...</span>
 
-        <span class="k">this</span><span class="p">.</span><span class="nx">gameObject</span> <span class="o">=</span> <span class="nx">gameObject</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">gameObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">gameObject</span><span class="p">;</span>
 
-        <span class="nx">gameObject</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s2">&quot;scene-awake&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="w">        </span><span class="nx">gameObject</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s2">&quot;scene-awake&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 
-            <span class="c1">// I register a &quot;pointerdown&quot;</span>
-            <span class="c1">// event for &quot;animating&quot; the game object</span>
-            <span class="c1">// with a push effect</span>
+<span class="w">            </span><span class="c1">// I register a &quot;pointerdown&quot;</span>
+<span class="w">            </span><span class="c1">// event for &quot;animating&quot; the game object</span>
+<span class="w">            </span><span class="c1">// with a push effect</span>
 
-            <span class="c1">// I set a pixel perfect handler</span>
-            <span class="c1">// with certain alpha-tolerance</span>
-            <span class="kd">const</span> <span class="nx">handler</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">input</span>
-                <span class="p">.</span><span class="nx">makePixelPerfect</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">alphaTolerance</span><span class="p">);</span>
+<span class="w">            </span><span class="c1">// I set a pixel perfect handler</span>
+<span class="w">            </span><span class="c1">// with certain alpha-tolerance</span>
+<span class="w">            </span><span class="kd">const</span><span class="w"> </span><span class="nx">handler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">input</span>
+<span class="w">                </span><span class="p">.</span><span class="nx">makePixelPerfect</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">alphaTolerance</span><span class="p">);</span>
 
 
-            <span class="k">this</span><span class="p">.</span><span class="nx">gameObject</span><span class="p">.</span><span class="nx">setInteractive</span><span class="p">(</span><span class="nx">handler</span><span class="p">)</span>
-                <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;pointerdown&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-                    <span class="c1">// animate the object with the push effect</span>
-                    <span class="k">this</span><span class="p">.</span><span class="nx">gameObject</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">tween</span><span class="p">(...);</span>
-                <span class="p">});</span>
-        <span class="p">});</span>
-    <span class="p">}</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="nx">gameObject</span><span class="p">.</span><span class="nx">setInteractive</span><span class="p">(</span><span class="nx">handler</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;pointerdown&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="c1">// animate the object with the push effect</span>
+<span class="w">                    </span><span class="k">this</span><span class="p">.</span><span class="nx">gameObject</span><span class="p">.</span><span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">tween</span><span class="p">(...);</span>
+<span class="w">                </span><span class="p">});</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="cm">/** @type {number} **/</span>
-    <span class="nx">alphaTolerance</span> <span class="o">=</span> <span class="mf">100</span><span class="p">;</span>
+<span class="w">    </span><span class="cm">/** @type {number} **/</span>
+<span class="w">    </span><span class="nx">alphaTolerance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>In the section <a class="reference external" href="./user-components-super-class.html">A base class for your components</a>), we explain how you can use a common super-class for all the components. It simplifies the listening of <a class="reference external" href="https://phaser.io">Phaser</a> events, and it also includes the <strong>scene-awake</strong> event. So you can rewrite the previous <strong>PushOnClick</strong> component in this way:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">PushOnClick</span> <span class="k">extends</span> <span class="nx">UserComponent</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">PushOnClick</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">UserComponent</span><span class="w"> </span><span class="p">{</span>
 
-    <span class="kr">constructor</span><span class="p">(</span><span class="nx">gameObject</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">super</span><span class="p">(</span><span class="nx">gameObject</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">gameObject</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">super</span><span class="p">(</span><span class="nx">gameObject</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    <span class="nx">awake</span><span class="p">()</span> <span class="p">{</span>
+<span class="w">    </span><span class="nx">awake</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-        <span class="c1">// Instead of registering a scene-awake event listener</span>
-        <span class="c1">// you can override this method.</span>
+<span class="w">        </span><span class="c1">// Instead of registering a scene-awake event listener</span>
+<span class="w">        </span><span class="c1">// you can override this method.</span>
 
-        <span class="p">...</span>
+<span class="w">        </span><span class="p">...</span>
 
-        <span class="k">this</span><span class="p">.</span><span class="nx">gameObject</span><span class="p">.</span><span class="nx">setInteractive</span><span class="p">(...)</span>
-                <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;pointerdown&quot;</span><span class="p">,</span> <span class="p">...);</span>
-        <span class="p">...</span>
-    <span class="p">}</span>
-    <span class="p">...</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">gameObject</span><span class="p">.</span><span class="nx">setInteractive</span><span class="p">(...)</span>
+<span class="w">                </span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;pointerdown&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">...);</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">scene-awake</span></code> event is emitted in the <code class="docutils literal notranslate"><span class="pre">editorCreate()</span></code> method of a scene. So, if you create a new component and this component listens to the <code class="docutils literal notranslate"><span class="pre">scene-awake</span></code> event, then you should emit that event manually:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">comp</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">PushOnClick</span><span class="p">(</span><span class="nx">someSprite</span><span class="p">);</span>
-<span class="nx">comp</span><span class="p">.</span><span class="nx">alphaTolerance</span> <span class="o">=</span> <span class="mf">50</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">comp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">PushOnClick</span><span class="p">(</span><span class="nx">someSprite</span><span class="p">);</span>
+<span class="nx">comp</span><span class="p">.</span><span class="nx">alphaTolerance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">50</span><span class="p">;</span>
 <span class="c1">// emit the awake event so the component can be notified</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s2">&quot;scene-awake&quot;</span><span class="p">);</span>
 </pre></div>

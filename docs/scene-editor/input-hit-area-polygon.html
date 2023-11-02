@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Polygon Hit Area &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
@@ -100,11 +106,11 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="input.html">Input</a> &raquo;</li>
-          <li><a href="input-hit-area.html">Hit Area</a> &raquo;</li>
-      <li>Polygon Hit Area</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="input.html">Input</a></li>
+          <li class="breadcrumb-item"><a href="input-hit-area.html">Hit Area</a></li>
+      <li class="breadcrumb-item active">Polygon Hit Area</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -114,7 +120,7 @@
            <div itemprop="articleBody">
              
   <section id="polygon-hit-area">
-<h1>Polygon Hit Area<a class="headerlink" href="#polygon-hit-area" title="Permalink to this headline"></a></h1>
+<h1>Polygon Hit Area<a class="headerlink" href="#polygon-hit-area" title="Link to this heading"></a></h1>
 <p>You can set a polygon hit area to an object by selecting the <code class="docutils literal notranslate"><span class="pre">POLYGON</span></code> option in the <strong>Shape</strong> parameter in the <strong>Hit Area</strong> section. The polygon is made with an array points. The points are represented in a string of numbers, with this syntax: <code class="docutils literal notranslate"><span class="pre">&quot;{P1.x}</span> <span class="pre">{P2.y}</span> <span class="pre">...</span> <span class="pre">{Pn.x}</span> <span class="pre">{Pn.y}&quot;</span></code>. You can change the points in the <strong>Hit Area (Polygon)</strong>:</p>
 <img alt="Set polygon hit area." src="../_images/scene-editor-input-hit-area-polygon-20230517.webp" />
 <p>You can click in the 3-dots button for getting a bigger text box and edit all the points:</p>
@@ -128,11 +134,11 @@
 <p>To modify a point, drag it 🙂.</p>
 <p>The <a class="reference external" href="../scene-editor/scene-compiler.html">scene compiler</a> generates the code for setting the polygon hit area like this:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// car</span>
-<span class="kd">const</span> <span class="nx">car</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mf">616</span><span class="p">,</span> <span class="mf">523</span><span class="p">,</span> <span class="s2">&quot;supercars-parsec&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mf">616</span><span class="p">,</span><span class="w"> </span><span class="mf">523</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;supercars-parsec&quot;</span><span class="p">);</span>
 <span class="nx">car</span><span class="p">.</span><span class="nx">setInteractive</span><span class="p">(</span>
-  <span class="ow">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Geom</span><span class="p">.</span><span class="nx">Polygon</span><span class="p">(</span>
-    <span class="s2">&quot;1 85 83 37 245 -0 381 3 574 13 597 57 586 76 603 88 562 115 548 140 510 162 456 147 316 139 158 146 110 160 68 149 0 138&quot;</span>
-    <span class="p">),</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Geom</span><span class="p">.</span><span class="nx">Polygon</span><span class="p">.</span><span class="nx">Contains</span><span class="p">);</span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Geom</span><span class="p">.</span><span class="nx">Polygon</span><span class="p">(</span>
+<span class="w">    </span><span class="s2">&quot;1 85 83 37 245 -0 381 3 574 13 597 57 586 76 603 88 562 115 548 140 510 162 456 147 316 139 158 146 110 160 68 149 0 138&quot;</span>
+<span class="w">    </span><span class="p">),</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Geom</span><span class="p">.</span><span class="nx">Polygon</span><span class="p">.</span><span class="nx">Contains</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>

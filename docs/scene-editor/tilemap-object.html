@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tilemap &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -71,6 +76,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
@@ -105,10 +111,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="game-objects.html">Game Object types</a> &raquo;</li>
-      <li>Tilemap</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="game-objects.html">Game Object types</a></li>
+      <li class="breadcrumb-item active">Tilemap</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -118,7 +124,7 @@
            <div itemprop="articleBody">
              
   <section id="tilemap">
-<h1>Tilemap<a class="headerlink" href="#tilemap" title="Permalink to this headline"></a></h1>
+<h1>Tilemap<a class="headerlink" href="#tilemap" title="Link to this heading"></a></h1>
 <p>The <a class="reference external" href="tilemap-object.html">Tilemap</a> is a built-in <a class="reference external" href="https://phaser.io">Phaser</a> type: <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.Tilemaps.Tilemap.html">Phaser.Tilemaps.Tilemap</a>. It is not a display object, it just stores the data of the maps. The display maps are added to the scene using <a class="reference external" href="tilemap-layer-object.html">TilemapLayer objects</a>.</p>
 <p>The <a class="reference external" href="../scene-editor/index.html">Scene Editor</a> only supports maps created by <a class="reference external" href="https:://www.mapeditor.org">Tiled</a> (the popular third-party tool) with the <a class="reference external" href="https://doc.mapeditor.org/en/stable/manual/export/#json">JSON format</a>. Since Phaser v3.50, the following map orientations are supported: Orthogonal, Isometric, Hexagonal, and Staggered.</p>
 <p>This is the workflow:</p>
@@ -151,12 +157,12 @@
 <img alt="../_images/scene-editor-tileset-image-property-10152020.webp" src="../_images/scene-editor-tileset-image-property-10152020.webp" />
 <p><a class="reference external" href="tilemap-object.html">Tilemap</a> objects are code-generated by the <a class="reference external" href="../scene-editor/scene-compiler.html">scene compiler</a> using the <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html#tilemap__anchor">tilemap</a> factory . And the tileset images are created using the <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.Tilemaps.Tilemap.html#addTilesetImage__anchor">Tilemap.addTilesetImage</a> method:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// super_mario_1</span>
-<span class="kd">const</span> <span class="nx">super_mario_1</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">tilemap</span><span class="p">(</span><span class="s2">&quot;super-mario_1&quot;</span><span class="p">);</span>
-<span class="nx">super_mario_1</span><span class="p">.</span><span class="nx">addTilesetImage</span><span class="p">(</span><span class="s2">&quot;SuperMarioBros-World1-1&quot;</span><span class="p">,</span> <span class="s2">&quot;super-mario&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">super_mario_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">tilemap</span><span class="p">(</span><span class="s2">&quot;super-mario_1&quot;</span><span class="p">);</span>
+<span class="nx">super_mario_1</span><span class="p">.</span><span class="nx">addTilesetImage</span><span class="p">(</span><span class="s2">&quot;SuperMarioBros-World1-1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;super-mario&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>By default, a <a class="reference external" href="tilemap-object.html">Tilemap</a> is created with a <a class="reference external" href="variable-properties.html#scope-property">Class-scope</a>. It means, a field code is generated to reference the object, so you can manually configure other aspects of the map or manually create the layers:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">super_mario_1</span> <span class="o">=</span> <span class="nx">super_mario_1</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">super_mario_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">super_mario_1</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>However, for creating the layers, you have the <a class="reference external" href="tilemap-layer-object.html">TilemapLayer objects</a> support in the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a>, which is explained in the next section.</p>

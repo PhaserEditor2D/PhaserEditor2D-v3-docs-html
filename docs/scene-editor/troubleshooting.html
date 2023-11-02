@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Troubleshooting &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
@@ -95,9 +101,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-      <li>Troubleshooting</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+      <li class="breadcrumb-item active">Troubleshooting</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -107,10 +113,10 @@
            <div itemprop="articleBody">
              
   <section id="troubleshooting">
-<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline"></a></h1>
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h1>
 <p>This is a chapter dedicated to common mistakes or issues you can find using the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a>.</p>
 <section id="scene-dependencies-model">
-<h2>Scene dependencies model<a class="headerlink" href="#scene-dependencies-model" title="Permalink to this headline"></a></h2>
+<h2>Scene dependencies model<a class="headerlink" href="#scene-dependencies-model" title="Link to this heading"></a></h2>
 <p>The <a class="reference external" href="../scene-editor/index.html">Scene Editor</a> is a complex tool. It depends on the state of the whole project. A change in an asset file, a <a class="reference external" href="../asset-pack-editor/asset-pack-file.html">Asset Pack file</a> or a <a class="reference external" href="../scene-editor/prefabs.html">prefab</a> file, can affect to the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a> content. For that reason, you may find a glitch or something weird in the editor, like an object without an image or an object with an out-dated image. In this case, you can do any other following steps:</p>
 <ul class="simple">
 <li><p>Execute the <strong>Refresh Scene</strong> command: press <code class="docutils literal notranslate"><span class="pre">Ctrl+Alt+U</span></code> or find it in the context menu.</p></li>
@@ -118,12 +124,12 @@
 </ul>
 </section>
 <section id="outdated-generated-code">
-<h2>Outdated generated code<a class="headerlink" href="#outdated-generated-code" title="Permalink to this headline"></a></h2>
+<h2>Outdated generated code<a class="headerlink" href="#outdated-generated-code" title="Link to this heading"></a></h2>
 <p>It is possible that when you execute the game, the scene you see is different. A possible cause could be that the scene was not re-compiled after a <a class="reference external" href="../scene-editor/prefabs.html">prefab</a> file change.</p>
 <p>If you change a <a class="reference external" href="../scene-editor/prefabs.html">prefab</a> file, for example, you change the type of the <a class="reference external" href="../scene-editor/prefab-object.html">prefab object</a>, then you should re-compile all the scenes referencing that <a class="reference external" href="../scene-editor/prefabs.html">prefab</a> file. The quick solution is to re-compile the whole project: press <code class="docutils literal notranslate"><span class="pre">Ctrl+Alt+B</span></code> or select the <strong>Compile Project</strong> option in the <a class="reference external" href="../workbench/main-menu.html">Main menu</a>.</p>
 </section>
 <section id="duplicated-scene-identifier">
-<h2>Duplicated scene identifier<a class="headerlink" href="#duplicated-scene-identifier" title="Permalink to this headline"></a></h2>
+<h2>Duplicated scene identifier<a class="headerlink" href="#duplicated-scene-identifier" title="Link to this heading"></a></h2>
 <p>Each scene file has an identifier that should be unique in the project. When you create a new scene file, a new identifier is generated for it. However, if you copy the content of a scene file and create a new file with it, then you will get different files with the same identifier.</p>
 <p>If it is the case, the editor will show an error message with the files with the same identifier:</p>
 <img alt="Duplicated scene ID message." src="../_images/scene-editor-troubleshooting-duplicated-id-msg-08122020.webp" />
@@ -132,15 +138,15 @@
 <p>This command will generate a new identifier for all the scene files that share the same identifier. Only the original file is not modified, in this case, the file with the older modification time.</p>
 <p>We recommend to use the <strong>Fix Duplicated Scenes ID</strong> command, but you can modify the scene identifier manually. Just open the file in a text editor and change the <code class="docutils literal notranslate"><span class="pre">id</span></code> field.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;write-here-a-unique-identifier&quot;</span><span class="p">,</span>
-    <span class="c1">// ...</span>
+<span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;write-here-a-unique-identifier&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// ...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>The <a class="reference external" href="../scene-editor/index.html">Scene Editor</a> uses the <code class="docutils literal notranslate"><span class="pre">Phaser.Utils.String.UUID()</span></code> function to generate a new identifier. You can do the same.</p>
 </section>
 <section id="disable-pixel-art-rendering">
-<h2>Disable Pixel Art rendering<a class="headerlink" href="#disable-pixel-art-rendering" title="Permalink to this headline"></a></h2>
+<h2>Disable Pixel Art rendering<a class="headerlink" href="#disable-pixel-art-rendering" title="Link to this heading"></a></h2>
 <p>By default, the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a> creates a game with the <cite>pixelArt</cite> rendering flag enabled. You can change this configuration by executing the <strong>Scene Editor: Disable Pixel Art Rendering</strong> command and refreshing the page.</p>
 </section>
 </section>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adding User Components to a Game Object &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
@@ -104,10 +110,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="user-components.html">User Components</a> &raquo;</li>
-      <li>Adding User Components to a Game Object</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="user-components.html">User Components</a></li>
+      <li class="breadcrumb-item active">Adding User Components to a Game Object</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -117,17 +123,17 @@
            <div itemprop="articleBody">
              
   <section id="adding-user-components-to-a-game-object">
-<h1>Adding User Components to a Game Object<a class="headerlink" href="#adding-user-components-to-a-game-object" title="Permalink to this headline"></a></h1>
+<h1>Adding User Components to a Game Object<a class="headerlink" href="#adding-user-components-to-a-game-object" title="Link to this heading"></a></h1>
 <p>You can add a user component to an object (entity)  in two ways: manually, and with the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a>.</p>
 <p>Adding a component to an object manually:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">platform</span> <span class="o">=</span> <span class="p">...;</span>
-<span class="kd">const</span> <span class="nx">move</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">HorizontalMove</span><span class="p">(</span><span class="nx">platform</span><span class="p">);</span>
-<span class="nx">move</span><span class="p">.</span><span class="nx">minX</span> <span class="o">=</span> <span class="mf">100</span><span class="p">;</span>
-<span class="nx">move</span><span class="p">.</span><span class="nx">maxX</span> <span class="o">=</span> <span class="mf">400</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">platform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">move</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">HorizontalMove</span><span class="p">(</span><span class="nx">platform</span><span class="p">);</span>
+<span class="nx">move</span><span class="p">.</span><span class="nx">minX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
+<span class="nx">move</span><span class="p">.</span><span class="nx">maxX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">400</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>The constructor of the user component <strong>HorizontalMove</strong> adds the component to the object. You can keep a reference to the component or get the component from the game object, with the <strong>getComponent</strong> method:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">move</span> <span class="o">=</span> <span class="nx">HorizontalMove</span><span class="p">.</span><span class="nx">getComponent</span><span class="p">(</span><span class="nx">platform</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">move</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">HorizontalMove</span><span class="p">.</span><span class="nx">getComponent</span><span class="p">(</span><span class="nx">platform</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>However, the interesting is adding components to objects in the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a>.</p>
@@ -149,18 +155,18 @@
 <div><img alt="Showing the user components of an object." src="../_images/scene-editor-user-components-show-components-20230627.webp" />
 </div></blockquote>
 <section id="generating-the-code-for-a-component-in-an-object">
-<h2>Generating the code for a component in an object<a class="headerlink" href="#generating-the-code-for-a-component-in-an-object" title="Permalink to this headline"></a></h2>
+<h2>Generating the code for a component in an object<a class="headerlink" href="#generating-the-code-for-a-component-in-an-object" title="Link to this heading"></a></h2>
 <p>The <a class="reference external" href="user-components-compiler.html">user components compiler</a> will generate the code to create the component, just like if you write it by hand:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// bridge2 (components)</span>
-<span class="kd">const</span> <span class="nx">bridge2HorizontalMove</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">HorizontalMove</span><span class="p">(</span><span class="nx">bridge2</span><span class="p">);</span>
-<span class="nx">bridge2HorizontalMove</span><span class="p">.</span><span class="nx">horizVelocity</span> <span class="o">=</span> <span class="mf">100</span><span class="p">;</span>
-<span class="nx">bridge2HorizontalMove</span><span class="p">.</span><span class="nx">minX</span> <span class="o">=</span> <span class="mf">10</span><span class="p">;</span>
-<span class="nx">bridge2HorizontalMove</span><span class="p">.</span><span class="nx">maxX</span> <span class="o">=</span> <span class="mf">400</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">bridge2HorizontalMove</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">HorizontalMove</span><span class="p">(</span><span class="nx">bridge2</span><span class="p">);</span>
+<span class="nx">bridge2HorizontalMove</span><span class="p">.</span><span class="nx">horizVelocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">;</span>
+<span class="nx">bridge2HorizontalMove</span><span class="p">.</span><span class="nx">minX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="nx">bridge2HorizontalMove</span><span class="p">.</span><span class="nx">maxX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">400</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
 <section id="actions-for-a-component">
-<h2>Actions for a component<a class="headerlink" href="#actions-for-a-component" title="Permalink to this headline"></a></h2>
+<h2>Actions for a component<a class="headerlink" href="#actions-for-a-component" title="Link to this heading"></a></h2>
 <p>These are the actions associated to the user component of an object:</p>
 <img alt="User component section's menu." src="../_images/scene-editor-user-components-section-menu-20230627.webp" />
 <ul class="simple">
@@ -171,7 +177,7 @@
 </ul>
 </section>
 <section id="browsing-the-user-components-in-a-scene">
-<h2>Browsing the User Components in a scene<a class="headerlink" href="#browsing-the-user-components-in-a-scene" title="Permalink to this headline"></a></h2>
+<h2>Browsing the User Components in a scene<a class="headerlink" href="#browsing-the-user-components-in-a-scene" title="Link to this heading"></a></h2>
 <p>You can take an overview of all the user components in all the objects of the scene with the <strong>Browse User Components</strong> (<code class="docutils literal notranslate"><span class="pre">Shift+M</span></code>) command:</p>
 <img alt="Browse User Component command." src="../_images/scene-editor-user-components-browse-1-20230627.webp" />
 <img alt="User components in the scene." src="../_images/scene-editor-user-components-browse-2-20230627.webp" />

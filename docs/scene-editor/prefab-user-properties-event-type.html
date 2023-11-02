@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Event property type &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
@@ -121,11 +127,11 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="prefabs.html">Prefabs</a> &raquo;</li>
-          <li><a href="prefab-user-properties.html">Prefab user properties</a> &raquo;</li>
-      <li>Event property type</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="prefabs.html">Prefabs</a></li>
+          <li class="breadcrumb-item"><a href="prefab-user-properties.html">Prefab user properties</a></li>
+      <li class="breadcrumb-item active">Event property type</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -135,15 +141,15 @@
            <div itemprop="articleBody">
              
   <section id="event-property-type">
-<h1>Event property type<a class="headerlink" href="#event-property-type" title="Permalink to this headline"></a></h1>
+<h1>Event property type<a class="headerlink" href="#event-property-type" title="Link to this heading"></a></h1>
 <p>This type of property allows selecting an event name from a list of the <a class="reference external" href="https://phaser.io">Phaser</a> events plus custom-defined events. It also allows writing any arbitrary event name.</p>
 <p>To open the list of available events, click on the search button. It opens a dialog with the <a class="reference external" href="https://phaser.io">Phaser</a> and custom events:</p>
 <img alt="Select an event name." src="../_images/prefab-user-props-select-event-name-20230626.webp" />
 <p>When you click on an event name, the bottom pane of the dialog shows the documentation.</p>
 <section id="dynamic-keyboard-events">
-<h2>Dynamic keyboard events<a class="headerlink" href="#dynamic-keyboard-events" title="Permalink to this headline"></a></h2>
+<h2>Dynamic keyboard events<a class="headerlink" href="#dynamic-keyboard-events" title="Link to this heading"></a></h2>
 <p><a class="reference external" href="https://phaser.io">Phaser</a> provides the special <code class="docutils literal notranslate"><span class="pre">Phaser.Input.Keyboard.Events.KEY_DOWN</span></code> and <code class="docutils literal notranslate"><span class="pre">Phaser.Input.Keyboard.Events.KEY_UP</span></code> events. These events allow listening to the keys defined in the <code class="docutils literal notranslate"><span class="pre">KeyCodes</span></code> class, combining in this way:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">keyboard</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;keydown-SPACE&#39;</span><span class="p">,</span> <span class="nx">listener</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">input</span><span class="p">.</span><span class="nx">keyboard</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;keydown-SPACE&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">listener</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Where <code class="docutils literal notranslate"><span class="pre">SPACE</span></code> is a constant in the <code class="docutils literal notranslate"><span class="pre">KeyCodes</span></code> class, and <code class="docutils literal notranslate"><span class="pre">keydown</span></code> (or <code class="docutils literal notranslate"><span class="pre">keyup</span></code>) is the name of the event.</p>
@@ -151,7 +157,7 @@
 <img alt="Keyboard events." src="../_images/prefab-user-props-keydown-events-20230626.webp" />
 </section>
 <section id="dynamic-animation-events">
-<h2>Dynamic animation events<a class="headerlink" href="#dynamic-animation-events" title="Permalink to this headline"></a></h2>
+<h2>Dynamic animation events<a class="headerlink" href="#dynamic-animation-events" title="Link to this heading"></a></h2>
 <p>From the <a class="reference external" href="https://phaser.io">Phaser</a> documentation:</p>
 <blockquote>
 <div><p>The Animation Complete Dynamic Key Event.</p>
@@ -166,32 +172,32 @@ For example, if you had an animation called explode you could listen for the com
 <img alt="Dynamic animation events." src="../_images/prefab-user-props-dynamic-animation-events-20230626.webp" />
 </section>
 <section id="dynamic-spine-events">
-<h2>Dynamic Spine events<a class="headerlink" href="#dynamic-spine-events" title="Permalink to this headline"></a></h2>
+<h2>Dynamic Spine events<a class="headerlink" href="#dynamic-spine-events" title="Link to this heading"></a></h2>
 <p><a class="reference external" href="https://esotericsoftware.com">Spine</a> skeletons contain user events that are fired at a certain moment of an animation. The Event property dialog shows all the events defined in all the <a class="reference external" href="https://esotericsoftware.com">Spine</a> skeleton assets present in the <a class="reference external" href="../asset-pack-editor/asset-pack-file.html">Asset Pack files</a>:</p>
 <img alt="Spine events." src="../_images/prefab-user-props-spine-events-20230927.webp" />
 <p><a class="reference external" href="https://esotericsoftware.com/spine-events">Learn more about the Spine events</a></p>
 </section>
 <section id="custom-events">
-<h2>Custom events<a class="headerlink" href="#custom-events" title="Permalink to this headline"></a></h2>
+<h2>Custom events<a class="headerlink" href="#custom-events" title="Link to this heading"></a></h2>
 <p>In addition to the <a class="reference external" href="https://phaser.io">Phaser</a> events, the dialog shows custom events defined in an <code class="docutils literal notranslate"><span class="pre">events.txt</span></code> file. Since version 3.62.0 of the editor, this file is included in all project templates. However, you can create this file yourself in any folder of your project. The syntax is very simple. In every line, you define an event, and the name and the documentation are separated with a space. Like this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>my-event-name My event name documentation
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>my-event-name<span class="w"> </span>My<span class="w"> </span>event<span class="w"> </span>name<span class="w"> </span>documentation
 <span class="c1"># the editor ignores all lines starting with #</span>
-other-event My other event.
+other-event<span class="w"> </span>My<span class="w"> </span>other<span class="w"> </span>event.
 </pre></div>
 </div>
 <p>Then, the Event property dialog will show the custom events at the beginning of the list:</p>
 <img alt="Custom events." src="../_images/prefab-user-props-custom-event-20230626.webp" />
 </section>
 <section id="event-code-generation">
-<h2>Event code generation<a class="headerlink" href="#event-code-generation" title="Permalink to this headline"></a></h2>
+<h2>Event code generation<a class="headerlink" href="#event-code-generation" title="Link to this heading"></a></h2>
 <p>The <a class="reference external" href="../scene-editor/scene-compiler.html">scene compiler</a> generates the Event properties like this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>class Dragon extends Phaser.GameObjects.Sprite <span class="o">{</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>class<span class="w"> </span>Dragon<span class="w"> </span>extends<span class="w"> </span>Phaser.GameObjects.Sprite<span class="w"> </span><span class="o">{</span>
 
-        constructor<span class="o">(</span>..<span class="o">)</span> <span class="o">{</span>
-                ...
-        <span class="o">}</span>
+<span class="w">        </span>constructor<span class="o">(</span>..<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span>...
+<span class="w">        </span><span class="o">}</span>
 
-        <span class="nv">jumpEvent</span> <span class="o">=</span> Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN<span class="p">;</span>
+<span class="w">        </span><span class="nv">jumpEvent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Phaser.Input.Events.GAMEOBJECT_POINTER_DOWN<span class="p">;</span>
 <span class="o">}</span>
 </pre></div>
 </div>

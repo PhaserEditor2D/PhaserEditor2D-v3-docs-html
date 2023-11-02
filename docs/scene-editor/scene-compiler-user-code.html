@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>User code &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
@@ -98,10 +104,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="scene-compiler.html">The scene compiler</a> &raquo;</li>
-      <li>User code</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="scene-compiler.html">The scene compiler</a></li>
+      <li class="breadcrumb-item active">User code</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -111,7 +117,7 @@
            <div itemprop="articleBody">
              
   <section id="user-code">
-<h1>User code<a class="headerlink" href="#user-code" title="Permalink to this headline"></a></h1>
+<h1>User code<a class="headerlink" href="#user-code" title="Link to this heading"></a></h1>
 <p>The <a class="reference external" href="../scene-editor/index.html">Scene Editor</a> helps to build game levels, but it is far away to cover all aspects of a game. Especially, the game logic should be implemented by you, writing code.</p>
 <p>In <a class="reference external" href="https://phaser.io">Phaser</a> programming, it is common to see, in the same file, code to create the objects of the level (what the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a> is good for) and code to handle the interaction between the objects (the game logic, that is not targeted by the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a>).</p>
 <p>We designed the <a class="reference external" href="../scene-editor/scene-compiler.html">scene compiler</a> to allow you to merge the generated code with your code, in the same file.</p>
@@ -133,7 +139,7 @@
 <p>The next image is an example. Look that you can import a <code class="docutils literal notranslate"><span class="pre">MyUtils</span></code> class and use it in the <code class="docutils literal notranslate"><span class="pre">create()</span></code> method:</p>
 <img alt="User code." src="../_images/scene-compiler-user-code-27022022.webp" />
 <section id="editing-the-generated-code">
-<h2>Editing the generated code<a class="headerlink" href="#editing-the-generated-code" title="Permalink to this headline"></a></h2>
+<h2>Editing the generated code<a class="headerlink" href="#editing-the-generated-code" title="Link to this heading"></a></h2>
 <p>The code generated by the <a class="reference external" href="../scene-editor/scene-compiler.html">scene compiler</a> can be edited in an external editor (like <a class="reference external" href="https://code.visualstudio.com">Visual Studio Code</a>) or using the <a class="reference external" href="https://microsoft.github.io/monaco-editor/">Monaco editor</a> that is built-in in <a class="reference external" href="https://phasereditor2d.com">Phaser Editor 2D</a>.</p>
 <p>We recommend you to read the <a class="reference external" href="../code-editor/index.html">Code Editor</a> chapter and the <a class="reference external" href="../code-editor/js-editor-advanced-features.html">Advanced JavaScript editing features</a> section.</p>
 <p>The <a class="reference external" href="../scene-editor/index.html">Scene Editor</a> provides two commands to quickly edit the code file generated by the <a class="reference external" href="../scene-editor/scene-compiler.html">scene compiler</a>:</p>

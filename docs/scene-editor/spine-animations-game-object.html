@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Creating a SpineGameObject &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="spine-animations.html">Spine animations</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="spine-animations-install.html">Installing the Spine plugin in your game</a></li>
 <li class="toctree-l3"><a class="reference internal" href="spine-animations-loading.html">Loading the Spine assets</a></li>
@@ -102,10 +108,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="spine-animations.html">Spine animations</a> &raquo;</li>
-      <li>Creating a SpineGameObject</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="spine-animations.html">Spine animations</a></li>
+      <li class="breadcrumb-item active">Creating a SpineGameObject</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -115,16 +121,16 @@
            <div itemprop="articleBody">
              
   <section id="creating-a-spinegameobject">
-<h1>Creating a SpineGameObject<a class="headerlink" href="#creating-a-spinegameobject" title="Permalink to this headline"></a></h1>
+<h1>Creating a SpineGameObject<a class="headerlink" href="#creating-a-spinegameobject" title="Link to this heading"></a></h1>
 <p>The <a class="reference external" href="https://esotericsoftware.com/spine-phaser#SpineGameObject">SpineGameObject</a> is the <a class="reference external" href="https://phaser.io">Phaser</a> game object implementation to display, control, and customize <a class="reference external" href="https://esotericsoftware.com">Spine</a> animations.</p>
 <p>The <a class="reference external" href="https://esotericsoftware.com/spine-phaser">Spine Phaser runtime</a> provides the <code class="docutils literal notranslate"><span class="pre">spine()</span></code> factory for creating a <a class="reference external" href="https://esotericsoftware.com/spine-phaser#SpineGameObject">SpineGameObject</a>. This is an example:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">spineObject</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">spine</span><span class="p">(</span><span class="mf">400</span><span class="p">,</span> <span class="mf">500</span><span class="p">,</span> <span class="s2">&quot;spineboy&quot;</span><span class="p">,</span> <span class="s2">&quot;spineboy-atlas&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">spineObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">spine</span><span class="p">(</span><span class="mf">400</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;spineboy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;spineboy-atlas&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>But you don’t need to write that code. The <a class="reference external" href="../scene-editor/index.html">Scene Editor</a> can generate that code for you. You only need to drag a <a class="reference external" href="https://esotericsoftware.com">Spine</a> block from the <a class="reference external" href="../workbench/blocks-view.html">Blocks view</a> and drop it on the scene.</p>
 <p>Let’s see the different ways of doing this.</p>
 <section id="create-a-spine-object-with-a-spinegameobject-built-in-block">
-<h2>Create a Spine object with a SpineGameObject built-in block<a class="headerlink" href="#create-a-spine-object-with-a-spinegameobject-built-in-block" title="Permalink to this headline"></a></h2>
+<h2>Create a Spine object with a SpineGameObject built-in block<a class="headerlink" href="#create-a-spine-object-with-a-spinegameobject-built-in-block" title="Link to this heading"></a></h2>
 <p>The main way of adding a <a class="reference external" href="https://esotericsoftware.com/spine-phaser#SpineGameObject">SpineGameObject</a> to the scene is by dropping the <strong>SpineGameObject</strong> block on the scene. This block is located in the <strong>Built-in</strong> section of the <a class="reference external" href="../workbench/blocks-view.html">Blocks view</a>, under the <strong>Spine</strong> folder. Drag it and drop it on the scene:</p>
 <img alt="Add spine game object to the scene." src="../_images/spine-animations-add-game-object-1-20230924.webp" />
 <p>It opens a configuration dialog for selecting the skeleton data key and the atlas key to be used by the <a class="reference external" href="https://esotericsoftware.com/spine-phaser#SpineGameObject">SpineGameObject</a>. Every <a class="reference external" href="https://esotericsoftware.com/spine-phaser#SpineGameObject">SpineGameObject</a> requires a reference to the skeleton data and the atlas. This means, you first have to <a class="reference external" href="spine-animations-loading.html">add the skeleton data and atlas files to an Asset Pack file</a>. In addition, the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a> requires that you select the skin of the animation.</p>
@@ -155,12 +161,12 @@
 </div></blockquote>
 </section>
 <section id="create-a-spine-object-with-a-skeleton-data-block">
-<h2>Create a Spine object with a skeleton data block<a class="headerlink" href="#create-a-spine-object-with-a-skeleton-data-block" title="Permalink to this headline"></a></h2>
+<h2>Create a Spine object with a skeleton data block<a class="headerlink" href="#create-a-spine-object-with-a-skeleton-data-block" title="Link to this heading"></a></h2>
 <p>The <strong>Spine JSON</strong> and <strong>Spine Binary</strong> sections of the <a class="reference external" href="../workbench/blocks-view.html">Blocks view</a> show all the skeleton data you <a class="reference external" href="spine-animations-loading.html">defined in the Asset Pack file</a>. You can drag a skeleton data block and drop it on the scene. It shows the configuration dialog to select the atlas and the skin, just like in the previous section. The next image shows the <code class="docutils literal notranslate"><span class="pre">spineboy</span></code> skeleton block:</p>
 <img alt="Add a skeleton block." src="../_images/spine-animations-add-skeleton-block-20230924.webp" />
 </section>
 <section id="create-a-spine-object-with-a-skeleton-s-skin-block">
-<h2>Create a Spine object with a skeleton’s skin block<a class="headerlink" href="#create-a-spine-object-with-a-skeleton-s-skin-block" title="Permalink to this headline"></a></h2>
+<h2>Create a Spine object with a skeleton’s skin block<a class="headerlink" href="#create-a-spine-object-with-a-skeleton-s-skin-block" title="Link to this heading"></a></h2>
 <p>If you imported the skeleton data and the atlas assets in the Asset Pack following the <a class="reference external" href="spine-animations-loading.html#spine-assets-default-naming-rules">default naming rules</a>, then the <a class="reference external" href="../workbench/blocks-view.html">Blocks view</a> shows a special <strong>skin</strong> block inside the skeleton data block.</p>
 <p>Drag this skin block and drop it on the scene. It creates the <a class="reference external" href="https://esotericsoftware.com/spine-phaser#SpineGameObject">SpineGameObject</a> right away, without showing the configuration dialog:</p>
 <img alt="Add the skin block." src="../_images/spine-animations-add-object-skin-block-20230924.webp" />

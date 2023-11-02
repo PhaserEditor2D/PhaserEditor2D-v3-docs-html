@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Layer &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -75,6 +80,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
@@ -109,10 +115,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="game-objects.html">Game Object types</a> &raquo;</li>
-      <li>Layer</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="game-objects.html">Game Object types</a></li>
+      <li class="breadcrumb-item active">Layer</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -122,7 +128,7 @@
            <div itemprop="articleBody">
              
   <section id="layer">
-<h1>Layer<a class="headerlink" href="#layer" title="Permalink to this headline"></a></h1>
+<h1>Layer<a class="headerlink" href="#layer" title="Link to this heading"></a></h1>
 <p>The <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Layer.html">Phaser.GameObjects.Layer</a> object type allows grouping objects. Unlike the <a class="reference external" href="./container-object.html">Container</a> objects, a layer cannot be transformed. It doesn’t have position, angle or scale. Its only purpose is to sort the objects for rendering, quickly.</p>
 <p><a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Layer.html">Learn more about Layers in the Phaser docs</a>.</p>
 <p><a class="reference external" href="./working-with-parent-objects.html">Learn more about working with parent objects in the Scene Editor</a>.</p>
@@ -130,20 +136,20 @@
 <img alt="Creating an empty layer." src="../_images/scene-editor-layer-drop-into-scene-12172020.webp" />
 <p>The code generated by the <a class="reference external" href="../scene-editor/scene-compiler.html">scene compiler</a>, to create a Layer, is like this:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// create the layer</span>
-<span class="kd">const</span> <span class="nx">layer_1</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">layer</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">layer_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">layer</span><span class="p">();</span>
 
 <span class="c1">// create an object and add it to the layer</span>
-<span class="kd">const</span> <span class="nx">someObject</span> <span class="o">=</span> <span class="p">...</span> <span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">someObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">;</span>
 <span class="nx">layer_1</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">someObject</span><span class="p">);</span>
 </pre></div>
 </div>
 <section id="grouping-objects-in-a-layer">
-<h2>Grouping objects in a Layer<a class="headerlink" href="#grouping-objects-in-a-layer" title="Permalink to this headline"></a></h2>
+<h2>Grouping objects in a Layer<a class="headerlink" href="#grouping-objects-in-a-layer" title="Link to this heading"></a></h2>
 <p>You can create a layer with a couple of objects. You can do this by selecting the objects and executing the  <a class="reference external" href="#grouping-objects-in-a-layer">Create Layer with Selection</a> command. The command is available in the <a class="reference external" href="./working-with-parent-objects.html#the-parent-context-menu">Parent context menu</a>.</p>
 <p>When you execute the command, the selected objects are removed from the original parents and added to the new layer. All objects keep the same absolute position. If all objects are children of a common layer, then the new layer will be added to the original parent layer.</p>
 </section>
 <section id="layer-properties">
-<h2>Layer properties<a class="headerlink" href="#layer-properties" title="Permalink to this headline"></a></h2>
+<h2>Layer properties<a class="headerlink" href="#layer-properties" title="Link to this heading"></a></h2>
 <p>The Layer type contains some of the <a class="reference external" href="common-object-properties.html">common object properties</a>:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="variable-properties.html">Variable properties</a></p></li>

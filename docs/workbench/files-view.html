@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Files view &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -90,9 +95,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Workbench</a> &raquo;</li>
-      <li>Files view</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Workbench</a></li>
+      <li class="breadcrumb-item active">Files view</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -102,12 +107,12 @@
            <div itemprop="articleBody">
              
   <section id="files-view">
-<h1>Files view<a class="headerlink" href="#files-view" title="Permalink to this headline"></a></h1>
+<h1>Files view<a class="headerlink" href="#files-view" title="Link to this heading"></a></h1>
 <p>The <a class="reference external" href="../workbench/files-view.html">Files view</a> shows the files of the project. The files are displayed in a tree structure, like in many other file navigators.</p>
 <p>Like the other <a class="reference external" href="../misc/content-viewers.html">content viewers</a> present in the IDE, the Files view shows inline previews of a certain type of files. At the same time, you can zoom in/out them by pressing the <code class="docutils literal notranslate"><span class="pre">Shift</span></code> key and rolling the mouse wheel.</p>
 <img alt="Files view zooming." src="../_images/files-view-zoom-04052020.webp" />
 <section id="the-design-and-assets-sub-tabs">
-<h2>The Design and Assets sub-tabs<a class="headerlink" href="#the-design-and-assets-sub-tabs" title="Permalink to this headline"></a></h2>
+<h2>The Design and Assets sub-tabs<a class="headerlink" href="#the-design-and-assets-sub-tabs" title="Link to this heading"></a></h2>
 <p>The main activities you do with Phaser Editor 2D are to create the scenes and pack the assets. For this reason, we added two sub-tabs to the Files view: <strong>Design</strong> and <strong>Assets</strong>. It allows you (we hope) to filter the files and show in the view only the files related to a certain activity.</p>
 <p>When you select the <strong>Design</strong> tab, the view shows only the files you commonly edit with Phaser Editor 2D: the Scene files, the User Components files, the Animations files, the Asset Pack files.</p>
 <p>When you select the <strong>Assets</strong> tab, the view shows only the files used as assets by the different editor: images, atlas files, audio files, video files, Asset Pack files, etc…</p>
@@ -116,7 +121,7 @@
 <img alt="Tab sections." src="../_images/files-view-tab-sections-03122021.webp" />
 </section>
 <section id="context-menu">
-<h2>Context menu<a class="headerlink" href="#context-menu" title="Permalink to this headline"></a></h2>
+<h2>Context menu<a class="headerlink" href="#context-menu" title="Link to this heading"></a></h2>
 <p>The context menu lists a couple of common file operations.</p>
 <p>The <strong>New…</strong> sub-menu shows shortcuts to create new files related to the IDE tools.</p>
 <p>The <strong>Open With</strong> sub-menu shows all the editors you can use to open a selected file.</p>
@@ -126,7 +131,7 @@
 <img alt="Context menu of the Files view." src="../_images/files-view-context-menu-09302020.webp" />
 </section>
 <section id="inspector-view-integration">
-<h2>Inspector view integration<a class="headerlink" href="#inspector-view-integration" title="Permalink to this headline"></a></h2>
+<h2>Inspector view integration<a class="headerlink" href="#inspector-view-integration" title="Link to this heading"></a></h2>
 <p>The <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a> shows the properties of the objects selected in the active view or part. When you select a file in the <a class="reference external" href="../workbench/files-view.html">Files view</a>, the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a> displays different property sections of the file.</p>
 <p>In all cases, the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a> shows the <strong>File</strong> section. It displays the <strong>Name</strong>, <strong>Full Name</strong>, <strong>Size</strong>, and a button to open the file in an editor.</p>
 <p>In addition, plugins can provide their own file property sections for <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a>. There are the cases of the images preview, the scenes preview or the <a class="reference external" href="../asset-pack-editor/import-from-files-view.html">Asset Pack Editor section</a>.</p>

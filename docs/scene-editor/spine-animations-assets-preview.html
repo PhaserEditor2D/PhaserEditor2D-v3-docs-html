@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Spine assets preview &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="spine-animations.html">Spine animations</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="spine-animations-install.html">Installing the Spine plugin in your game</a></li>
 <li class="toctree-l3"><a class="reference internal" href="spine-animations-loading.html">Loading the Spine assets</a></li>
@@ -102,10 +108,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="spine-animations.html">Spine animations</a> &raquo;</li>
-      <li>Spine assets preview</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="spine-animations.html">Spine animations</a></li>
+      <li class="breadcrumb-item active">Spine assets preview</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -115,17 +121,17 @@
            <div itemprop="articleBody">
              
   <section id="spine-assets-preview">
-<h1>Spine assets preview<a class="headerlink" href="#spine-assets-preview" title="Permalink to this headline"></a></h1>
+<h1>Spine assets preview<a class="headerlink" href="#spine-assets-preview" title="Link to this heading"></a></h1>
 <p>There are different contexts in <a class="reference external" href="https://phasereditor2d.com">Phaser Editor 2D</a> where there are <a class="reference external" href="https://esotericsoftware.com">Spine</a> assets and you can preview them: in the <a class="reference external" href="../asset-pack-editor/index.html">Asset Pack Editor</a> and the <a class="reference external" href="../workbench/blocks-view.html">Blocks view</a> of the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a>.</p>
 <p>For displaying and inspecting Spine objects, the <a class="reference external" href="https://esotericsoftware.com/spine-phaser">Spine Phaser runtime</a> requires the skeleton data file and the atlas files. If you follow the default <a class="reference external" href="https://esotericsoftware.com">Spine</a> assets <a class="reference external" href="spine-animations-loading.html#spine-assets-default-naming-rules">naming rules</a>, then <a class="reference external" href="https://phasereditor2d.com">Phaser Editor 2D</a> can build the skeleton instances and preview them.</p>
 <p>In the next sections we explain it in details.</p>
 <section id="preview-spine-atlas-assets">
-<h2>Preview Spine atlas assets<a class="headerlink" href="#preview-spine-atlas-assets" title="Permalink to this headline"></a></h2>
+<h2>Preview Spine atlas assets<a class="headerlink" href="#preview-spine-atlas-assets" title="Link to this heading"></a></h2>
 <p>The <a class="reference external" href="../asset-pack-editor/index.html">Asset Pack Editor</a> shows the <a class="reference external" href="https://esotericsoftware.com">Spine</a> atlas assets you add to an <a class="reference external" href="../asset-pack-editor/asset-pack-file.html">Asset Pack file</a>. If you select it in the editor, the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a> shows you all the atlas frames:</p>
 <img alt="Atlas preview" src="../_images/spine-animations-atlas-preview-20230924.webp" />
 </section>
 <section id="preview-spine-skeleton-and-animation-data">
-<h2>Preview Spine skeleton and animation data<a class="headerlink" href="#preview-spine-skeleton-and-animation-data" title="Permalink to this headline"></a></h2>
+<h2>Preview Spine skeleton and animation data<a class="headerlink" href="#preview-spine-skeleton-and-animation-data" title="Link to this heading"></a></h2>
 <p>You can select a <a class="reference external" href="https://esotericsoftware.com">Spine</a> skeleton data in the <a class="reference external" href="../asset-pack-editor/index.html">Asset Pack Editor</a> or the <a class="reference external" href="../workbench/blocks-view.html">Blocks view</a> of the <a class="reference external" href="../scene-editor/index.html">Scene Editor</a>. In both cases, the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a> shows two sections of properties: the <strong>Spine Skeleton</strong> and the <strong>Spine Preview</strong>.</p>
 <p>The <strong>Spine Skeleton</strong> shows the <strong>Skeleton Key</strong> and <strong>Atlas Key</strong>:</p>
 <img alt="Skeleton assets info" src="../_images/spine-animations-skeleton-asset-preview-20230924.webp" />
@@ -133,18 +139,18 @@
 <img alt="Displays the skins of a skeleton data." src="../_images/spine-animations-skeleton-skins-preview-20230924.webp" />
 </section>
 <section id="preview-spine-animations">
-<h2>Preview Spine animations<a class="headerlink" href="#preview-spine-animations" title="Permalink to this headline"></a></h2>
+<h2>Preview Spine animations<a class="headerlink" href="#preview-spine-animations" title="Link to this heading"></a></h2>
 <p>Notice the <strong>Spine Skeleton</strong> section contains a <strong>Preview Animations</strong> button. It opens the <strong>Spine Preview</strong> dialog.</p>
 <p>In this dialog, you can play the skeleton animations and change other properties like the skin.</p>
 <img alt="Skeleton preview dialog" src="../_images/spine-animations-skeleton-preview-dialog-20230924.webp" />
 <p>Let’s go parameter by parameter.</p>
 <section id="skin-preview">
-<h3>Skin preview<a class="headerlink" href="#skin-preview" title="Permalink to this headline"></a></h3>
+<h3>Skin preview<a class="headerlink" href="#skin-preview" title="Link to this heading"></a></h3>
 <p>You can change the preview skin by pressing in the <strong>Skin</strong> button:</p>
 <img alt="Change skin" src="../_images/spine-animations-asset-preview-dialog-skin-20230924.webp" />
 </section>
 <section id="animation-and-track">
-<h3>Animation and Track<a class="headerlink" href="#animation-and-track" title="Permalink to this headline"></a></h3>
+<h3>Animation and Track<a class="headerlink" href="#animation-and-track" title="Link to this heading"></a></h3>
 <p>With <a class="reference external" href="https://esotericsoftware.com">Spine</a> you can play simultaneous animations on different tracks. With the <strong>Track</strong> button you can select the track ID for playing the animation you select in the <strong>Animation</strong> button.</p>
 <p>In the next image, you can see it is playing the <strong>idle</strong> animation in <strong>Track 0</strong>, and the <strong>shoot</strong> animation in <strong>Track 1</strong>.</p>
 <img alt="Tracks" src="../_images/spine-animations-assets-preview-dialog-track-20230924.webp" />

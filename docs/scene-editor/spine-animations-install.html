@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Installing the Spine plugin in your game &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="spine-animations.html">Spine animations</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Installing the Spine plugin in your game</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#spine-starter-template">Spine starter template</a></li>
@@ -100,10 +106,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="spine-animations.html">Spine animations</a> &raquo;</li>
-      <li>Installing the Spine plugin in your game</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="spine-animations.html">Spine animations</a></li>
+      <li class="breadcrumb-item active">Installing the Spine plugin in your game</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -113,11 +119,11 @@
            <div itemprop="articleBody">
              
   <section id="installing-the-spine-plugin-in-your-game">
-<h1>Installing the Spine plugin in your game<a class="headerlink" href="#installing-the-spine-plugin-in-your-game" title="Permalink to this headline"></a></h1>
+<h1>Installing the Spine plugin in your game<a class="headerlink" href="#installing-the-spine-plugin-in-your-game" title="Link to this heading"></a></h1>
 <p>The <a class="reference external" href="https://esotericsoftware.com/spine-phaser">Spine Phaser runtime</a> is a third-party library. It is not included in <a class="reference external" href="https://phaser.io">Phaser</a> by default.</p>
 <p><a class="reference external" href="https://phasereditor2d.com">Phaser Editor 2D</a> provides the <a class="reference external" href="https://esotericsoftware.com">Spine</a> tooling by default, you don’t need to do any extra steps for using <a class="reference external" href="https://esotericsoftware.com">Spine</a> in the editor. However, you should install the <a class="reference external" href="https://esotericsoftware.com">Spine</a> plugin in your game.</p>
 <p>You can install it via NPM:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm install @esotericsoftware/spine-phaser
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm<span class="w"> </span>install<span class="w"> </span>@esotericsoftware/spine-phaser
 </pre></div>
 </div>
 <p>Or using the <code class="docutils literal notranslate"><span class="pre">script</span></code> tag in the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file of your game:</p>
@@ -126,23 +132,23 @@
 </pre></div>
 </div>
 <p>Next, add the Spine scene plugin to your Phaser game configuration:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="p">...</span>
-  <span class="nx">plugins</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">scene</span><span class="o">:</span> <span class="p">[{</span>
-          <span class="nx">key</span><span class="o">:</span> <span class="s2">&quot;spine.SpinePlugin&quot;</span><span class="p">,</span>
-          <span class="nx">plugin</span><span class="o">:</span> <span class="nx">spine</span><span class="p">.</span><span class="nx">SpinePlugin</span><span class="p">,</span>
-          <span class="nx">mapping</span><span class="o">:</span> <span class="s2">&quot;spine&quot;</span>
-        <span class="p">}]</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="nx">plugins</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">scene</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">          </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;spine.SpinePlugin&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">plugin</span><span class="o">:</span><span class="w"> </span><span class="nx">spine</span><span class="p">.</span><span class="nx">SpinePlugin</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">mapping</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;spine&quot;</span>
+<span class="w">        </span><span class="p">}]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 
-<span class="ow">new</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
+<span class="ow">new</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Game</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><a class="reference external" href="https://esotericsoftware.com/spine-phaser#Installation">Learn more about installing Phaser Spine in your game</a></p>
 <section id="spine-starter-template">
-<h2>Spine starter template<a class="headerlink" href="#spine-starter-template" title="Permalink to this headline"></a></h2>
+<h2>Spine starter template<a class="headerlink" href="#spine-starter-template" title="Link to this heading"></a></h2>
 <p>Installing the <a class="reference external" href="https://esotericsoftware.com/spine-phaser">Spine Phaser runtime</a> is not complex, however, we provide a starter template with a basic configuration. If you are going to start a new project, then we recommend you use this project template.</p>
 <p>It is available in the <a class="reference external" href="http://marketplace.phasereditor2d.com/starters/spine/">Phaser Editor 2D Marketplace</a> and in the <strong>Phaser Editor 2D All in One</strong> marketplace page:</p>
 <img alt="Spine project template." src="../_images/spine-animations-project-template-20230928.webp" />

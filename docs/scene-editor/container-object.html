@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Container &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -76,6 +81,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
@@ -110,10 +116,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="game-objects.html">Game Object types</a> &raquo;</li>
-      <li>Container</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="game-objects.html">Game Object types</a></li>
+      <li class="breadcrumb-item active">Container</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -123,22 +129,22 @@
            <div itemprop="articleBody">
              
   <section id="container">
-<h1>Container<a class="headerlink" href="#container" title="Permalink to this headline"></a></h1>
+<h1>Container<a class="headerlink" href="#container" title="Link to this heading"></a></h1>
 <p>In <a class="reference external" href="https://phaser.io">Phaser</a> 3, the only game object types that have children are the Container (<a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Container.html">Phaser.GameObjects.Container</a>) and the <a class="reference external" href="./layer-object.html">Layer</a> objects. But only the Container can be used to transform the children (in position, angle and scale).</p>
 <p><a class="reference external" href="./working-with-parent-objects.html">Learn more about working with parent objects in the Scene Editor</a>.</p>
 <p>You can create a <a class="reference external" href="container-object.html">container</a> by dropping a <a class="reference external" href="blocks-view-integration.html">Container built-in block</a> on the scene,  or with the <a class="reference external" href="#grouping-objects-in-a-container">Create Container with Selection</a> command.</p>
 <img alt="Creating an empty container." src="../_images/scene-editor-container-drop-into-scene-12172020.webp" />
 <p>The code generated by the <a class="reference external" href="../scene-editor/scene-compiler.html">scene compiler</a>, to create a <a class="reference external" href="container-object.html">container</a>, is like this:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// x=100, y=20</span>
-<span class="kd">const</span> <span class="nx">container_1</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">container</span><span class="p">(</span><span class="mf">100</span><span class="p">,</span> <span class="mf">20</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">container_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">container</span><span class="p">(</span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">);</span>
 
 <span class="c1">// some object is created and added to the container</span>
-<span class="kd">const</span> <span class="nx">someObject</span> <span class="o">=</span> <span class="p">...</span> <span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">someObject</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">;</span>
 <span class="nx">container_1</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">someObject</span><span class="p">);</span>
 </pre></div>
 </div>
 <section id="grouping-objects-in-a-container">
-<h2>Grouping objects in a Container<a class="headerlink" href="#grouping-objects-in-a-container" title="Permalink to this headline"></a></h2>
+<h2>Grouping objects in a Container<a class="headerlink" href="#grouping-objects-in-a-container" title="Link to this heading"></a></h2>
 <p>There are cases where you need to create a container with a couple of objects. You can do this by selecting the objects and executing the  <a class="reference external" href="#grouping-objects-in-a-container">Create Container with Selection</a> command.</p>
 <p>To execute the command, you can press the <code class="docutils literal notranslate"><span class="pre">J</span></code> key or select it the <a class="reference external" href="./working-with-parent-objects.html#the-parent-context-menu">context menu</a>.</p>
 <ol class="arabic simple">
@@ -152,13 +158,13 @@
 <img alt="Create container with selection." src="../_images/scene-editor-create-container-with-selection-04182020.webp" />
 </section>
 <section id="trimming-a-container">
-<h2>Trimming a Container<a class="headerlink" href="#trimming-a-container" title="Permalink to this headline"></a></h2>
+<h2>Trimming a Container<a class="headerlink" href="#trimming-a-container" title="Link to this heading"></a></h2>
 <p>The <strong>Trim Container</strong> command removes the whitespace of the container. This means, that the children are shifted to the left/top corner to the container, and the container is re-positioned to keep the children at the same global position.</p>
 <p>To execute this command press the <code class="docutils literal notranslate"><span class="pre">Shift+T</span></code> key or select the <strong>Trim Container</strong> options of the <a class="reference external" href="./working-with-parent-objects.html#the-parent-context-menu">context menu</a>.</p>
 <img alt="Trim container." src="../_images/scene-editor-trim-container-04182020.webp" />
 </section>
 <section id="container-properties">
-<h2>Container properties<a class="headerlink" href="#container-properties" title="Permalink to this headline"></a></h2>
+<h2>Container properties<a class="headerlink" href="#container-properties" title="Link to this heading"></a></h2>
 <p>The <a class="reference external" href="container-object.html">Container</a> type contains some of the <a class="reference external" href="common-object-properties.html">common object properties</a>:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="variable-properties.html">Variable properties</a></p></li>

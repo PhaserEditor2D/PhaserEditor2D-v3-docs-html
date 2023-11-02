@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Enabling the Arcade physics on a game object &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -61,6 +66,7 @@
 <li class="toctree-l3"><a class="reference internal" href="arcade-physics-collider.html">Arcade physics collider</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
@@ -95,10 +101,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="arcade-physics.html">Arcade physics</a> &raquo;</li>
-      <li>Enabling the Arcade physics on a game object</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="arcade-physics.html">Arcade physics</a></li>
+      <li class="breadcrumb-item active">Enabling the Arcade physics on a game object</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -108,7 +114,7 @@
            <div itemprop="articleBody">
              
   <section id="enabling-the-arcade-physics-on-a-game-object">
-<h1>Enabling the Arcade physics on a game object<a class="headerlink" href="#enabling-the-arcade-physics-on-a-game-object" title="Permalink to this headline"></a></h1>
+<h1>Enabling the Arcade physics on a game object<a class="headerlink" href="#enabling-the-arcade-physics-on-a-game-object" title="Link to this heading"></a></h1>
 <p>You can enable an Arcade physics body in any game object:</p>
 <ul>
 <li><p>Select the object and open the context menu.</p></li>
@@ -126,9 +132,9 @@
 </ul>
 <p>You can remove the body of the object. In the same <strong>Arcade Physics</strong>, select the <strong>Remove Body</strong> option. This option is only available if the selected object is not a <a class="reference external" href="./arcade-physics-add-object.html">built-in Arcade Image or Arcade Sprite</a> object.</p>
 <p>When you add a physics body to the object, the code for creating the object is generated like this:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">gorilla</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mf">379</span><span class="p">,</span> <span class="mf">271</span><span class="p">,</span> <span class="s2">&quot;gorilla&quot;</span><span class="p">)</span>
-    <span class="kr">as</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">GameObjects</span><span class="p">.</span><span class="nx">Image</span> <span class="o">&amp;</span> <span class="p">{</span> <span class="nx">body</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Physics</span><span class="p">.</span><span class="nx">Arcade</span><span class="p">.</span><span class="nx">Body</span> <span class="p">};</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">existing</span><span class="p">(</span><span class="nx">gorilla</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">gorilla</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mf">379</span><span class="p">,</span><span class="w"> </span><span class="mf">271</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;gorilla&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">as</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">GameObjects</span><span class="p">.</span><span class="nx">Image</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Physics</span><span class="p">.</span><span class="nx">Arcade</span><span class="p">.</span><span class="nx">Body</span><span class="w"> </span><span class="p">};</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">existing</span><span class="p">(</span><span class="nx">gorilla</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Notice the <code class="docutils literal notranslate"><span class="pre">as</span> <span class="pre">Phaser.GameObjects.Image</span> <span class="pre">&amp;</span> <span class="pre">{</span> <span class="pre">body:</span> <span class="pre">Phaser.Physics.Arcade.Body</span> <span class="pre">}</span></code> expression. It is telling to the TypeScript compiler the object created by the the <code class="docutils literal notranslate"><span class="pre">image(...)</span></code> method is an <code class="docutils literal notranslate"><span class="pre">Image</span></code> but also has an Arcade body. That annotation is required for generating valid TypeScript code.</p>

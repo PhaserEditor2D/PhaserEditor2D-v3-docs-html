@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sprite &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -71,6 +76,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
@@ -105,10 +111,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="game-objects.html">Game Object types</a> &raquo;</li>
-      <li>Sprite</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="game-objects.html">Game Object types</a></li>
+      <li class="breadcrumb-item active">Sprite</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -118,15 +124,24 @@
            <div itemprop="articleBody">
              
   <section id="sprite">
-<h1>Sprite<a class="headerlink" href="#sprite" title="Permalink to this headline"></a></h1>
+<h1>Sprite<a class="headerlink" href="#sprite" title="Link to this heading"></a></h1>
 <p>The <a class="reference external" href="sprite-object.html">Sprite</a> is a built-in <a class="reference external" href="https://phaser.io">Phaser</a> object type: <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html">Phaser.GameObjects.Sprite</a>. It is like the <a class="reference external" href="image-object.html">Image</a> type, but also it can play <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.Sprite.html#play__anchor">sprite animations</a>. This means, that you may use a <a class="reference external" href="sprite-object.html">Sprite</a> object only if it will be animated in the game, otherwise, the better is to use an <a class="reference external" href="image-object.html">Image</a>.</p>
 <p>A <a class="reference external" href="sprite-object.html">Sprite</a> is created in code using the <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.GameObjects.GameObjectFactory.html#sprite__anchor">sprite factory</a>. This is how the <a class="reference external" href="../scene-editor/scene-compiler.html">scene compiler</a> generates the code of a <a class="reference external" href="sprite-object.html">Sprite</a>:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">player</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="mf">192</span><span class="p">,</span> <span class="mf">512</span><span class="p">,</span> <span class="s2">&quot;dragon-atlas&quot;</span><span class="p">,</span> <span class="s2">&quot;idle-000&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">sprite</span><span class="p">(</span><span class="mf">192</span><span class="p">,</span><span class="w"> </span><span class="mf">512</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;dragon-atlas&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;idle-000&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>To create a <a class="reference external" href="sprite-object.html">Sprite</a> object, you can drop a <a class="reference external" href="blocks-view-integration.html">Sprite built-in block</a> on the scene. Or you can convert an <a class="reference external" href="image-object.html">Image</a> or <a class="reference external" href="tile-sprite-object.html">TileSprite</a> into a <a class="reference external" href="sprite-object.html">Sprite</a>.</p>
+<p>To create a <a class="reference external" href="sprite-object.html">Sprite</a> object, you can:</p>
+<ul>
+<li><p>Drop a <a class="reference external" href="blocks-view-integration.html">Sprite built-in block</a> on the scene:</p>
+<img alt="Create an empty Sprite." src="../_images/scene-editor-sprite-create-20231023.webp" />
+</li>
+<li><p>Drop an <a class="reference external" href="sprite-animations.html">animation block</a> on the scene:</p>
+<img alt="Create a Sprite object from an animation block." src="../_images/scene-editor-sprite-create-from-animation-block-20231023.webp" />
+</li>
+<li><p>Or you can convert an <a class="reference external" href="image-object.html">Image</a> or <a class="reference external" href="tile-sprite-object.html">TileSprite</a> into a <a class="reference external" href="sprite-object.html">Sprite</a>.</p></li>
+</ul>
 <p><a class="reference external" href="replace-object-type.html">Learn more about type conversion</a></p>
-<img alt="Create an empty Sprite." src="../_images/scene-editor-sprite-create-09252020.webp" />
+<p>If you create a sprite, probably you want to play an animation with it. To do this you can set the <a class="reference external" href="animations-properties.html">Animation properties</a>.</p>
 <p>The <a class="reference external" href="sprite-object.html">Sprite</a> type has properties common to other object types:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="variable-properties.html">Variable properties</a></p></li>
@@ -136,6 +151,7 @@
 <li><p><a class="reference external" href="flip-properties.html">Flip properties</a></p></li>
 <li><p><a class="reference external" href="visible-property.html">Visible property</a></p></li>
 <li><p><a class="reference external" href="alpha-properties.html">Alpha properties</a></p></li>
+<li><p><a class="reference external" href="animations-properties.html">Animation properties</a></p></li>
 <li><p><a class="reference external" href="texture-property.html">Texture property</a></p></li>
 </ul>
 </section>

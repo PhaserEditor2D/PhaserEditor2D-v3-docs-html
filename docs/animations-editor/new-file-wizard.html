@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Create a new Animations file &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -77,9 +82,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Animations Editor</a> &raquo;</li>
-      <li>Create a new Animations file</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Animations Editor</a></li>
+      <li class="breadcrumb-item active">Create a new Animations file</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -89,7 +94,7 @@
            <div itemprop="articleBody">
              
   <section id="create-a-new-animations-file">
-<h1>Create a new Animations file<a class="headerlink" href="#create-a-new-animations-file" title="Permalink to this headline"></a></h1>
+<h1>Create a new Animations file<a class="headerlink" href="#create-a-new-animations-file" title="Link to this heading"></a></h1>
 <p>To create an Animations file, open the <a class="reference external" href="../workbench/new-file-dialog.html">New File dialog</a> and select the <strong>Animations File</strong> option:</p>
 <img alt="Select create a new animations file." src="../_images/animations-new-file-1.webp" />
 <p>It opens the <strong>New Animations File</strong> dialog and asks for the name of the file and the location:</p>
@@ -98,7 +103,7 @@
 <p>In the majority of the cases, you want to add the animations file to an <a class="reference external" href="../asset-pack-editor/asset-pack-file.html">Asset Pack file</a>. To do this, select the file in the <a class="reference external" href="../workbench/files-view.html">Files view</a> and the <a class="reference external" href="../workbench/inspector-view.html">Inspector view</a> will show you the option to add the animations to an <a class="reference external" href="../asset-pack-editor/asset-pack-file.html">Asset Pack file</a>:</p>
 <img alt="Import animation file into the Asset Pack file." src="../_images/animations-add-to-pack-file.webp" />
 <p>Also, you can load the animations file using the <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin#animation">Animations Loader</a>:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">animation</span><span class="p">(</span><span class="s2">&quot;playerAnimations&quot;</span><span class="p">,</span> <span class="s2">&quot;assets/animations.json&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">load</span><span class="p">.</span><span class="nx">animation</span><span class="p">(</span><span class="s2">&quot;playerAnimations&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;assets/animations.json&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>

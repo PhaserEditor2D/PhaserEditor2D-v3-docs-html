@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Working with parent objects &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Working with parent objects</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#parent-context-menu">Parent context menu</a></li>
@@ -97,9 +103,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-      <li>Working with parent objects</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+      <li class="breadcrumb-item active">Working with parent objects</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -109,35 +115,35 @@
            <div itemprop="articleBody">
              
   <section id="working-with-parent-objects">
-<h1>Working with parent objects<a class="headerlink" href="#working-with-parent-objects" title="Permalink to this headline"></a></h1>
+<h1>Working with parent objects<a class="headerlink" href="#working-with-parent-objects" title="Link to this heading"></a></h1>
 <p>In <a class="reference external" href="https://phaser.io">Phaser</a>, only two type of scene objects can be used as a “container” or a “parent” of other objects: the <a class="reference external" href="./container-object.html">Container</a>, and the <a class="reference external" href="./layer-object.html">Layer</a> objects.</p>
 <p>In the next section you can learn about operations common to both type of objects.</p>
 <section id="parent-context-menu">
-<h2>Parent context menu<a class="headerlink" href="#parent-context-menu" title="Permalink to this headline"></a></h2>
+<h2>Parent context menu<a class="headerlink" href="#parent-context-menu" title="Link to this heading"></a></h2>
 <p>The <strong>Parent</strong> sub-menu of the scene context menu shows the commands you can apply to containers and layers. Many of those commands are compatible with both types:</p>
 <img alt="The Parent context menu." src="../_images/parent-context-menu--07082021.webp" />
 </section>
 <section id="moving-an-object-to-a-parent">
-<h2>Moving an object to a parent<a class="headerlink" href="#moving-an-object-to-a-parent" title="Permalink to this headline"></a></h2>
+<h2>Moving an object to a parent<a class="headerlink" href="#moving-an-object-to-a-parent" title="Link to this heading"></a></h2>
 <p>You can move an object to a new parent. The command <strong>Move To Parent</strong> opens the <strong>Parent</strong> dialog. This dialog shows all the available parents for the object (including the scene) and you can select the new parent.</p>
 <p>The command can be executed by pressing the <code class="docutils literal notranslate"><span class="pre">Shift+P</span></code> keys or selecting the <strong>Move To Parent</strong> option in the context menu.</p>
 <img alt="Move object to parent." src="../_images/scene-editor-move-to-container-07082021.webp" />
 </section>
 <section id="breaking-a-parent">
-<h2>Breaking a parent<a class="headerlink" href="#breaking-a-parent" title="Permalink to this headline"></a></h2>
+<h2>Breaking a parent<a class="headerlink" href="#breaking-a-parent" title="Link to this heading"></a></h2>
 <p>The <strong>Break Parent</strong> command removes a  Container or Layer, but keeps its children. The children are added to the parent of the parent, and their preserve the same absolute position.</p>
 <p>You can execute the command by pressing the <code class="docutils literal notranslate"><span class="pre">Shift+B</span></code> keys or selecting the <strong>Break Parent</strong> option of the <a class="reference internal" href="#parent-context-menu">Parent context menu</a>.</p>
 </section>
 <section id="selecting-the-parent-of-an-object">
-<h2>Selecting the parent of an object<a class="headerlink" href="#selecting-the-parent-of-an-object" title="Permalink to this headline"></a></h2>
+<h2>Selecting the parent of an object<a class="headerlink" href="#selecting-the-parent-of-an-object" title="Link to this heading"></a></h2>
 <p>The <strong>Select Parent</strong> command selects the parent of an object. To execute the command press the <code class="docutils literal notranslate"><span class="pre">P</span></code> key or click on the <strong>Select Parent</strong> option of the <a class="reference internal" href="#parent-context-menu">Parent context menu</a>.</p>
 </section>
 <section id="selecting-the-children-of-an-object">
-<h2>Selecting the children of an object<a class="headerlink" href="#selecting-the-children-of-an-object" title="Permalink to this headline"></a></h2>
+<h2>Selecting the children of an object<a class="headerlink" href="#selecting-the-children-of-an-object" title="Link to this heading"></a></h2>
 <p>The <strong>Select Children</strong> command selects the children of a container or a layer. To execute this command, press the <code class="docutils literal notranslate"><span class="pre">N</span></code> key or click on the <strong>Select Children</strong> option in the <a class="reference internal" href="#parent-context-menu">Parent context menu</a>.</p>
 </section>
 <section id="changing-the-rendering-order-of-children">
-<h2>Changing the rendering order of children<a class="headerlink" href="#changing-the-rendering-order-of-children" title="Permalink to this headline"></a></h2>
+<h2>Changing the rendering order of children<a class="headerlink" href="#changing-the-rendering-order-of-children" title="Link to this heading"></a></h2>
 <p>You can change the rendering order of an object. The context menu shows the <strong>Edit</strong> → <strong>Move</strong> commands, to move the objects in different depth directions:</p>
 <img alt="Changing the rendering order of objects." src="../_images/scene-editor-display-list-move-objects-20230627.webp" />
 </section>

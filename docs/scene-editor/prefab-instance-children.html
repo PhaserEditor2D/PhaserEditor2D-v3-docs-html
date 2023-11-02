@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adding children to a prefab instance &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
@@ -101,10 +107,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="prefabs.html">Prefabs</a> &raquo;</li>
-      <li>Adding children to a prefab instance</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="prefabs.html">Prefabs</a></li>
+      <li class="breadcrumb-item active">Adding children to a prefab instance</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -114,7 +120,7 @@
            <div itemprop="articleBody">
              
   <section id="adding-children-to-a-prefab-instance">
-<h1>Adding children to a prefab instance<a class="headerlink" href="#adding-children-to-a-prefab-instance" title="Permalink to this headline"></a></h1>
+<h1>Adding children to a prefab instance<a class="headerlink" href="#adding-children-to-a-prefab-instance" title="Link to this heading"></a></h1>
 <p>Since v3.35.0 of Phaser Editor 2D you can add children to a prefab instance. Sure, it should be an instance of a Layer or Container prefab.</p>
 <p>For backward compatibility, this behavior is disabled by default in prefabs. You should enable it in the <a class="reference external" href="children-properties.html">Children properties section</a>, setting on the <strong>Allow Append Children</strong> parameter. It means you have to checkmark that parameter in a Container or Layer prefab or nested prefab.</p>
 <p>This is a handy feature for creating reusable objects. Let’s see the next example.</p>
@@ -131,37 +137,37 @@
 <p>Notice the new <strong>levelCompleteRibbon</strong>, and the <strong>star1</strong>, <strong>star2</strong>, and <strong>star3</strong> objects, are children of an instance of the <strong>DialogPrefab</strong> prefab. In previous versions of the editor, for getting a similar structure, you had to wrap a <strong>DialogPrefab</strong> with a new container and add the new objects to it. But now, you can add new children to the same prefab instance and at the same time, it inherits the behaviors of the <strong>DialogPrefab</strong>. It doesn’t require any manual delegation of behaviors.</p>
 <img alt="Structure of the Complete Level prefab." src="../_images/prefab-children-level-complete-dialog-outline-20221004.webp" />
 <p>As result, we get the following code of the <code class="docutils literal notranslate"><span class="pre">LevelCompletePrefab</span></code> class:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nx">LevelCompleteDialogPrefab</span> <span class="k">extends</span> <span class="nx">DialogPrefab</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">LevelCompleteDialogPrefab</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">DialogPrefab</span><span class="w"> </span><span class="p">{</span>
 
-<span class="kr">constructor</span><span class="p">(</span><span class="nx">scene</span><span class="o">:</span> <span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scene</span><span class="p">,</span> <span class="nx">x</span><span class="o">?:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">y</span><span class="o">?:</span> <span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
-<span class="k">super</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span> <span class="nx">x</span> <span class="o">??</span> <span class="mf">400</span><span class="p">,</span> <span class="nx">y</span> <span class="o">??</span> <span class="mf">303</span><span class="p">);</span>
+<span class="kr">constructor</span><span class="p">(</span><span class="nx">scene</span><span class="o">:</span><span class="w"> </span><span class="nx">Phaser</span><span class="p">.</span><span class="nx">Scene</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="o">?:</span><span class="w"> </span><span class="nx">number</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">?:</span><span class="w"> </span><span class="nx">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="k">super</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="mf">400</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="mf">303</span><span class="p">);</span>
 
 <span class="k">this</span><span class="p">.</span><span class="nx">closeButton</span><span class="p">.</span><span class="nx">setTexture</span><span class="p">(</span><span class="s2">&quot;Button Pack - Green_Button Green - Close&quot;</span><span class="p">);</span>
 
 <span class="c1">// levelCompleteRibbon</span>
-<span class="kd">const</span> <span class="nx">levelCompleteRibbon</span> <span class="o">=</span> <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">30</span><span class="p">,</span> <span class="s2">&quot;Casual Game GUI_Attribute - Ribbon Green&quot;</span><span class="p">);</span>
-<span class="nx">levelCompleteRibbon</span><span class="p">.</span><span class="nx">scaleX</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>
-<span class="nx">levelCompleteRibbon</span><span class="p">.</span><span class="nx">scaleY</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">levelCompleteRibbon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Casual Game GUI_Attribute - Ribbon Green&quot;</span><span class="p">);</span>
+<span class="nx">levelCompleteRibbon</span><span class="p">.</span><span class="nx">scaleX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="nx">levelCompleteRibbon</span><span class="p">.</span><span class="nx">scaleY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">levelCompleteRibbon</span><span class="p">);</span>
 
 <span class="c1">// star1</span>
-<span class="kd">const</span> <span class="nx">star1</span> <span class="o">=</span> <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="o">-</span><span class="mf">89</span><span class="p">,</span> <span class="mf">81</span><span class="p">,</span> <span class="s2">&quot;Casual Game GUI_Icon - Star Yellow&quot;</span><span class="p">);</span>
-<span class="nx">star1</span><span class="p">.</span><span class="nx">scaleX</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>
-<span class="nx">star1</span><span class="p">.</span><span class="nx">scaleY</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>
-<span class="nx">star1</span><span class="p">.</span><span class="nx">angle</span> <span class="o">=</span> <span class="o">-</span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">star1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="o">-</span><span class="mf">89</span><span class="p">,</span><span class="w"> </span><span class="mf">81</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Casual Game GUI_Icon - Star Yellow&quot;</span><span class="p">);</span>
+<span class="nx">star1</span><span class="p">.</span><span class="nx">scaleX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="nx">star1</span><span class="p">.</span><span class="nx">scaleY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="nx">star1</span><span class="p">.</span><span class="nx">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">10</span><span class="p">;</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">star1</span><span class="p">);</span>
 
 <span class="c1">// star2</span>
-<span class="kd">const</span> <span class="nx">star2</span> <span class="o">=</span> <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="o">-</span><span class="mf">2</span><span class="p">,</span> <span class="mf">71</span><span class="p">,</span> <span class="s2">&quot;Casual Game GUI_Icon - Star Yellow&quot;</span><span class="p">);</span>
-<span class="nx">star2</span><span class="p">.</span><span class="nx">scaleX</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>
-<span class="nx">star2</span><span class="p">.</span><span class="nx">scaleY</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">star2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="o">-</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">71</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Casual Game GUI_Icon - Star Yellow&quot;</span><span class="p">);</span>
+<span class="nx">star2</span><span class="p">.</span><span class="nx">scaleX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="nx">star2</span><span class="p">.</span><span class="nx">scaleY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">star2</span><span class="p">);</span>
 
 <span class="c1">// star3</span>
-<span class="kd">const</span> <span class="nx">star3</span> <span class="o">=</span> <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mf">85</span><span class="p">,</span> <span class="mf">81</span><span class="p">,</span> <span class="s2">&quot;Casual Game GUI_Icon - Star Yellow&quot;</span><span class="p">);</span>
-<span class="nx">star3</span><span class="p">.</span><span class="nx">scaleX</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>
-<span class="nx">star3</span><span class="p">.</span><span class="nx">scaleY</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>
-<span class="nx">star3</span><span class="p">.</span><span class="nx">angle</span> <span class="o">=</span> <span class="mf">10</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">star3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mf">85</span><span class="p">,</span><span class="w"> </span><span class="mf">81</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Casual Game GUI_Icon - Star Yellow&quot;</span><span class="p">);</span>
+<span class="nx">star3</span><span class="p">.</span><span class="nx">scaleX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="nx">star3</span><span class="p">.</span><span class="nx">scaleY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="nx">star3</span><span class="p">.</span><span class="nx">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">star3</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="p">}</span>

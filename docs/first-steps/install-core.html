@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Install Phaser Editor 2D Core &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -84,10 +89,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">First steps</a> &raquo;</li>
-          <li><a href="download-and-install.html">Download and install</a> &raquo;</li>
-      <li>Install Phaser Editor 2D Core</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">First steps</a></li>
+          <li class="breadcrumb-item"><a href="download-and-install.html">Download and install</a></li>
+      <li class="breadcrumb-item active">Install Phaser Editor 2D Core</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -97,18 +102,18 @@
            <div itemprop="articleBody">
              
   <section id="install-phaser-editor-2d-core">
-<h1>Install Phaser Editor 2D Core<a class="headerlink" href="#install-phaser-editor-2d-core" title="Permalink to this headline"></a></h1>
+<h1>Install Phaser Editor 2D Core<a class="headerlink" href="#install-phaser-editor-2d-core" title="Link to this heading"></a></h1>
 <p>You can install <a class="reference external" href="../intro/core.html">Phaser Editor 2D Core</a> using two main methods:</p>
 <ul class="simple">
 <li><p>Download it from the Phaser Editor 2D website.</p></li>
 <li><p>Install it using the Node Package Manager (NPM)</p></li>
 </ul>
 <section id="getting-phaser-editor-2d-core-from-the-phaser-editor-2d-website">
-<h2>Getting Phaser Editor 2D Core from the Phaser Editor 2D website<a class="headerlink" href="#getting-phaser-editor-2d-core-from-the-phaser-editor-2d-website" title="Permalink to this headline"></a></h2>
+<h2>Getting Phaser Editor 2D Core from the Phaser Editor 2D website<a class="headerlink" href="#getting-phaser-editor-2d-core-from-the-phaser-editor-2d-website" title="Link to this heading"></a></h2>
 <p>Download the <code class="docutils literal notranslate"><span class="pre">PhaserEditor2D-core-&lt;version&gt;-&lt;platform&gt;.zip</span></code> file for your platform from the <a class="reference external" href="https://phasereditor2d.com/downloads">Downloads page</a>.</p>
 <p>Un-compress the downloaded file, open the terminal and run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /path/to/downloaded/PhaserEditor2D
-$ ./PhaserEditor2D -project path/to/project
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/path/to/downloaded/PhaserEditor2D
+$<span class="w"> </span>./PhaserEditor2D<span class="w"> </span>-project<span class="w"> </span>path/to/project
 </pre></div>
 </div>
 <p>The server starts and opens the default browser in the address: <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:1959/editor</span></code>.</p>
@@ -127,33 +132,33 @@ $ ./PhaserEditor2D -project path/to/project
 </ul>
 </div></blockquote>
 <p>However, you can run the server in a remote host using the <code class="docutils literal notranslate"><span class="pre">-public</span></code> option:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./PhaserEditor2D -public
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./PhaserEditor2D<span class="w"> </span>-public
 </pre></div>
 </div>
 <p>It allows remote connections but disables all the OS integration described before.</p>
 <p><a class="reference external" href="../misc/server-options.html">Learn more about all the command line options</a></p>
 </section>
 <section id="getting-phaser-editor-2d-core-from-the-npm-registry">
-<h2>Getting Phaser Editor 2D Core from the NPM registry<a class="headerlink" href="#getting-phaser-editor-2d-core-from-the-npm-registry" title="Permalink to this headline"></a></h2>
+<h2>Getting Phaser Editor 2D Core from the NPM registry<a class="headerlink" href="#getting-phaser-editor-2d-core-from-the-npm-registry" title="Link to this heading"></a></h2>
 <p>You can install <a class="reference external" href="../intro/core.html">Phaser Editor 2D Core</a> globally in your system using <a class="reference external" href="https://www.npmjs.com">NPM</a>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; npm install -g phasereditor2d-launcher
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>phasereditor2d-launcher
 </pre></div>
 </div>
 <p>And you can run it in a terminal:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ phasereditor2d-launcher -project path/to/project
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>phasereditor2d-launcher<span class="w"> </span>-project<span class="w"> </span>path/to/project
 </pre></div>
 </div>
 <p>The <a class="reference external" href="https://www.npmjs.com/package/phasereditor2d-launcher">phasereditor2d-launcher</a> script downloads the latest <a class="reference external" href="../intro/core.html">Phaser Editor 2D Core</a> version from the Phaser Editor 2D website and runs it. Next time, the script will use the downloaded editor.</p>
 <p>However, probably you would like to install <code class="docutils literal notranslate"><span class="pre">phasereditor2d-launcher</span></code> as a dependency of your project. Then do:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; npm install phasereditor2d-launcher --save-dev
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>npm<span class="w"> </span>install<span class="w"> </span>phasereditor2d-launcher<span class="w"> </span>--save-dev
 </pre></div>
 </div>
 <p>And run it:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ npx phasereditor2d-launcher -project .
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>npx<span class="w"> </span>phasereditor2d-launcher<span class="w"> </span>-project<span class="w"> </span>.
 </pre></div>
 </div>
 <p>If your project was created using one of the project templates provided by the <a class="reference external" href="../intro/all-in-one.html">Phaser Editor 2D All-in-One</a> distribution or downloaded from the <a class="reference external" href="https://phasereditor2d.com/start">Phaser Editor 2D Start page</a>, then the editor is installed together with the other dependencies. Also, the <code class="docutils literal notranslate"><span class="pre">package.json</span></code> file contains the <code class="docutils literal notranslate"><span class="pre">editor</span></code> script for running the editor:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; npm run editor
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span>editor
 </pre></div>
 </div>
 <p><a class="reference external" href="https://www.npmjs.com/package/phasereditor2d-launcher">Learn more about the phasereditor2d-launcher module</a>.</p>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Creating a Script Node &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +60,7 @@
 <li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
@@ -101,10 +107,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="script-node.html">Script Nodes</a> &raquo;</li>
-      <li>Creating a Script Node</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="script-node.html">Script Nodes</a></li>
+      <li class="breadcrumb-item active">Creating a Script Node</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -114,7 +120,7 @@
            <div itemprop="articleBody">
              
   <section id="creating-a-script-node">
-<h1>Creating a Script Node<a class="headerlink" href="#creating-a-script-node" title="Permalink to this headline"></a></h1>
+<h1>Creating a Script Node<a class="headerlink" href="#creating-a-script-node" title="Link to this heading"></a></h1>
 <p>A <a class="reference external" href="../scene-editor/script-node.html">ScriptNode</a> object shares a lot with the game objects, you can add it to the scene by dragging it from the <a class="reference external" href="../workbench/blocks-view.html">Blocks view</a> and dropping it on the scene:</p>
 <img alt="Create script node from the blocks view." src="../_images/script-node-create-1-20230322.webp" />
 <p>That action creates an instance of the <a class="reference external" href="./script-node-class.html">ScriptNode class</a> and adds it to the object selected in the scene. If no object is selected, then it adds the script node to the scene.</p>
@@ -123,34 +129,34 @@
 <p>It opens the <strong>Add Script</strong> dialog. There you can select the script you want to add:</p>
 <img alt="The Add Script dialog." src="../_images/script-node-add-script-dialog.webp" />
 <section id="browsing-the-script-nodes">
-<h2>Browsing the Script Nodes<a class="headerlink" href="#browsing-the-script-nodes" title="Permalink to this headline"></a></h2>
+<h2>Browsing the Script Nodes<a class="headerlink" href="#browsing-the-script-nodes" title="Link to this heading"></a></h2>
 <p>The <a class="reference external" href="../scene-editor/script-node.html">script nodes</a> are displayed in the <a class="reference external" href="../workbench/outline-view.html">Outline view</a>, below the parent object, or the scene:</p>
 <img alt="Script nodes in the outline view." src="../_images/script-node-outline-20230322.webp" />
 <p>Also, you can browse the scripts of an object by pressing the command <code class="docutils literal notranslate"><span class="pre">Shift+U</span></code>. The command is also available in the <strong>Scripting</strong> section of the context menu. That command opens the <strong>Browse Scripts</strong> dialog:</p>
 <img alt="Browsing the script nodes." src="../_images/script-node-browse-scripts-20230322.webp" />
 </section>
 <section id="code-generation-of-the-creation-of-a-script">
-<h2>Code generation of the creation of a script<a class="headerlink" href="#code-generation-of-the-creation-of-a-script" title="Permalink to this headline"></a></h2>
+<h2>Code generation of the creation of a script<a class="headerlink" href="#code-generation-of-the-creation-of-a-script" title="Link to this heading"></a></h2>
 <p>When you add a <a class="reference external" href="../scene-editor/script-node.html">ScriptNode</a> to an object, it generates a code like this:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">editorCreate</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c1">// btn</span>
-    <span class="kd">const</span> <span class="nx">btn</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mf">359</span><span class="p">,</span> <span class="mf">223</span><span class="p">,</span> <span class="s2">&quot;ui&quot;</span><span class="p">,</span> <span class="s2">&quot;btn.png&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">editorCreate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// btn</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">btn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mf">359</span><span class="p">,</span><span class="w"> </span><span class="mf">223</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ui&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;btn.png&quot;</span><span class="p">);</span>
 
-    <span class="c1">// onPointerDownScript</span>
-    <span class="ow">new</span> <span class="nx">OnPointerDownScript</span><span class="p">(</span><span class="nx">btn</span><span class="p">);</span>
-    <span class="p">...</span>
+<span class="w">    </span><span class="c1">// onPointerDownScript</span>
+<span class="w">    </span><span class="ow">new</span><span class="w"> </span><span class="nx">OnPointerDownScript</span><span class="p">(</span><span class="nx">btn</span><span class="p">);</span>
+<span class="w">    </span><span class="p">...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>It is the code generated by the <a class="reference external" href="../scene-editor/scene-compiler.html">scene compiler</a> when you add a script node prefab. If you add an instance of the built-in ScriptNode, the code is similar, but using the <a class="reference external" href="./script-node-class.html">ScriptNode class</a>:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">editorCreate</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">editorCreate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-  <span class="c1">// btn</span>
-  <span class="kd">const</span> <span class="nx">btn</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mf">359</span><span class="p">,</span> <span class="mf">223</span><span class="p">,</span> <span class="s2">&quot;ui&quot;</span><span class="p">,</span> <span class="s2">&quot;btn.png&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// btn</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">btn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mf">359</span><span class="p">,</span><span class="w"> </span><span class="mf">223</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ui&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;btn.png&quot;</span><span class="p">);</span>
 
-  <span class="c1">// scriptnode_1</span>
-  <span class="ow">new</span> <span class="nx">ScriptNode</span><span class="p">(</span><span class="nx">btn</span><span class="p">);</span>
-  <span class="p">...</span>
+<span class="w">  </span><span class="c1">// scriptnode_1</span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">ScriptNode</span><span class="p">(</span><span class="nx">btn</span><span class="p">);</span>
+<span class="w">  </span><span class="p">...</span>
 <span class="p">}</span>
 </pre></div>
 </div>

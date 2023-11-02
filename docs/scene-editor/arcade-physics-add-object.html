@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Creating Arcade Image and Sprite objects &mdash; Phaser Editor 2D Help</title>
@@ -13,10 +13,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -29,15 +30,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #343131" >
-            <a href="../index.html" class="icon icon-home"> Phaser Editor 2D
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Phaser Editor 2D
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.63.0
+                v3.64.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -61,6 +66,7 @@
 <li class="toctree-l3"><a class="reference internal" href="arcade-physics-collider.html">Arcade physics collider</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
@@ -95,10 +101,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Scene Editor</a> &raquo;</li>
-          <li><a href="arcade-physics.html">Arcade physics</a> &raquo;</li>
-      <li>Creating Arcade Image and Sprite objects</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
+          <li class="breadcrumb-item"><a href="arcade-physics.html">Arcade physics</a></li>
+      <li class="breadcrumb-item active">Creating Arcade Image and Sprite objects</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -108,7 +114,7 @@
            <div itemprop="articleBody">
              
   <section id="creating-arcade-image-and-sprite-objects">
-<h1>Creating Arcade Image and Sprite objects<a class="headerlink" href="#creating-arcade-image-and-sprite-objects" title="Permalink to this headline"></a></h1>
+<h1>Creating Arcade Image and Sprite objects<a class="headerlink" href="#creating-arcade-image-and-sprite-objects" title="Link to this heading"></a></h1>
 <p>The simplest way of creating an object with an Arcade physics body is by adding a <a class="reference external" href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Physics.Arcade.Image">Phaser.Physics.Arcade.Image</a> or <a class="reference external" href="https://newdocs.phaser.io/docs/3.55.2/Phaser.Physics.Arcade.Sprite">Phaser.Physics.Arcade.Sprite</a> object to the scene. Both types are available in the Arcade section of the <a class="reference external" href="../workbench/blocks-view.html">Blocks view</a>:</p>
 <img alt="Drop arcade image from blocks view." src="../_images/arcade-add-image-1-20221005.webp" />
 <p>When you drop it to the scene, it shows a dialog for selecting a texture:</p>
@@ -116,9 +122,9 @@
 <img alt="A physics object in the scene." src="../_images/arcade-add-image-3-20221005.webp" />
 <p>Arcade game objects are generated in code with the <a class="reference external" href="https://newdocs.phaser.io/docs/3.54.0/Phaser.Physics.Arcade.Factory#image">image</a> and <a class="reference external" href="https://newdocs.phaser.io/docs/3.54.0/Phaser.Physics.Arcade.Factory#sprite">sprite</a> factories of the Arcade physics system:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// gorilla</span>
-<span class="kd">const</span> <span class="nx">gorilla</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mf">310</span><span class="p">,</span> <span class="mf">313</span><span class="p">,</span> <span class="s2">&quot;gorilla&quot;</span><span class="p">);</span>
-<span class="nx">gorilla</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">setOffset</span><span class="p">(</span><span class="mf">216</span><span class="p">,</span> <span class="mf">58</span><span class="p">);</span>
-<span class="nx">gorilla</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">setSize</span><span class="p">(</span><span class="mf">186</span><span class="p">,</span> <span class="mf">365</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">gorilla</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">add</span><span class="p">.</span><span class="nx">image</span><span class="p">(</span><span class="mf">310</span><span class="p">,</span><span class="w"> </span><span class="mf">313</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;gorilla&quot;</span><span class="p">);</span>
+<span class="nx">gorilla</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">setOffset</span><span class="p">(</span><span class="mf">216</span><span class="p">,</span><span class="w"> </span><span class="mf">58</span><span class="p">);</span>
+<span class="nx">gorilla</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">setSize</span><span class="p">(</span><span class="mf">186</span><span class="p">,</span><span class="w"> </span><span class="mf">365</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The <strong>Arcade Image</strong> and <strong>Arcade Sprite</strong> game object types provide helper methods for configuring the physics body. However, you can <a class="reference external" href="arcade-physics-add-body.html">enable an Arcade physics body in any other game object</a>.</p>
