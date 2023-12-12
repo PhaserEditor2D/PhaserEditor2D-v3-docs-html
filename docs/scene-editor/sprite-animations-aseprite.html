@@ -15,7 +15,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/documentation_options.js?v=4259c620"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -38,7 +38,7 @@
               <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.64.0
+                v3.65.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -63,6 +63,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="sprite-animations.html">Sprite animations</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="sprite-animations-preview.html">Sprite animation preview</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Aseprite support</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#aseprite-code-snippets">Aseprite Code Snippets</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#aseprite-exporting-instructions">Aseprite exporting instructions</a></li>
 </ul>
 </li>
@@ -139,6 +140,29 @@
 </div></blockquote>
 </li>
 </ul>
+<section id="aseprite-code-snippets">
+<h2>Aseprite Code Snippets<a class="headerlink" href="#aseprite-code-snippets" title="Link to this heading"></a></h2>
+<p>In <a class="reference external" href="https://phaser.io">Phaser</a>, before playing an <a class="reference external" href="/scene-editor/sprite-animations-aseprite.html">Aseprite</a> animation in a sprite, you should create the animations in the Animations Manager.</p>
+<p>For creating the animations you should call the <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.Animations.AnimationManager.html#createFromAseprite__anchor">createFromAseprite</a> and pass as argument the <a class="reference external" href="/scene-editor/sprite-animations-aseprite.html">Aseprite</a> asset key.</p>
+<p>In <a class="reference external" href="https://phasereditor2d.com">Phaser Editor 2D</a> you can add this chunk of code in an assisted way:</p>
+<ul>
+<li><p>Right-click on the scene. It opens the context menu. In the <strong>Code Snippet</strong> menu, select the <strong>Add Create Animations From Aseprite</strong> option.</p>
+<blockquote>
+<div><img alt="Select the Aseprite code snippet to add." src="../_images/scene-editor-aseprite-code-snippet-1-20231107.webp" />
+</div></blockquote>
+</li>
+<li><p>It opens a dialog with all the <a class="reference external" href="/scene-editor/sprite-animations-aseprite.html">Aseprite</a> asset keys defined in the <a class="reference external" href="../asset-pack-editor/asset-pack-file.html">Asset Pack files</a> of the project. Select the one you want to use in your project. Probably all of them:</p>
+<img alt="Select the Aseprite_ asset key." src="../_images/scene-editor-aseprite-code-snippet-2-20231107.webp" />
+</li>
+<li><p>Finally, when you compile the scene, it generates these lines of codes at the first lines of the <strong>create()</strong> method of the scene:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// snippets</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">createFromAseprite</span><span class="p">(</span><span class="s2">&quot;paladin&quot;</span><span class="p">);</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">anims</span><span class="p">.</span><span class="nx">createFromAseprite</span><span class="p">(</span><span class="s2">&quot;tank&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
 <section id="aseprite-exporting-instructions">
 <h2>Aseprite exporting instructions<a class="headerlink" href="#aseprite-exporting-instructions" title="Link to this heading"></a></h2>
 <p>Taken from the <a class="reference external" href="https://photonstorm.github.io/phaser3-docs/Phaser.Loader.LoaderPlugin.html#aseprite_anchor">Phaser documentation</a>:</p>

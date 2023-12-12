@@ -15,13 +15,13 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/documentation_options.js?v=4259c620"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Creating a Script Node" href="script-node-create.html" />
+    <link rel="next" title="Script Nodes libraries" href="script-node-libraries.html" />
     <link rel="prev" title="Script Nodes" href="script-node.html" /> 
 </head>
 
@@ -38,7 +38,7 @@
               <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.64.0
+                v3.65.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -68,9 +68,10 @@
 <li class="toctree-l2"><a class="reference internal" href="prefabs.html">Prefabs</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="script-node.html">Script Nodes</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Script Nodes vs User Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="script-node-libraries.html">Script Nodes libraries</a></li>
 <li class="toctree-l3"><a class="reference internal" href="script-node-create.html">Creating a Script Node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="script-node-class.html">The ScriptNode class</a></li>
-<li class="toctree-l3"><a class="reference internal" href="script-node-basic-scripts-project.html">The Basic Scripts project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="script-node-basic-scripts-project.html">The Core scripts project</a></li>
 <li class="toctree-l3"><a class="reference internal" href="script-node-prefab.html">Making a ScriptNode prefab</a></li>
 <li class="toctree-l3"><a class="reference internal" href="script-node-properties.html">ScriptNode’s properties</a></li>
 </ul>
@@ -123,23 +124,18 @@
 <p>These are some examples of modeling behaviors with user components:</p>
 <ul class="simple">
 <li><p>An <strong>AutoplayAnimation</strong> user component that you can add to sprites. It has an <strong>animationKey</strong> property that is played automatically. Because you can play only one animation at a time in a sprite, it fits well in the one-to-one relationship constraint of user components.</p></li>
-<li><p>A <strong>BorderAnchor</strong> component, with a <strong>anchorTo</strong> property with values like <code class="docutils literal notranslate"><span class="pre">left</span></code>, <code class="docutils literal notranslate"><span class="pre">top</span></code>, <code class="docutils literal notranslate"><span class="pre">right</span></code>, <code class="docutils literal notranslate"><span class="pre">bottom</span></code>. This component will auto re-position the object in a responsive scene. Because an object has only one position, it fits in the one-to-one restriction of user components.</p></li>
+<li><p>A <strong>BorderAnchor</strong> component, with an <strong>anchorTo</strong> property with values like <code class="docutils literal notranslate"><span class="pre">left</span></code>, <code class="docutils literal notranslate"><span class="pre">top</span></code>, <code class="docutils literal notranslate"><span class="pre">right</span></code>, <code class="docutils literal notranslate"><span class="pre">bottom</span></code>. This component will auto-re-position the object in a responsive scene. Because an object has only one position, it fits in the one-to-one restriction of user components.</p></li>
+<li><p>A <strong>DurationConfig</strong> component, with info about the duration of an animation. You can add it to a script node or a prefab, that performs an animation. It means you can use a user component for adding extra configuration to a certain action or object.</p></li>
 </ul>
 <p><strong>When to use a Script Node?</strong></p>
-<p>The script nodes are logical game objects and you can make prefabs of them. The prefabs system in the editor is powerful and you can express complex behaviors in a hierarchical relationship. Also, you can add script nodes not only to objects else to scenes too. However, it is very easy that you start abusing the use of script nodes and making large hierarchies of logical nodes. We think for now it isn’t a good idea, but in the end, it is up to you.</p>
+<p>The script nodes are logical game objects and you can make prefabs of them. The prefabs system in the editor is powerful and you can express complex behaviors in a hierarchical relationship. Also, you can add script nodes not only to objects else to scenes too. However, it is very easy you start abusing the use of script nodes and making large hierarchies of logical nodes. We think for now it isn’t a good idea, but in the end, it is up to you.</p>
 <p>Some examples of modeling behaviors with script nodes:</p>
 <ul class="simple">
-<li><p>When you can make logical units that you can combine and make different behaviors. For example, you can make a <strong>StartSceneAction</strong> script node with a <strong>sceneKey</strong> property. This node will start the <strong>sceneKey</strong> scene when it is executed. You can use this script in different contexts:</p></li>
-</ul>
-<blockquote>
-<div><ul class="simple">
-<li><p>In a hierarchy of nodes for starting the Game scene after pressing a <strong>Play</strong> button.</p></li>
-<li><p>You can use the same <strong>StartSceneAction</strong> in a hierarchy of nodes that listens to the SPACE key, so it starts the Game scene.</p></li>
-</ul>
-</div></blockquote>
-<ul class="simple">
-<li><p>A <strong>LevelGameplay</strong> script node with the gameplay of a level. You can add this node to a different scene and changes the parameters of the gameplay, for making it harder.</p></li>
-<li><p>A <strong>PlayerCollider</strong>, <strong>DestroyObjectAction</strong>, and a <strong>ChangeHealthAction</strong> scripts. You can combine them for expressing when a player hits an object in the level if it will destroy the object and how much it affects the player’s health. You can create different combinations for the different kinds of objects in the level.</p></li>
+<li><p>When you can make logical units that you can combine and make different behaviors. For example, you can make a <strong>StartSceneAction</strong> script node with a <strong>sceneKey</strong> property. This node will start the <strong>sceneKey</strong> scene when it is executed. You can use this script in different contexts:
+* In a hierarchy of nodes for starting the Game scene after pressing a <strong>Play</strong> button.
+* You can use the same <strong>StartSceneAction</strong> in a hierarchy of nodes that listens to the SPACE key, so it starts the Game scene.
+* A <strong>LevelGameplay</strong> script node with the gameplay of a level. You can add this node to a different scene and change the parameters of the gameplay, to make it harder.</p></li>
+<li><p>A <strong>PlayerCollider</strong>, <strong>DestroyObjectAction</strong>, and a <strong>ChangeHealthAction</strong> scripts. You can combine them to express when a player hits an object in the level if it will destroy the object and how much it affects the player’s health. You can create different combinations for the different kinds of objects in the level.</p></li>
 </ul>
 <p>As we said previously, it is up to you when to use the script nodes and how much you split the behaviors in a tree of small logical units. Our advice is to keep it simple and learn first from your game before making a complex framework of script nodes.</p>
 </section>
@@ -149,7 +145,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="script-node.html" class="btn btn-neutral float-left" title="Script Nodes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="script-node-create.html" class="btn btn-neutral float-right" title="Creating a Script Node" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="script-node-libraries.html" class="btn btn-neutral float-right" title="Script Nodes libraries" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

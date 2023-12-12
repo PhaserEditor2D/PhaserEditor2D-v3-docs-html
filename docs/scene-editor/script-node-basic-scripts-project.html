@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Basic Scripts project &mdash; Phaser Editor 2D Help</title>
+  <title>The Core scripts project &mdash; Phaser Editor 2D Help</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
@@ -15,7 +15,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/documentation_options.js?v=4259c620"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -38,7 +38,7 @@
               <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.64.0
+                v3.65.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -68,11 +68,12 @@
 <li class="toctree-l2"><a class="reference internal" href="prefabs.html">Prefabs</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="script-node.html">Script Nodes</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="script-node-vs-user-component.html">Script Nodes vs User Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="script-node-libraries.html">Script Nodes libraries</a></li>
 <li class="toctree-l3"><a class="reference internal" href="script-node-create.html">Creating a Script Node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="script-node-class.html">The ScriptNode class</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">The Basic Scripts project</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">The Core scripts project</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#base-scripts">Base scripts</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#trigger-scripts">Trigger scripts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#event-scripts">Event scripts</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#action-scripts">Action scripts</a></li>
 </ul>
 </li>
@@ -111,7 +112,7 @@
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Scene Editor</a></li>
           <li class="breadcrumb-item"><a href="script-node.html">Script Nodes</a></li>
-      <li class="breadcrumb-item active">The Basic Scripts project</li>
+      <li class="breadcrumb-item active">The Core scripts project</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -120,39 +121,42 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="the-basic-scripts-project">
-<h1>The Basic Scripts project<a class="headerlink" href="#the-basic-scripts-project" title="Link to this heading"></a></h1>
-<p>In the previous section, we covered how to create the <code class="docutils literal notranslate"><span class="pre">ScriptNode</span></code> class. It is very basic, it is the minimum you need for using the <a class="reference external" href="../scene-editor/script-node.html">script nodes</a>. For that reason, we created a project with other basic script nodes you can use in your game: the <a class="reference external" href="http://github.com/PhaserEditor2D/script-nodes-basic">script-nodes-basic</a> project.</p>
+  <section id="the-core-scripts-project">
+<h1>The Core scripts project<a class="headerlink" href="#the-core-scripts-project" title="Link to this heading"></a></h1>
+<p>In the previous section, we covered how to create the <code class="docutils literal notranslate"><span class="pre">ScriptNode</span></code> class. It is very basic, it is the minimum you need for using the <a class="reference external" href="../scene-editor/script-node.html">script nodes</a>. For that reason, we created a project with other basic script nodes you can use in your game: the <a class="reference external" href="http://github.com/PhaserEditor2D/phasereditor2d-scripts-core">scripts-core</a> project.</p>
 <p>It is a project in development. In the way we get more experience making games with the script nodes, we may change it or increment the number of scripts on it.</p>
 <p>Following we present you a summary of the project. You can learn more on the project’s site:</p>
-<p><a class="reference external" href="https://github.com/PhaserEditor2D/script-nodes-basic">github.com/PhaserEditor2D/script-nodes-basic</a></p>
-<p>There are three groups of scripts: <strong>Base</strong>, <strong>Triggers</strong>, and <strong>Actions</strong>.</p>
+<p><a class="reference external" href="http://github.com/PhaserEditor2D/phasereditor2d-scripts-core">github.com/PhaserEditor2D/scripts-core</a></p>
+<p>There are three groups of scripts: <strong>Base</strong>, <strong>Events</strong>, and <strong>Actions</strong>.</p>
 <section id="base-scripts">
 <h2>Base scripts<a class="headerlink" href="#base-scripts" title="Link to this heading"></a></h2>
-<p>Contain basic/abstract functionality. Often, you will create prefab variants of them (extend them).</p>
+<p>Contains basic/abstract functionality. Often, you will create prefab variants of them (extend them).</p>
 <ul class="simple">
 <li><p><strong>ScriptNode</strong> - the base class for all the scripts.</p></li>
 <li><p><strong>SpriteScriptNode</strong> - base prefab for script nodes accessing sprite objects.</p></li>
 <li><p><strong>RootScriptNode</strong> - a script node that registers itself into the game object and can be used as a container of other scripts.</p></li>
 </ul>
 </section>
-<section id="trigger-scripts">
-<h2>Trigger scripts<a class="headerlink" href="#trigger-scripts" title="Link to this heading"></a></h2>
-<p>These scripts listen to a certain event. When the event is triggered, then execute the children, which are actions.</p>
+<section id="event-scripts">
+<h2>Event scripts<a class="headerlink" href="#event-scripts" title="Link to this heading"></a></h2>
+<p>These scripts listen to certain events. When the event is emitted, then executes the children, which are actions.</p>
 <ul class="simple">
-<li><p><strong>OnEventScript</strong> - listens the given <code class="docutils literal notranslate"><span class="pre">eventName</span></code> object’s event.</p></li>
-<li><p><strong>OnKeyboardEventScript</strong> - listens the given <code class="docutils literal notranslate"><span class="pre">eventName</span></code> keyboard’s event.</p></li>
-<li><p><strong>OnPointerDownScript</strong> - a prefab variant of <strong>OnEventScript</strong>, listening the <code class="docutils literal notranslate"><span class="pre">pointerdown</span></code> event.</p></li>
+<li><p><strong>OnEventScript</strong> - registers to the given <code class="docutils literal notranslate"><span class="pre">eventEmitter</span></code> and listens to the given <code class="docutils literal notranslate"><span class="pre">eventName</span></code> event.</p></li>
 <li><p><strong>OnSceneAwakeScript</strong> - listens the <code class="docutils literal notranslate"><span class="pre">scene-awake</span></code> event of the scene.</p></li>
+<li><p><strong>OnPointerDownScript</strong> - listens to the <code class="docutils literal notranslate"><span class="pre">pointerdown</span></code> event of the game object.</p></li>
 </ul>
 </section>
 <section id="action-scripts">
 <h2>Action scripts<a class="headerlink" href="#action-scripts" title="Link to this heading"></a></h2>
-<p>Actions are scripts that are executed manually or by other nodes, like triggers or other actions.</p>
+<p>Actions are scripts that are executed manually or by other nodes, like events or other actions. This is important, an action script doesn’t execute by itself.</p>
 <ul class="simple">
 <li><p><strong>CallbackActionScript</strong> - executes the given <code class="docutils literal notranslate"><span class="pre">callback</span></code> expression.</p></li>
 <li><p><strong>StartSceneActionScript</strong> - starts the given <code class="docutils literal notranslate"><span class="pre">sceneKey</span></code> scene.</p></li>
 <li><p><strong>ExecActionScript</strong> - executes the given <code class="docutils literal notranslate"><span class="pre">targetAction</span></code>.</p></li>
+<li><p><strong>EmitEventActionScript</strong> - the given <code class="docutils literal notranslate"><span class="pre">eventEmitter</span></code> emits the given <code class="docutils literal notranslate"><span class="pre">eventName</span></code>.</p></li>
+<li><p><strong>AlertActionScript</strong> - shows the browser’s alert dialog, with the given <code class="docutils literal notranslate"><span class="pre">message</span></code>.</p></li>
+<li><p><strong>ConsoleLogActionScript</strong> - logs the given <code class="docutils literal notranslate"><span class="pre">message</span></code> to the browser’s console.</p></li>
+<li><p><strong>DestroyActionScript</strong> - destroys the game object.</p></li>
 </ul>
 </section>
 </section>

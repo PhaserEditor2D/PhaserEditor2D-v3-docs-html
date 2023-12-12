@@ -15,13 +15,13 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=338c8c79"></script>
+        <script src="../_static/documentation_options.js?v=4259c620"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The Basic Scripts project" href="script-node-basic-scripts-project.html" />
+    <link rel="next" title="The Core scripts project" href="script-node-basic-scripts-project.html" />
     <link rel="prev" title="Creating a Script Node" href="script-node-create.html" /> 
 </head>
 
@@ -38,7 +38,7 @@
               <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.64.0
+                v3.65.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -68,6 +68,7 @@
 <li class="toctree-l2"><a class="reference internal" href="prefabs.html">Prefabs</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="script-node.html">Script Nodes</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="script-node-vs-user-component.html">Script Nodes vs User Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="script-node-libraries.html">Script Nodes libraries</a></li>
 <li class="toctree-l3"><a class="reference internal" href="script-node-create.html">Creating a Script Node</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">The ScriptNode class</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#the-parent">The parent</a></li>
@@ -76,7 +77,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#the-action-methods">The action methods</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="script-node-basic-scripts-project.html">The Basic Scripts project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="script-node-basic-scripts-project.html">The Core scripts project</a></li>
 <li class="toctree-l3"><a class="reference internal" href="script-node-prefab.html">Making a ScriptNode prefab</a></li>
 <li class="toctree-l3"><a class="reference internal" href="script-node-properties.html">ScriptNode’s properties</a></li>
 </ul>
@@ -131,13 +132,14 @@
 <p>The protocol of this class is simple, it needs a constructor that receives a parent argument. Something like this:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">ScriptNode</span><span class="w"> </span><span class="p">{</span>
 
-<span class="kr">constructor</span><span class="p">(</span><span class="nx">parent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="p">}</span>
+<span class="w">   </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">parent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>It is simple, but if you need, you can create a prefab with more features, like handling children, events, etc…</p>
-<p>The good news is that <a class="reference external" href="https://phasereditor2d.com">Phaser Editor 2D</a> can generate the default implementation of this class for you, with basic features:</p>
+<p>It is simple, but if you need to, you can create a prefab with more features, like handling children, events, etc…</p>
+<p>The good news is that this class is included in the <a class="reference external" href="https://phasereditor2d.com">Phaser Editor 2D</a> project templates. If your project is not based on a template, you can install it from the <code class="docutils literal notranslate"><span class="pre">&#64;phasereditor2d/scripts-core</span></code> script library. <a class="reference external" href="script-node-libraries.html">Learn more about the script libraries</a>.</p>
+<p>Also, <a class="reference external" href="https://phasereditor2d.com">Phaser Editor 2D</a> can generate the default implementation of this class for you, with the basic features:</p>
 <ol class="arabic simple">
 <li><p>In the <a class="reference external" href="../workbench/files-view.html">Files view</a>, select the folder when you want to add the class file.</p></li>
 <li><p>Open the <a class="reference external" href="../workbench/command-palette.html">Command Palette</a> (<code class="docutils literal notranslate"><span class="pre">Ctrl+K</span></code>) and search for <code class="docutils literal notranslate"><span class="pre">script</span></code>.</p></li>
@@ -173,7 +175,7 @@
 </section>
 <section id="the-events">
 <h2>The events<a class="headerlink" href="#the-events" title="Link to this heading"></a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">ScriptNode</span></code> class provides a couple of methods for handling special events that may help you on implementing the behaviors. It works just like the <a class="reference external" href="./user-components-super-class.html">User Components events</a>. The methods are:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ScriptNode</span></code> class provides a couple of methods for handling special events that may help you implement the behaviors. It works just like the <a class="reference external" href="./user-components-super-class.html">User Components events</a>. The methods are:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">awake()</span></code>: It is called when all the objects of the scene are created. The values of the user properties (prefab) will be available at this time, so you can override this method for making computations that require the value of the properties. It works like the <a class="reference external" href="user-components-awake-event.html">UserComponent “awake” method</a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">start()</span></code>: It is called the first time the scene updates.</p></li>
@@ -197,7 +199,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="script-node-create.html" class="btn btn-neutral float-left" title="Creating a Script Node" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="script-node-basic-scripts-project.html" class="btn btn-neutral float-right" title="The Basic Scripts project" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="script-node-basic-scripts-project.html" class="btn btn-neutral float-right" title="The Core scripts project" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
