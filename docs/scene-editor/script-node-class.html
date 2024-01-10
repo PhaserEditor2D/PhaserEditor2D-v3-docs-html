@@ -15,7 +15,7 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=4259c620"></script>
+        <script src="../_static/documentation_options.js?v=d02618cb"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
@@ -38,7 +38,7 @@
               <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.65.0
+                v3.66.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -75,6 +75,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#the-children">The children</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#the-events">The events</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#the-action-methods">The action methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-action-s-target">The action’s target</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custom-action-script-node">Custom action script node</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="script-node-basic-scripts-project.html">The Core scripts project</a></li>
@@ -191,6 +193,39 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">executeChildren()</span></code>: Executes the children.</p></li>
 </ul>
 <p>In the next chapter, we mention a project with basic node implementations that you can include in your game. These scripts provide a protocol or style you can adopt for your game.</p>
+</section>
+<section id="the-action-s-target">
+<h2>The action’s target<a class="headerlink" href="#the-action-s-target" title="Link to this heading"></a></h2>
+<p>Most of the action nodes modify or read the game object of the node. This is fine for a lot of cases, but a bit limited. Let’s see an example.</p>
+<p>You want to make a collider between a player object and a list of coin objects and destroy the coin when the player touches it:</p>
+<img alt="The scene for collecting coins" src="../_images/scene-editor-script-node-target-action-game-20240109.webp" />
+<p>We have a <strong>Make Collider Action</strong> node that you can add to the player. This node has a parameter to select the other object you want to collide with. In this case, it is a container with the coins:</p>
+<img alt="Make collider node." src="../_images/scene-editor-script-node-demo-collider-node-20240109.webp" />
+<img alt="Make collider node properties" src="../_images/scene-editor-script-node-demo-collider-node-props-20240109.webp" />
+<p>When the collision happens, the collider node executes the children and passes the two objects as arguments. In the first argument goes the player, and in the second argument goes the coin.</p>
+<p>So, we add <strong>Destroy Object Action</strong> to the collider node. This node is an action to destroy an object. By default, it destroys the game object associated with it: the player. But we want to destroy the coin, not the player. So we need to change the target of the destroy action from the game object to the second argument.</p>
+<p>To do this, we add the <strong>Action Target Config</strong> user component to the destroy object action, and set the <strong>Target</strong> to <strong>ARG_2</strong>. The destroy action then will get the second argument and destroy it.</p>
+<img alt="The destroy action node" src="../_images/scene-editor-script-node-collider-demo-destroy-action-20240109.webp" />
+<img alt="The properties of the destroy action" src="../_images/scene-editor-script-node-collider-demo-destroy-action-properties-20240109.webp" />
+<p>The <strong>Target</strong> parameter shows an array of options, <strong>GAME_OBJECT</strong> (default), <strong>ARG_1</strong>, …, <strong>ARG_8</strong>.</p>
+<p>In addition to the <strong>Target</strong>, you can set the <strong>Target Name</strong> of the action. This name is only about syntax sugar and makes the node more readable in the Outline view. Look in the previous screenshot, the node starts with the value of <strong>Target</strong> plus the <strong>Target Name</strong>.</p>
+</section>
+<section id="custom-action-script-node">
+<h2>Custom action script node<a class="headerlink" href="#custom-action-script-node" title="Link to this heading"></a></h2>
+<p>Making a new action node is very simple. Just create a prefab of a <strong>Script Node</strong>, and implement the <code class="docutils literal notranslate"><span class="pre">execute()</span></code> method. If you want to support the <strong>Action Target Config</strong> component, you can use the <code class="docutils literal notranslate"><span class="pre">ScriptNode.getActionTargetObject()</span></code> utility method:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">execute</span><span class="p">(...</span><span class="nx">args</span><span class="o">:</span><span class="w"> </span><span class="nx">any</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">   </span><span class="kd">const</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">getActionTargetObject</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
+
+<span class="w">   </span><span class="nx">obj</span><span class="p">.</span><span class="nx">doSomething</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>That utility method does the following:</p>
+<ul class="simple">
+<li><p>Check if the <strong>Action Target Config</strong> user component is present in the node. If it is present and has a target configured to return an argument, then returns the right argument.</p></li>
+<li><p>Else, it returns the node’s game object.</p></li>
+</ul>
 </section>
 </section>
 
