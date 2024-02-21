@@ -15,13 +15,13 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=d02618cb"></script>
+        <script src="../_static/documentation_options.js?v=a1f35292"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Troubleshooting" href="troubleshooting.html" />
+    <link rel="next" title="Numeric input field" href="misc-numeric-input.html" />
     <link rel="prev" title="Preview active scene" href="misc-preview-scene.html" /> 
 </head>
 
@@ -38,7 +38,7 @@
               <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v3.66.0
+                v3.67.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -59,9 +59,10 @@
 <li class="toctree-l2"><a class="reference internal" href="inspector-view.html">Inspector view</a></li>
 <li class="toctree-l2"><a class="reference internal" href="game-objects.html">Game Object types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scene-properties.html">Scene properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcade-physics.html">Arcade Physics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sprite-animations.html">Sprite animations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spine-animations.html">Spine animations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shader-effects.html">Shader Effects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="working-with-parent-objects.html">Working with parent objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="object-list.html">Object List</a></li>
 <li class="toctree-l2"><a class="reference internal" href="input.html">Input</a></li>
@@ -74,6 +75,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="misc.html">Miscellaneous</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="misc-preview-scene.html">Preview active scene</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Enabling pixel art rendering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="misc-numeric-input.html">Numeric input field</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
@@ -113,7 +115,7 @@
              
   <section id="enabling-pixel-art-rendering">
 <h1>Enabling pixel art rendering<a class="headerlink" href="#enabling-pixel-art-rendering" title="Link to this heading"></a></h1>
-<p>The <a class="reference external" href="../scene-editor/index.html">SceneEditor</a> runs a Phaser game for rendering the scene. By default, <a class="reference external" href="https://phaser.io">Phaser</a> renders the scene with antialiasing disabled, which is the optimal configuration for pixel-art based games. If your game is not using pixel art, then you can disable antialiasing by running the command <strong>Disable Pixel Art Rendering</strong>. You can enable it back with the command <strong>Disable Pixel Art Rendering</strong>. Once you run any of these commands, you have to reload (<code class="docutils literal notranslate"><span class="pre">Ctrl+R</span></code>) the editor.</p>
+<p>The <a class="reference external" href="../scene-editor/index.html">Scene Editor</a> runs a Phaser game for rendering the scene. By default, <a class="reference external" href="https://phasereditor2d.com">Phaser Editor 2D</a> renders the scene with antialiasing disabled, which is the optimal configuration for pixel-art-based games. If your game is not using pixel art, then you can disable antialiasing by running the command <strong>Disable Pixel Art Rendering</strong>. You can enable it back with the command <strong>Enable Pixel Art Rendering</strong>. Once you run any of these commands, you have to reload (<code class="docutils literal notranslate"><span class="pre">Ctrl+R</span></code>) the editor.</p>
 </section>
 
 
@@ -121,13 +123,13 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="misc-preview-scene.html" class="btn btn-neutral float-left" title="Preview active scene" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="troubleshooting.html" class="btn btn-neutral float-right" title="Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="misc-numeric-input.html" class="btn btn-neutral float-right" title="Numeric input field" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2016-2023, Arian Fornaris.</p>
+    <p>&#169; Copyright 2016-2024, Arian Fornaris.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
